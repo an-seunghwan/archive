@@ -53,6 +53,8 @@ assert len(np.unique(x_train)) == 2
 x_train = tf.cast(x_train, tf.float32)
 x_test = tf.cast(x_test, tf.float32)
 #%%
+plt.imshow(x_train[0])
+#%%
 def high_pass_x_y(image):
     x_var = image[:,:,1:,:] - image[:,:,:-1,:]
     y_var = image[:,1:,:,:] - image[:,:-1,:,:]
@@ -61,6 +63,21 @@ def high_pass_x_y(image):
 def total_variation_loss(image):
     x_deltas, y_deltas = high_pass_x_y(image)
     return tf.reduce_mean(tf.reduce_sum(tf.abs(x_deltas), axis=[1, 2, 3]) + tf.reduce_sum(tf.abs(y_deltas), axis=[1, 2, 3]))
+#%%
+def clip_0_1(image):
+    return tf.clip_by_value(image, clip_value_min=0.0, clip_value_max=1.0)
+
+x_var = x_train[0][:,1:,:] - x_train[0][:,:-1,:]
+y_var = x_train[0][1:,:,:] - x_train[0][:-1,:,:]
+#%%
+plt.figure(figsize=(10, 10))
+plt.subplot(2,2,1)
+plt.title("Horizontal Deltas")
+plt.imshow(clip_0_1(2*y_var+0.5).numpy()[..., 0])
+
+plt.subplot(2,2,2)
+plt.title("Vertical Deltas")
+plt.imshow(clip_0_1(2*x_var+0.5).numpy()[..., 0])
 #%%
 PARAMS = {
     "data": 'mnist',
@@ -199,17 +216,35 @@ for obs in ['mse', 'taylor', 'bce']:
     np.random.seed(1)
     recon = vae.decoder(np.random.normal(size=(100, PARAMS['latent_dim'])))
     plt.imshow(recon.numpy()[0, ..., 0])
-    plt.savefig('./recon_vae_{}.png'.format(obs))
+    plt.savefig('./recon_vae_{}.png'.format(obs),
+                dpi=200, bbox_inches="tight", pad_inches=0.1)
     plt.show()
     plt.close()
     #%%
     plt.hist(recon.numpy().reshape(-1), density=True)
-    plt.savefig('./density_vae_{}.png'.format(obs))
+    plt.savefig('./density_vae_{}.png'.format(obs),
+                dpi=200, bbox_inches="tight", pad_inches=0.1)
     plt.show()
     plt.close()
     #%%
     total_variation.append(total_variation_loss(recon).numpy())
     print(total_variation_loss(recon).numpy())
+    #%%
+    x_var = recon.numpy()[0][:,1:,:] - recon.numpy()[0][:,:-1,:]
+    y_var = recon.numpy()[0][1:,:,:] - recon.numpy()[0][:-1,:,:]
+    #%%
+    plt.figure(figsize=(10, 15))
+    plt.subplot(2,2,1)
+    plt.title("Horizontal Deltas")
+    plt.imshow(clip_0_1(2*y_var+0.5).numpy()[..., 0])
+
+    plt.subplot(2,2,2)
+    plt.title("Vertical Deltas")
+    plt.imshow(clip_0_1(2*x_var+0.5).numpy()[..., 0])
+    plt.savefig('./total_variation_vae_{}.png'.format(obs),
+                dpi=200, bbox_inches="tight", pad_inches=0.1)
+    plt.show()
+    plt.close()
 #%%
 '''GAN'''
 def make_generator_model():
@@ -301,18 +336,36 @@ train(train_dataset, epochs=30)
 #%%
 np.random.seed(1)
 recon = generator(np.random.normal(size=(100, PARAMS['latent_dim'])))
-plt.imshow(recon.numpy()[0, ..., 0])
-plt.savefig('./recon_gan.png')
+plt.imshow(recon.numpy()[11, ..., 0])
+plt.savefig('./recon_gan.png',
+            dpi=200, bbox_inches="tight", pad_inches=0.1)
 plt.show()
 plt.close()
 #%%
 plt.hist(recon.numpy().reshape(-1), density=True)
-plt.savefig('./density_gan.png')
+plt.savefig('./density_gan.png',
+            dpi=200, bbox_inches="tight", pad_inches=0.1)
 plt.show()
 plt.close()
 #%%
 total_variation.append(total_variation_loss(recon).numpy())
 print(total_variation_loss(recon).numpy())
+#%%
+x_var = recon.numpy()[11][:,1:,:] - recon.numpy()[11][:,:-1,:]
+y_var = recon.numpy()[11][1:,:,:] - recon.numpy()[11][:-1,:,:]
+#%%
+plt.figure(figsize=(10, 15))
+plt.subplot(2,2,1)
+plt.title("Horizontal Deltas")
+plt.imshow(clip_0_1(2*y_var+0.5).numpy()[..., 0])
+
+plt.subplot(2,2,2)
+plt.title("Vertical Deltas")
+plt.imshow(clip_0_1(2*x_var+0.5).numpy()[..., 0])
+plt.savefig('./total_variation_gan.png',
+            dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.show()
+plt.close()
 #%%
 print(total_variation)
 # [37.417057, 56.11975, 68.309326, 96.69542]
