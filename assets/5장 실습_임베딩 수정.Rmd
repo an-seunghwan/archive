@@ -1,0 +1,85 @@
+---
+title: "고차원 데이터 임베딩"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 고차원 연속형 데이터가 주어진 경우 PCA를 통해 변수만들기
+
+### 1. 데이터 불러오기 (wine dataset)
+
+```{r}
+# install.packages("sysfonts")
+library(sysfonts)
+
+winedf <- read.csv(url("http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data"), header=T)
+names(winedf) = c("Cvs","Alcohol","Malic acid","Ash","Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols", "Proanthocyanins", "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Proline")
+head(winedf)
+```
+
+### 2. 주성분 분석
+
+```{r}
+winePCA <- prcomp(scale(winedf[,-1]))
+summary(winePCA)
+```
+
+### 3. 주성분 분석을 이용한 임베딩 산점도 
+
+```{r}
+plot(main="Three Different Cultivars",
+     winePCA$x[,1:2], 
+     col = factor(winedf$Cvs))
+```
+
+첫 번째 주성분과 두 번째 주성분에 의해서 관측치들이 각 class별로 구분되는 것을 확인할 수 있다.
+
+## 고차원 데이터가 주어진 경우 RBM을 이용한 임베딩
+
+### 1. MNIST 데이터 불러오기 및 시각화
+
+```{r}
+# install.packages("remotes")
+# remotes::install_github("TimoMatzen/RBM")
+library(RBM)
+
+# 고차원 데이터 MNIST를 불러온다.
+data(MNIST)
+
+# 데이터의 차원
+length(MNIST$trainX[2, ])
+
+# 1개의 훈련 데이터를 시각화
+image(matrix(MNIST$trainX[2, ], nrow = 28), col = grey(seq(0, 1, length = 256)))
+```
+
+### 2. RBM 모형 학습
+
+```{r}
+# 훈련 데이터 저장
+train <- MNIST$trainX
+
+# RBM 모형을 적합
+modelRBM <- RBM(x = train, n.iter = 1000, n.hidden = 100, size.minibatch = 10)
+```
+
+### 3. RBM 모형을 이용한 이미지 복원과 시각화
+
+```{r}
+# MNIST 테스트 데이터
+test <- matrix(MNIST$testX[6, ], nrow = 1)
+
+V <- cbind(1, test[1,, drop = FALSE])
+H <- 1/(1 + exp(-(V %*% modelRBM$trained.weights))) 
+V.rec <- 1/(1 + exp(-(H %*% t(modelRBM$trained.weights)) ))
+
+par(mfrow = c(1,2), family='AppleGothic')
+image(matrix(V[, -1], nrow = sqrt(ncol(test))), col = grey(seq(0, 1, length = 256)))
+title(main = '원래 이미지', font.main = 4)
+image(matrix(V.rec[, -1], nrow = sqrt(ncol(test))), col = grey(seq(0, 1, length = 256)))
+title(main = '복원된 이미지', font.main = 4)
+```
+
