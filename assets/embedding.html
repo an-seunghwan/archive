@@ -1,0 +1,348 @@
+<!DOCTYPE html><html><head>
+      <title>embedding</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/anseunghwan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="1-%EC%A3%BC%EC%84%B1%EB%B6%84-%EB%B6%84%EC%84%9D">1. &#xC8FC;&#xC131;&#xBD84; &#xBD84;&#xC11D;</h2>
+
+<h3 class="mume-header" id="1-%EA%B0%9C%EC%9A%94">1. &#xAC1C;&#xC694;</h3>
+
+<ul>
+<li>&#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB294; &#xACE0;&#xCC28;&#xC6D0; &#xCD95;&#xB4E4;&#xC744; &#xB530;&#xB77C;&#xC11C; &#xC77C;&#xC815;&#xD55C; &#xD06C;&#xAE30;&#xC758; &#xBCC0;&#xB3D9;(&#xB370;&#xC774;&#xD130;&#xAC00; &#xD37C;&#xC838;&#xC788;&#xB294; &#xC815;&#xB3C4;, &#xB370;&#xC774;&#xD130;&#xAC00; &#xD45C;&#xD604;&#xD558;&#xB294; &#xC815;&#xBCF4;&#xC758; &#xD06C;&#xAE30;, &#xC804;&#xCCB4; &#xBCC0;&#xB3D9;, &#xBD84;&#xC0B0;)&#xC744; &#xAC00;&#xC9C4;&#xB2E4;. &#xC8FC;&#xC131;&#xBD84; &#xBD84;&#xC11D;&#xC740; &#xC8FC;&#xC5B4;&#xC9C4; &#xC804;&#xCCB4; &#xBCC0;&#xB3D9;&#xC744; &#xAC00;&#xC7A5; &#xC798; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; &#xC5EC;&#xB7EC; &#xC0C8;&#xB85C;&#xC6B4; &#xCD95;(&#xC8FC;&#xC131;&#xBD84; &#xCD95;)&#xB4E4;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xB9D0;&#xD558;&#xACE0;, &#xC774;&#xB7EC;&#xD55C; &#xC0C8;&#xB85C;&#xC6B4; &#xCD95;&#xC758; &#xAC1C;&#xC218;&#xB294; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xC758; &#xBCC0;&#xC218;&#xC758; &#xAC1C;&#xC218;&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xB2E4;.</li>
+<li>&#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC740; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xC758; &#xBCC0;&#xC218;&#xB4E4;&#xC758; &#xC120;&#xD615;&#xACB0;&#xD569;&#xC744; &#xAD6C;&#xC131;&#xD558;&#xB294; &#xC120;&#xD615;&#xACB0;&#xD569; &#xACC4;&#xC218;&#xB4E4;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB97C; 10&#xCC28;&#xC6D0;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xACE0;, 10&#xAC1C;&#xC758; &#xBCC0;&#xC218;&#xAC00; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x22EF;</mo><mtext>&#x2009;</mtext><mo separator="true">,</mo><msub><mi>x</mi><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">x_1, x_2, \cdots, x_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>&#xB77C;&#xACE0; &#xD560; &#xB54C;, &#xBCC0;&#xC218;&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xC120;&#xD615;&#xACB0;&#xD569;&#xC740; &#xC2E4;&#xC218;&#xB4E4;&#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xC120;&#xD615;&#xACB0;&#xD569; &#xACC4;&#xC218; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x22EF;</mo><mtext>&#x2009;</mtext><mo separator="true">,</mo><msub><mi>a</mi><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">a_1, a_2, \cdots, a_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>&#xB4E4;&#xC5D0; &#xB300;&#xD574;&#xC11C; <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mo>&#x22EF;</mo><mo>+</mo><msub><mi>a</mi><mn>10</mn></msub><msub><mi>x</mi><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">a_1x_1 + a_2x_2 + \cdots + a_{10}x_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xC774;&#xB54C;, 10&#xCC28;&#xC6D0; &#xBCA1;&#xD130;&#xC758; &#xC120;&#xD615;&#xACB0;&#xD569;&#xC758; &#xACB0;&#xACFC;&#xB294; 1&#xCC28;&#xC6D0; &#xC2E4;&#xC218;&#xC784;&#xC744; &#xAE30;&#xC5B5;&#xD558;&#xC790;.</li>
+<li>&#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xB4E4;&#xC740; &#xC11C;&#xB85C; &#xC120;&#xD615; &#xC5F0;&#xAD00;&#xC131;&#xC774; &#xC5C6;&#xC73C;&#xBA70;, &#xC120;&#xD615; &#xC5F0;&#xAD00;&#xC131;&#xC774; &#xC5C6;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; &#xC120;&#xD615;&#xACB0;&#xD569; &#xACC4;&#xC218; &#xBCA1;&#xD130; 2&#xAC1C;&#xB97C; &#xB0B4;&#xC801;&#xD558;&#xBA74; &#xADF8; &#xAC12;&#xC774; 0&#xC774; &#xB428;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;(&#xC774;&#xB294; &#xB450; &#xC120;&#xD615;&#xACB0;&#xD569; &#xACC4;&#xC218; &#xBCA1;&#xD130;&#xAC00; &#xC11C;&#xB85C; &#xC9C1;&#xAD50;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;). &#xC774;&#xB97C; &#xC218;&#xC2DD;&#xC73C;&#xB85C; &#xD45C;&#xD604;&#xD558;&#xBA74;, 2&#xAC1C;&#xC758; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC744; &#xAD6C;&#xC131;&#xD558;&#xB294; &#xC120;&#xD615;&#xACB0;&#xD569; &#xACC4;&#xC218;&#xB4E4;&#xC744; &#xAC01;&#xAC01; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x22EF;</mo><mtext>&#x2009;</mtext><mo separator="true">,</mo><msub><mi>a</mi><mn>10</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a_1, a_2, \cdots, a_{10})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>b</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>b</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x22EF;</mo><mtext>&#x2009;</mtext><mo separator="true">,</mo><msub><mi>b</mi><mn>10</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(b_1, b_2, \cdots, b_{10})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>&#xC774;&#xB77C;&#xACE0; &#xD560; &#xB54C; &#xB450; &#xBCA1;&#xD130;&#xC758; &#xB0B4;&#xC801; <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>1</mn></msub><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>+</mo><mo>&#x22EF;</mo><mo>+</mo><msub><mi>a</mi><mn>10</mn></msub><msub><mi>b</mi><mn>10</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_1b_1 + a_2b_2 + \cdots + a_{10}b_{10} = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span>&#xC774; &#xB41C;&#xB2E4;.</li>
+</ul>
+<h3 class="mume-header" id="2-%EB%AA%A9%EC%A0%81">2. &#xBAA9;&#xC801;</h3>
+
+<h4 class="mume-header" id="1-%EC%84%A4%EB%AA%85%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EB%B3%80%EB%8F%99%EC%9D%B4-%ED%81%B0-%EC%B6%95-%ED%83%90%EC%83%89">1. &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; &#xBCC0;&#xB3D9;&#xC774; &#xD070; &#xCD95; &#xD0D0;&#xC0C9;</h4>
+
+<ul>
+<li>&#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB85C;&#xBD80;&#xD130; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB294;&#xB370;, &#xAC01;&#xAC01;&#xC758; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC740; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xD06C;&#xAE30;&#xC758; &#xBCC0;&#xB3D9;&#xC744; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C; &#xC911;&#xC694;&#xD55C; &#xC810;&#xC740; &#xAC01; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xB4E4;&#xC774; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; &#xBCC0;&#xB3D9;&#xB4E4;&#xC758; &#xD569;&#xC740; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xAC00; &#xAC00;&#xC9C0;&#xB294; &#xC804;&#xCCB4; &#xBCC0;&#xB3D9;&#xACFC; &#xAC19;&#xC544;&#xC9C4;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xAC00;&#xC7A5; &#xD070; &#xBCC0;&#xB3D9;&#xC744; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; &#xC8FC;&#xC131;&#xBD84;&#xC744; &#xCCAB; &#xBC88;&#xC9F8; &#xC8FC;&#xC131;&#xBD84;&#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB978;&#xB2E4;.</li>
+<li>&#xC5EC;&#xAE30;&#xC11C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; &#xBCC0;&#xB3D9;&#xC774; &#xAC00;&#xC7A5; &#xD070; &#xCD95;&#xC744; &#xD0D0;&#xC0C9;&#xD558;&#xC5EC; &#xC54C;&#xC544;&#xB0B8;&#xB2E4;&#xBA74; &#xD574;&#xB2F9; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC740; &#xB2E4;&#xB978; &#xCD95;&#xC5D0; &#xBE44;&#xD574; &#xB354; &#xB9CE;&#xC740; &#xC815;&#xBCF4;&#xC758; &#xD06C;&#xAE30;&#xB97C; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</li>
+<li>&#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; &#xBCC0;&#xB3D9;&#xC774; &#xD070; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC744; &#xC54C;&#xC544;&#xB0B8;&#xB2E4;&#xBA74; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xC758; &#xBCC0;&#xC218;&#xB4E4;&#xB85C;&#xBD80;&#xD130; &#xC5B4;&#xB5BB;&#xAC8C; &#xAD6C;&#xC131;&#xB418;&#xB294;&#xC9C0;&#xB97C; &#xD30C;&#xC545;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB41C;&#xB2E4;. &#xB530;&#xB77C;&#xC11C;, &#xC5B4;&#xB5A0;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xBCC0;&#xC218;&#xB4E4;&#xC744; &#xC870;&#xD569;(&#xC120;&#xD615;&#xACB0;&#xD569;)&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xB370;&#xC774;&#xD130;&#xB97C; &#xD6A8;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0;, &#xC989; &#xB9CE;&#xC740; &#xBD80;&#xBD84;&#xC758; &#xB370;&#xC774;&#xD130; &#xBCC0;&#xB3D9;&#xC744; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</li>
+</ul>
+<h4 class="mume-header" id="2-%EC%B0%A8%EC%9B%90-%EC%B6%95%EC%86%8C">2. &#xCC28;&#xC6D0; &#xCD95;&#xC18C;</h4>
+
+<ul>
+<li>&#xC6B0;&#xB9AC;&#xB294; &#xC0C8;&#xB86D;&#xAC8C; &#xB9CC;&#xB4E0; &#xCD95;, &#xC989; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xB4E4;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC804;&#xCCB4; &#xBCC0;&#xB3D9;&#xC758; &#xD06C;&#xAE30;&#xB97C; &#xCD5C;&#xB300;&#xD55C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xACE0;&#xCC28;&#xC6D0; &#xACF5;&#xAC04;&#xC5D0; &#xC18D;&#xD558;&#xB294; &#xAD00;&#xCE21;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB4E4;&#xC744; &#xC0C8;&#xB85C;&#xC6B4; &#xC800;&#xCC28;&#xC6D0; &#xACF5;&#xAC04;&#xC758; &#xD45C;&#xBCF8;(&#xC8FC;&#xC131;&#xBD84;)&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+</ul>
+<ol>
+<li>&#xC5EC;&#xB7EC; &#xC8FC;&#xC131;&#xBD84; &#xCD95; &#xC911;&#xC5D0;&#xC11C;, &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xB294; &#xBCC0;&#xB3D9;&#xC758; &#xD06C;&#xAE30; &#xC21C;&#xC73C;&#xB85C; &#xB098;&#xC5F4;&#xD558;&#xC5EC; &#xC0C1;&#xC704; &#xD06C;&#xAE30;&#xC758; &#xBCC0;&#xB3D9;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xB4E4;&#xC744; &#xC120;&#xD0DD; (&#xC774;&#xB54C;, &#xD574;&#xB2F9; &#xCD95;&#xB4E4;&#xC758; &#xBCC0;&#xB3D9;&#xC758; &#xD569;&#xC740; &#xB370;&#xC774;&#xD130;&#xAC00; &#xAC00;&#xC9C0;&#xB294; &#xC804;&#xCCB4; &#xBCC0;&#xB3D9;&#xC758; &#xD06C;&#xAE30;&#xC640; &#xBE44;&#xC2B7;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;, &#xC2A4;&#xD06C;&#xB9AC; &#xD50C;&#xB86F;, Scree plot)</li>
+<li>&#xC120;&#xD0DD;&#xB41C; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xB4E4;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC8FC;&#xC5B4;&#xC9C4; &#xACE0;&#xCC28;&#xC6D0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC120;&#xD615;&#xACB0;&#xD569;&#xC744; &#xD1B5;&#xD574; &#xC694;&#xC57D;</li>
+<li>&#xACE0;&#xCC28;&#xC6D0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC120;&#xD0DD;&#xB41C; &#xC8FC;&#xC131;&#xBD84; &#xCD95;&#xC758; &#xAC1C;&#xC218;&#xB9CC;&#xD07C;&#xC758; &#xCC28;&#xC6D0;&#xC758; &#xB370;&#xC774;&#xD130;&#xB85C; &#xCD95;&#xC18C;</li>
+</ol>
+<h4 class="mume-header" id="3-%EC%A3%BC%EC%84%B1%EB%B6%84%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%B4%EC%84%9D">3. &#xC8FC;&#xC131;&#xBD84;&#xC744; &#xD1B5;&#xD55C; &#xB370;&#xC774;&#xD130; &#xD574;&#xC11D;</h4>
+
+<ul>
+<li>&#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xC758; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294; &#xC798; &#xAD6C;&#xBD84;&#xB418;&#xC9C0; &#xC54A;&#xB358; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC8FC;&#xC131;&#xBD84; &#xBD84;&#xC11D;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xCC28;&#xC6D0;&#xCD95;&#xC18C;&#xB97C; &#xC218;&#xD589;&#xD558;&#xBA74; &#xC800;&#xCC28;&#xC6D0; &#xACF5;&#xAC04;&#xC5D0;&#xC11C; &#xC27D;&#xAC8C; &#xAD6C;&#xBD84;&#xB420; &#xC218; &#xC788;&#xC5B4; &#xAC19;&#xC740; &#xB77C;&#xBCA8;&#xC744; &#xAC16;&#xB294; &#xB370;&#xC774;&#xD130;&#xB07C;&#xB9AC; &#xADF8;&#xB8F9;&#xC9C0;&#xC5B4; &#xD574;&#xC11D;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xC7A5;&#xC810;&#xC774; &#xC788;&#xB2E4;.</li>
+</ul>
+<h3 class="mume-header" id="3-%EA%B5%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">3. &#xAD6C;&#xD558;&#xB294; &#xBC29;&#xBC95;</h3>
+
+<ol>
+<li>&#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130; &#xBCC0;&#xC218;&#xB4E4;&#xC758; &#xACF5;&#xBD84;&#xC0B0; &#xD589;&#xB82C;&#xC744; &#xAD6C;&#xD55C;&#xB2E4;.</li>
+<li>&#xACF5;&#xBD84;&#xC0B0; &#xD589;&#xB82C;&#xC758; &#xACE0;&#xC720;&#xBCA1;&#xD130;&#xC640; &#xACE0;&#xC720;&#xAC12;&#xB4E4;&#xC744; &#xACC4;&#xC0B0;
+<ul>
+<li>&#xD574;&#xB2F9; &#xACE0;&#xC720;&#xBCA1;&#xD130;&#xB4E4;&#xC740; &#xC11C;&#xB85C; &#xC9C1;&#xAD50;</li>
+<li>&#xACE0;&#xC720;&#xAC12;&#xC758; &#xD06C;&#xAE30; = &#xAC01; &#xC8FC;&#xC131;&#xBD84;&#xC5D0; &#xC758;&#xD574; &#xC124;&#xBA85;&#xB418;&#xB294; &#xBD84;&#xC0B0;&#xC758; &#xD06C;&#xAE30;</li>
+</ul>
+</li>
+<li>&#xACE0;&#xC720;&#xAC12;&#xC774; &#xD070; &#xC21C;&#xC11C;&#xB300;&#xB85C; &#xACE0;&#xC720;&#xBCA1;&#xD130;&#xB4E4;&#xC744; &#xB098;&#xC5F4;</li>
+<li>&#xACE0;&#xC720;&#xAC12;&#xC774; &#xAC00;&#xC7A5; &#xD070; &#xACE0;&#xC720;&#xBCA1;&#xD130;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC120;&#xD615;&#xACB0;&#xD569; = &#xCCAB; &#xBC88;&#xC9F8; &#xC8FC;&#xC131;&#xBD84;</li>
+<li>&#xB450; &#xBC88;&#xC9F8;&#xB85C; &#xACE0;&#xC720;&#xAC12;&#xC774; &#xD070; &#xACE0;&#xC720;&#xBCA1;&#xD130;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC120;&#xD615;&#xACB0;&#xD569; = &#xB450; &#xBC88;&#xC9F8; &#xC8FC;&#xC131;&#xBD84;</li>
+<li>&#xC6D0;&#xD558;&#xB294; &#xAC1C;&#xC218;&#xC758; &#xC8FC;&#xC131;&#xBD84;(&#xD639;&#xC740; &#xC6D0;&#xD558;&#xB294; &#xBCC0;&#xB3D9;&#xC758; &#xD06C;&#xAE30;)&#xC744; &#xC5BB;&#xC744; &#xB54C;&#xAE4C;&#xC9C0; &#xBC18;&#xBCF5;</li>
+</ol>
+<h2 class="mume-header" id="2-restricted-boltzmann-machine-rbm">2. Restricted Boltzmann Machine (RBM)</h2>
+
+<h3 class="mume-header" id="1-%EC%A0%95%EC%9D%98">1. &#xC815;&#xC758;</h3>
+
+<ul>
+<li>&#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xC758; &#xD655;&#xB960; &#xBD84;&#xD3EC;&#xB97C; &#xD559;&#xC2B5;&#xD560; &#xC218; &#xC788;&#xB294; &#xD655;&#xB960;&#xC801; &#xC0DD;&#xC131; &#xC778;&#xACF5; &#xC2E0;&#xACBD;&#xB9DD; &#xBAA8;&#xD615;(generative stochastic artificial neural network)&#xC774;&#xB77C;&#xACE0; &#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+</ul>
+<h3 class="mume-header" id="2-%EA%B5%AC%EC%A1%B0">2. &#xAD6C;&#xC870;</h3>
+
+<img src="https://github.com/an-seunghwan/archive/blob/main/assets/rbm.png?raw=true" width="200">
+<ol>
+<li>&#xC704;&#xC758; &#xADF8;&#xB9BC;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB294; &#xAC83;&#xCC98;&#xB7FC; RBM&#xC740; &#xB450; &#xADF8;&#xB8F9;&#xC758; &#xC720;&#xB2DB;(unit)&#xB4E4;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xC5B4; &#xC788;&#xB2E4;.
+<ul>
+<li>&#xB450; &#xADF8;&#xB8F9; = visible units(&#xADF8;&#xB9BC;&#xC758; &#xC67C;&#xCABD;), hidden units(&#xADF8;&#xB9BC;&#xC758; &#xC624;&#xB978;&#xCABD;)</li>
+<li>visible units&#xB294; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB4E4;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</li>
+<li>hidden units&#xB294; visible units&#xB4E4;&#xC758; &#xBD84;&#xD3EC;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xC228;&#xACA8;&#xC9C4; &#xAC12;&#xB4E4;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xAC01; &#xADF8;&#xB8F9;&#xC758; unit&#xB4E4;&#xC740; &#xC774;&#xBD84; &#xADF8;&#xB798;&#xD504;(bipartite graph)&#xB85C; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xB2E4;. &#xC989;, visible units&#xACFC; hidden units&#xB4E4;&#xC740; &#xAC01; &#xADF8;&#xB8F9; &#xB0B4;&#xC5D0;&#xC11C; &#xC11C;&#xB85C; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xC9C0;&#xB9CC;, visible unit&#xACFC; hidden unit&#xC740; &#xC11C;&#xB85C; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;.</li>
+<li>hidden units&#xB97C; &#xC774;&#xC6A9;&#xD574; visible units&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xCC28;&#xC6D0; &#xCD95;&#xC18C;&#xB97C; &#xC218;&#xD589;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;.</li>
+</ol>
+<h3 class="mume-header" id="3-%EC%88%98%EC%8B%9D">3. &#xC218;&#xC2DD;</h3>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

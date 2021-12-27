@@ -25,8 +25,48 @@
 
 ### 3. 구하는 방법
 1. 주어진 데이터 변수들의 공분산 행렬을 구한다.
-2. 공분산 행렬의 고유벡터와 고유값들을 계산 (해당 고유벡터들은 서로 직교)
+2. 공분산 행렬의 고유벡터와 고유값들을 계산 
+   - 해당 고유벡터들은 서로 직교
+   - 고유값의 크기 = 각 주성분에 의해 설명되는 분산의 크기
 3. 고유값이 큰 순서대로 고유벡터들을 나열
 4. 고유값이 가장 큰 고유벡터를 이용해 주어진 데이터를 선형결합 = 첫 번째 주성분
 5. 두 번째로 고유값이 큰 고유벡터를 이용해 주어진 데이터를 선형결합 = 두 번째 주성분
 6. 원하는 개수의 주성분(혹은 원하는 변동의 크기)을 얻을 때까지 반복
+
+## 2. Restricted Boltzmann Machine (RBM)
+
+### 1. 정의
+- 주어진 데이터의 확률 분포를 학습할 수 있는 확률적 생성 인공 신경망 모형(generative stochastic artificial neural network)이라고 할 수 있다.
+
+### 2. 구조
+<img src="https://github.com/an-seunghwan/archive/blob/main/assets/rbm.png?raw=true" width="200">
+
+1. 위의 그림에서 볼 수 있는 것처럼 RBM은 두 그룹의 유닛(unit)들로 구성되어 있다. 
+    - 두 그룹 = visible units(그림의 왼쪽), hidden units(그림의 오른쪽)
+    - visible units는 주어진 데이터들을 의미한다.
+    - hidden units는 visible units들의 분포를 결정하는 숨겨진 값들을 의미한다. 
+2. 각 그룹의 unit들은 이분 그래프(bipartite graph)로 연결되어 있다. 즉, visible units과 hidden units들은 서로 연결되어 있지만, 각 그룹 내에서는 내부적으로 서로 연결되어있지 않다.
+3. visible units가 주어진 경우의 hidden units에 대한 조건부 확률을 최대화하는 방향으로 모형을 학습하게 된다. 즉, 저차원의 hidden units의 값에 따라서 고차원의 visible units들의 조건부 분포가 결정되므로 1) 고차원 데이터에 대한 차원축소를 수행할 수 있고, 2)해당 조건부 분포를 이용해 새로운 visible units들을 확률적으로 생성할 수 있다.
+
+### 3. 수식
+0. visible units와 hidden units가 모두 0 또는 1의 값만을 가지는 경우를 고려한다.
+1. $i$번째 visible unit: $v_i$,$i=1,2,\cdots,n$
+2. $j$번째 hidden unit: $h_j$,$j=1,2,\cdots,m$, (차원 축소: $n > m$)
+3. 가중치 행렬: $W \in \mathbb{R}^{n \times m}$
+    - $w_{ij}$: visible unit $w_i$와 hidden unit $h_j$의 연결에 해당하는 가중치
+4. 편이(bias) 항:
+    - $a_i$: $v_i$의 편이 항
+    - $b_j$: $h_j$의 편이 항
+5. 조건부 분포
+    - RBM의 그래프 구조는 이분 그래프이므로, visible units가 주어진 경우에 hidden units들은 서로 연결되어 있지 않으므로 서로 독립이다. 마찬가지로, hidden units가 주어진 경우에 visible units들은 서로 독립이다.
+    - $$P(v|h) = \prod_{i=1}^n P(v_i|h)$$
+    - $$P(h|v) = \prod_{j=1}^m P(h_j|v)$$
+6. visible unit의 분포
+    - visible unit $v_i$는 0 또는 1의 값만을 가지므로 베르누이 분포를 따르는 확률변수이다.
+    - $$v_i \sim \text{Ber}(P(v_i = 1|h)) = \text{Ber}(\sigma\left(a_i + \sum_{j=1}^m w_{ij}h_j\right))$$
+    - 이때, $\sigma(x) = 1/(1 + \exp(-x))$.
+7. hidden unit의 분포
+    - hidden unit $h_j$는 0 또는 1의 값만을 가지므로 베르누이 분포를 따르는 확률변수이다.
+    - $$h_j \sim \text{Ber}(P(h_j = 1|v)) = \text{Ber}(\sigma\left(b_j + \sum_{i=1}^n v_i w_{ij}\right))$$
+    - 이때, $\sigma(x) = 1/(1 + \exp(-x))$.
+8. 위의 조건부 분포를 이용해 sampling된 visible units의 값이 주어진 데이터의 값과 충분히 같아질 때까지 경사하강법을 이용해 가중치 행렬과 편이 항을 학습한다.
