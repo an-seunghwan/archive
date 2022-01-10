@@ -85,3 +85,5 @@ result
 #%%
 df.to_csv('./panel.csv', encoding='cp949')
 #%%
+df.shape
+#%%
