@@ -41,12 +41,8 @@ df = pd.merge(df17[['가구번호', '가구원수']], df19[['가구번호', '가
 '''marginal prob'''
 result = {}
 for idx in range(1, 4): # idx = 가구원수
-    if idx != 3:
-        df['가구원수_x{}'.format(idx)] = df['가구원수_x'].apply(lambda x: 0 if x != idx else 1)
-        df['가구원수_y{}'.format(idx)] = df['가구원수_y'].apply(lambda x: 0 if x != idx else 1)
-    else:
-        df['가구원수_x{}'.format(idx)] = df['가구원수_x'].apply(lambda x: 0 if x < idx else 1)
-        df['가구원수_y{}'.format(idx)] = df['가구원수_y'].apply(lambda x: 0 if x < idx else 1)
+    df['가구원수_x{}'.format(idx)] = df['가구원수_x'].apply(lambda x: 0 if x != idx else 1)
+    df['가구원수_y{}'.format(idx)] = df['가구원수_y'].apply(lambda x: 0 if x != idx else 1)
 
     probs = np.zeros((2, 2))
     for i in range(2):
@@ -54,4 +50,22 @@ for idx in range(1, 4): # idx = 가구원수
             probs[i, j] = ((df['가구원수_x{}'.format(idx)] == i).astype(float) * (df['가구원수_y{}'.format(idx)] == j).astype(float)).sum() / df.shape[0]
     result[idx] = probs
 result
+
+# result = {}
+# for idx in range(1, 4): # idx = 가구원수
+#     if idx != 3:
+#         df['가구원수_x{}'.format(idx)] = df['가구원수_x'].apply(lambda x: 0 if x != idx else 1)
+#         df['가구원수_y{}'.format(idx)] = df['가구원수_y'].apply(lambda x: 0 if x != idx else 1)
+#     else:
+#         df['가구원수_x{}'.format(idx)] = df['가구원수_x'].apply(lambda x: 0 if x < idx else 1)
+#         df['가구원수_y{}'.format(idx)] = df['가구원수_y'].apply(lambda x: 0 if x < idx else 1)
+
+#     probs = np.zeros((2, 2))
+#     for i in range(2):
+#         for j in range(2):
+#             probs[i, j] = ((df['가구원수_x{}'.format(idx)] == i).astype(float) * (df['가구원수_y{}'.format(idx)] == j).astype(float)).sum() / df.shape[0]
+#     result[idx] = probs
+# result
+#%%
+df.shape
 #%%
