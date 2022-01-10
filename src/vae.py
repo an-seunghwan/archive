@@ -18,10 +18,7 @@ from datetime import datetime
 import sys
 from PIL import Image
 import os
-# os.chdir(r'D:\EXoN')
-# os.chdir('/Users/anseunghwan/Documents/GitHub/EXoN')
-os.chdir('/home/jeon/Desktop/an/EXoN')
-# os.chdir('/home1/prof/jeon/an/EXoN')
+os.chdir(r'D:\EXoN')
 #%%
 PARAMS = {
     "data": 'mnist',
