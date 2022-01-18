@@ -149,45 +149,42 @@ cond_gan.compile(
 
 cond_gan.fit(dataset, epochs=20)
 #%%
-# We first extract the trained generator from our Conditiona GAN.
 trained_gen = cond_gan.generator
 
-# Choose the number of intermediate images that would be generated in
-# between the interpolation + 2 (start and last images).
-num_interpolation = 9  # @param {type:"integer"}
+num_interpolation = 9  
 
-# Sample noise for the interpolation.
 interpolation_noise = tf.random.normal(shape=(1, latent_dim))
 interpolation_noise = tf.repeat(interpolation_noise, repeats=num_interpolation)
 interpolation_noise = tf.reshape(interpolation_noise, (num_interpolation, latent_dim))
 
-
 def interpolate_class(first_number, second_number):
-    # Convert the start and end labels to one-hot encoded vectors.
     first_label = keras.utils.to_categorical([first_number], num_classes)
     second_label = keras.utils.to_categorical([second_number], num_classes)
     first_label = tf.cast(first_label, tf.float32)
     second_label = tf.cast(second_label, tf.float32)
 
-    # Calculate the interpolation vector between the two labels.
     percent_second_label = tf.linspace(0, 1, num_interpolation)[:, None]
     percent_second_label = tf.cast(percent_second_label, tf.float32)
     interpolation_labels = (
         first_label * (1 - percent_second_label) + second_label * percent_second_label
     )
 
-    # Combine the noise and the labels and run inference with the generator.
     noise_and_labels = tf.concat([interpolation_noise, interpolation_labels], 1)
     fake = trained_gen.predict(noise_and_labels)
     return fake
-
-
-start_class = 1  # @param {type:"slider", min:0, max:9, step:1}
-end_class = 5  # @param {type:"slider", min:0, max:9, step:1}
+#%%
+start_class = 4
+end_class = 9
 
 fake_images = interpolate_class(start_class, end_class)
 #%%
 fake_images *= 255.0
 converted_images = fake_images.astype(np.uint8)
-converted_images = tf.image.resize(converted_images, (96, 96)).numpy().astype(np.uint8)
+#%%
+plt.figure(figsize=(10, 3))
+for i in range(9):
+    plt.subplot(1, 10, i+1)
+    plt.imshow(converted_images[i], 'gray_r')
+    plt.axis('off')
+plt.show()
 #%%
