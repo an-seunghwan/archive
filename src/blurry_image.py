@@ -53,7 +53,7 @@ assert len(np.unique(x_train)) == 2
 x_train = tf.cast(x_train, tf.float32)
 x_test = tf.cast(x_test, tf.float32)
 #%%
-plt.imshow(x_train[0])
+plt.imshow(x_train[0][..., 0])
 #%%
 def high_pass_x_y(image):
     x_var = image[:,:,1:,:] - image[:,:,:-1,:]
@@ -78,6 +78,8 @@ plt.imshow(clip_0_1(2*y_var+0.5).numpy()[..., 0])
 plt.subplot(2,2,2)
 plt.title("Vertical Deltas")
 plt.imshow(clip_0_1(2*x_var+0.5).numpy()[..., 0])
+#%%
+total_variation_loss(x_test).numpy()
 #%%
 PARAMS = {
     "data": 'mnist',
