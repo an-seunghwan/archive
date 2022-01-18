@@ -8,6 +8,8 @@ from tqdm import tqdm
 import numpy as np
 from konlpy.tag import Okt
 import matplotlib.pyplot as plt
+import os
+os.chdir(r'D:\archive')
 #%%
 data = pd.read_csv(r'D:\nlp_korea_bank\data\total_sample_labeling_fin44.csv', encoding='cp949')
 data = data[data['news/sentence'] == 0]
@@ -15,6 +17,8 @@ df1 = data[data['소비자'] == 1][['content_new', '소비자']].iloc[:500] # �
 df2 = data[data['소비자'] == 2][['content_new', '소비자']].iloc[:500] # 부정
 df = pd.concat([df1, df2], axis=0)
 df.head()
+#%%
+df.to_csv(r'D:\nlp_korea_bank\data\total_sample_labeling_small.csv', encoding='cp949')
 #%%
 corpus = df['content_new'].to_list()
 sentiment = df['소비자'].to_list()
@@ -171,11 +175,11 @@ for _ in progress_bar:
 embedding_matrix = embedding_layer.weights[0]
 embedding_matrix = embedding_matrix.numpy()
 embedding_matrix.shape
-# '''save embedding matrix'''
-# np.save('./assets/embedding_matrix', embedding_matrix)
+'''save embedding matrix'''
+np.save('./assets/embedding_matrix', embedding_matrix)
 #%%
-# '''load embedding matrix'''
-# embedding_matrix_imported = np.load('./assets/embedding_matrix.npy')
+'''load embedding matrix'''
+embedding_matrix = np.load('./assets/embedding_matrix.npy')
 #%%
 '''find similar words with cosine similarity'''
 F2norm = np.linalg.norm(embedding_matrix, axis=1)
