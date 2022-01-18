@@ -11,14 +11,15 @@ import matplotlib.pyplot as plt
 import os
 os.chdir(r'D:\archive')
 #%%
-data = pd.read_csv(r'D:\nlp_korea_bank\data\total_sample_labeling_fin44.csv', encoding='cp949')
-data = data[data['news/sentence'] == 0]
-df1 = data[data['소비자'] == 1][['content_new', '소비자']].iloc[:500] # 긍정
-df2 = data[data['소비자'] == 2][['content_new', '소비자']].iloc[:500] # 부정
-df = pd.concat([df1, df2], axis=0)
-df.head()
-#%%
-df.to_csv(r'D:\nlp_korea_bank\data\total_sample_labeling_small.csv', encoding='cp949')
+# data = pd.read_csv(r'D:\nlp_korea_bank\data\total_sample_labeling_fin44.csv', encoding='cp949')
+# data = data[data['news/sentence'] == 0]
+# df1 = data[data['소비자'] == 1][['content_new', '소비자']].iloc[:500] # 긍정
+# df2 = data[data['소비자'] == 2][['content_new', '소비자']].iloc[:500] # 부정
+# df = pd.concat([df1, df2], axis=0)
+# df.head()
+# #%%
+# df.to_csv(r'D:\nlp_korea_bank\data\total_sample_labeling_small.csv', encoding='cp949')
+df = pd.read_csv(r'D:\nlp_korea_bank\data\total_sample_labeling_small.csv', encoding='cp949')
 #%%
 corpus = df['content_new'].to_list()
 sentiment = df['소비자'].to_list()
@@ -49,6 +50,8 @@ tokenizer.fit_on_texts(preprocess_corpus)
 sequences=tokenizer.texts_to_sequences(preprocess_corpus)
 vocab=tokenizer.word_index
 vocab['pad'] = 0
+
+vocab = {x:y for x,y in sorted(vocab.items(), key=lambda x: x[1])}
 #%%
 plt.hist([len(x) for x in sequences])
 plt.title('sequence length histogram')
@@ -110,29 +113,32 @@ train_dataset = tf.data.Dataset.from_tensor_slices((contexts, targets, all_conte
 #%%
 '''modeling'''
 embedding_size = 32
+def build_model(embedding_size):
+    embedding_layer = K.layers.Embedding(len(vocab), embedding_size)
+    output_layer = K.layers.Dense(len(vocab), activation='softmax')
+    sentiment_layer = K.layers.Dense(1, activation='sigmoid')
 
-embedding_layer = K.layers.Embedding(len(vocab), embedding_size)
-output_layer = K.layers.Dense(len(vocab), activation='softmax')
-sentiment_layer = K.layers.Dense(1, activation='sigmoid')
+    '''문맥 정보'''
+    context_input = K.layers.Input((window_size*2, ))
+    context_h = K.layers.GlobalAveragePooling1D()(embedding_layer(context_input)) # context embedding vector들을 평균
 
-'''문맥 정보'''
-context_input = K.layers.Input((window_size*2, ))
-context_h = K.layers.GlobalAveragePooling1D()(embedding_layer(context_input)) # context embedding vector들을 평균
+    all_context_input = K.layers.Input((all_context_window, ))
+    all_context_h = K.layers.GlobalAveragePooling1D()(embedding_layer(all_context_input)) # 문장 embedding vector들을 평균
 
-all_context_input = K.layers.Input((all_context_window, ))
-all_context_h = K.layers.GlobalAveragePooling1D()(embedding_layer(all_context_input)) # context embedding vector들을 평균
+    h = context_h + all_context_h
+    target_output = output_layer(h)
 
-h = context_h + all_context_h
-target_output = output_layer(h)
+    '''감성 정보'''
+    sentiment_output = sentiment_layer(all_context_h)
 
-'''감성 정보'''
-sentiment_output = sentiment_layer(all_context_h)
+    model = K.models.Model([context_input, all_context_input], [target_output, sentiment_output])
 
-model = K.models.Model([context_input, all_context_input], [target_output, sentiment_output])
-
-model.summary()
+    # model.summary()
+    
+    return model
 #%%
 optimizer = K.optimizers.Adam(0.001)
+model = build_model(embedding_size)
 
 @tf.function
 def train_step(batch_context, batch_target, batch_all_contexts, batch_labels):
@@ -148,7 +154,7 @@ def train_step(batch_context, batch_target, batch_all_contexts, batch_labels):
     return loss, context_loss, sentiment_loss
 #%%
 iterator = iter(train_dataset)
-beta = 0.3
+beta = 0.99
 
 iteration = 1000
 step = 0
@@ -172,29 +178,9 @@ for _ in progress_bar:
     
     if step == iteration: break
 #%%
-embedding_matrix = embedding_layer.weights[0]
+embedding_matrix = model.layers[2].weights[0]
 embedding_matrix = embedding_matrix.numpy()
 embedding_matrix.shape
 '''save embedding matrix'''
-np.save('./assets/embedding_matrix', embedding_matrix)
-#%%
-'''load embedding matrix'''
-embedding_matrix = np.load('./assets/embedding_matrix.npy')
-#%%
-'''find similar words with cosine similarity'''
-F2norm = np.linalg.norm(embedding_matrix, axis=1)
-topk = 10
-target_word = '인력_1'
-assert target_word in vocab.keys()
-u = embedding_matrix[vocab.get(target_word), :]
-sim = np.matmul(embedding_matrix, u) / (F2norm * np.linalg.norm(u))
-topkidx = np.argsort(sim)[::-1][1:topk+1]
-print('topk similar words of {}:'.format(target_word), [vocab_reverse.get(i) for i in topkidx])
-#%%
-target_word = '인력_0'
-assert target_word in vocab.keys()
-u = embedding_matrix[vocab.get(target_word), :]
-sim = np.matmul(embedding_matrix, u) / (F2norm * np.linalg.norm(u))
-topkidx = np.argsort(sim)[::-1][1:topk+1]
-print('topk similar words of {}:'.format(target_word), [vocab_reverse.get(i) for i in topkidx])
+np.save('./assets/embedding_matrix_{}'.format(beta), embedding_matrix)
 #%%
