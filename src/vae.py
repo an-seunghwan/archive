@@ -27,10 +27,9 @@ PARAMS = {
     "class_num": 10,
     "latent_dim": 2,
     "sigma": 1., 
-    "activation": 'tanh',
+    "activation": 'sigmoid',
     "iterations": 1000, 
-    "learning_rate": 0.01,
-    "beta": 1.,
+    "learning_rate": 0.001,
 }
 #%%
 class Encoder(K.models.Model):
@@ -39,14 +38,14 @@ class Encoder(K.models.Model):
         self.params = params
         
         self.enc_dense1 = layers.Dense(512, activation='relu')
-        self.enc_dense2 = layers.Dense(256, activation='relu')
+        # self.enc_dense2 = layers.Dense(256, activation='relu')
         
         self.mean_layer = layers.Dense(self.params['latent_dim'], activation='linear')
         self.logvar_layer = layers.Dense(self.params['latent_dim'], activation='linear')
         
     def call(self, x):
         h = self.enc_dense1(x)
-        h = self.enc_dense2(h)
+        # h = self.enc_dense2(h)
         
         mean = self.mean_layer(h)
         logvar = self.logvar_layer(h)
@@ -58,12 +57,12 @@ class Decoder(K.models.Model):
         self.params = params
         
         self.dec_dense1 = layers.Dense(256, activation='relu')
-        self.dec_dense2 = layers.Dense(512, activation='relu')
+        # self.dec_dense2 = layers.Dense(512, activation='relu')
         self.dec_dense3 = layers.Dense(self.params["data_dim"], activation=self.params['activation'])
         
     def call(self, x):
         h = self.dec_dense1(x)
-        h = self.dec_dense2(h)
+        # h = self.dec_dense2(h)
         h = self.dec_dense3(h)
         return h
 #%%
@@ -87,8 +86,8 @@ class VAE(K.models.Model):
 #%%
 # data
 (x_train, y_train), (x_test, y_test) = K.datasets.mnist.load_data()
-x_train = (x_train.astype('float32') - 127.5) / 127.5
-x_test = (x_test.astype('float32') - 127.5) / 127.5
+x_train = x_train.astype('float32') / 255.
+x_test = x_test.astype('float32') / 255.
 x_train = x_train.reshape((len(x_train), np.prod(x_train.shape[1:])))
 x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
 
@@ -106,7 +105,7 @@ def loss_function(xhat, x, mean, logvar, PARAMS):
     kl = - 0.5 * (1 + logvar - tf.square(mean) - tf.math.exp(logvar))
     kl = tf.reduce_mean(tf.reduce_sum(kl, axis=1))
     
-    return error / PARAMS['beta'] + kl, error, kl
+    return error / (PARAMS['sigma'] ** 2) + kl, error, kl
 #%%
 @tf.function
 def train_step(x_batch, PARAMS):

@@ -21,8 +21,9 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from pprint import pprint
 import os
-os.chdir('/Users/anseunghwan/Documents/GitHub/archive')
-# os.chdir(r'D:\Semi_Mixture_VAE')
+# os.chdir('/Users/anseunghwan/Documents/GitHub/archive')
+os.chdir(r'D:\archive')
+# os.chdir('/home1/prof/jeon/an/archive')
 
 import models
 #%%
@@ -85,6 +86,8 @@ optimizer = tf.keras.optimizers.Adam(learning_rate)
 
 alpha = 0.1 * len(x_train)
 
+test_accuracy = 0
+
 for epoch in range(PARAMS['epochs']):
     loss_avg = tf.keras.metrics.Mean()
     recon_loss_avg = tf.keras.metrics.Mean()
@@ -143,16 +146,18 @@ for epoch in range(PARAMS['epochs']):
                 'Loss': f'{loss_avg.result():.4f}',
                 'Recon': f'{recon_loss_avg.result():.4f}',
                 'KL': f'{kl_loss_avg.result():.4f}',
-                'Accuracy': f'{accuracy.result():.3%}'
+                'Accuracy': f'{accuracy.result():.3%}',
+                'TEST Accuracy': f'{test_accuracy:.3%}'
         })
     
     _, _, logits, _, _ = model(x_test, y_test_onehot)
-    print('EPOCH: {}, classification error: '.format(epoch), len(np.where(y_test - np.argmax(logits.numpy(), axis=-1) != 0)[0]) / len(y_test))
+    test_accuracy = len(np.where(y_test - np.argmax(logits.numpy(), axis=-1) != 0)[0]) / len(y_test)
+    print('EPOCH: {}, classification error: '.format(epoch), test_accuracy)
 #%%
 '''classification error'''
 _, _, logits, _, _ = model(x_test, y_test_onehot)
 print('classification error: ', len(np.where(y_test - np.argmax(logits.numpy(), axis=-1) != 0)[0]) / len(y_test))
-model.save_weights('models/model_M2.h5', save_format="h5")
+model.save_weights('assets/model_M2.h5', save_format="h5")
 #%%
 # # z grid points
 # a = np.arange(-5, 5.1, 1)
