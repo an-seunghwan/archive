@@ -1,1200 +1,1200 @@
-Epoch: 0 Average loss: 515.49 Test Accuracy: 0.485
-u_recon_loss: 248.31, u_cont: 1.11, u_disc: 0.73
-l_recon_loss: 246.70, l_cont: 2.01, l_disc: 1.38, class: 15.24
-
-Epoch: 1 Average loss: 406.97 Test Accuracy: 0.7493
-u_recon_loss: 201.16, u_cont: 2.20, u_disc: 1.55
-l_recon_loss: 185.66, l_cont: 3.29, l_disc: 3.06, class: 10.05
-
-Epoch: 2 Average loss: 364.70 Test Accuracy: 0.8143
-u_recon_loss: 178.86, u_cont: 2.96, u_disc: 2.02
-l_recon_loss: 165.13, l_cont: 4.39, l_disc: 4.15, class: 7.19
-
-Epoch: 3 Average loss: 334.52 Test Accuracy: 0.8415
-u_recon_loss: 161.94, u_cont: 3.76, u_disc: 2.22
-l_recon_loss: 151.71, l_cont: 4.98, l_disc: 4.47, class: 5.45
-
-Epoch: 4 Average loss: 311.21 Test Accuracy: 0.858
-u_recon_loss: 148.52, u_cont: 3.53, u_disc: 1.95
-l_recon_loss: 143.42, l_cont: 5.33, l_disc: 4.35, class: 4.10
-
-Epoch: 5 Average loss: 292.37 Test Accuracy: 0.8842
-u_recon_loss: 138.05, u_cont: 3.92, u_disc: 1.51
-l_recon_loss: 136.55, l_cont: 5.40, l_disc: 3.84, class: 3.09
-
-Epoch: 6 Average loss: 275.32 Test Accuracy: 0.9093
-u_recon_loss: 130.12, u_cont: 3.61, u_disc: 1.56
-l_recon_loss: 129.70, l_cont: 5.22, l_disc: 3.00, class: 2.10
-
-Epoch: 7 Average loss: 269.07 Test Accuracy: 0.926
-u_recon_loss: 125.58, u_cont: 4.27, u_disc: 3.78
-l_recon_loss: 125.32, l_cont: 5.88, l_disc: 2.69, class: 1.55
-
-Epoch: 8 Average loss: 258.49 Test Accuracy: 0.9396
-u_recon_loss: 121.36, u_cont: 4.15, u_disc: 2.91
-l_recon_loss: 120.74, l_cont: 6.38, l_disc: 1.67, class: 1.27
-
-Epoch: 9 Average loss: 246.51 Test Accuracy: 0.9423
-u_recon_loss: 117.30, u_cont: 3.84, u_disc: 2.45
-l_recon_loss: 114.51, l_cont: 6.17, l_disc: 1.20, class: 1.04
-
-Epoch: 10 Average loss: 240.73 Test Accuracy: 0.946
-u_recon_loss: 113.96, u_cont: 4.97, u_disc: 2.21
-l_recon_loss: 110.75, l_cont: 7.00, l_disc: 0.96, class: 0.87
-
-Epoch: 11 Average loss: 233.99 Test Accuracy: 0.9464
-u_recon_loss: 110.61, u_cont: 5.36, u_disc: 2.05
-l_recon_loss: 106.10, l_cont: 8.26, l_disc: 0.83, class: 0.78
-
-Epoch: 12 Average loss: 225.88 Test Accuracy: 0.9513
-u_recon_loss: 106.65, u_cont: 5.48, u_disc: 1.91
-l_recon_loss: 102.06, l_cont: 8.33, l_disc: 0.70, class: 0.74
-
-Epoch: 13 Average loss: 218.53 Test Accuracy: 0.9529
-u_recon_loss: 103.06, u_cont: 5.31, u_disc: 1.79
-l_recon_loss: 99.03, l_cont: 8.05, l_disc: 0.64, class: 0.65
-
-Epoch: 14 Average loss: 210.61 Test Accuracy: 0.9548
-u_recon_loss: 99.91, u_cont: 5.78, u_disc: 1.69
-l_recon_loss: 93.98, l_cont: 8.09, l_disc: 0.54, class: 0.62
-
-Epoch: 15 Average loss: 205.16 Test Accuracy: 0.9556
-u_recon_loss: 97.09, u_cont: 6.37, u_disc: 1.60
-l_recon_loss: 90.20, l_cont: 8.89, l_disc: 0.46, class: 0.56
-
-Epoch: 16 Average loss: 199.86 Test Accuracy: 0.9578
-u_recon_loss: 94.55, u_cont: 6.66, u_disc: 1.54
-l_recon_loss: 86.63, l_cont: 9.50, l_disc: 0.45, class: 0.53
-
-Epoch: 17 Average loss: 193.05 Test Accuracy: 0.958
-u_recon_loss: 91.98, u_cont: 6.91, u_disc: 1.45
-l_recon_loss: 82.64, l_cont: 9.21, l_disc: 0.40, class: 0.46
-
-Epoch: 18 Average loss: 187.70 Test Accuracy: 0.9577
-u_recon_loss: 89.55, u_cont: 7.34, u_disc: 1.38
-l_recon_loss: 79.68, l_cont: 8.95, l_disc: 0.39, class: 0.41
-
-Epoch: 19 Average loss: 182.65 Test Accuracy: 0.9591
-u_recon_loss: 87.28, u_cont: 6.59, u_disc: 1.35
-l_recon_loss: 77.20, l_cont: 9.49, l_disc: 0.34, class: 0.41
-
-Epoch: 20 Average loss: 178.78 Test Accuracy: 0.9588
-u_recon_loss: 85.27, u_cont: 6.80, u_disc: 1.27
-l_recon_loss: 74.51, l_cont: 10.23, l_disc: 0.36, class: 0.35
-
-Epoch: 21 Average loss: 173.49 Test Accuracy: 0.9594
-u_recon_loss: 83.19, u_cont: 6.18, u_disc: 1.22
-l_recon_loss: 72.53, l_cont: 9.68, l_disc: 0.36, class: 0.34
-
-Epoch: 22 Average loss: 169.58 Test Accuracy: 0.9618
-u_recon_loss: 81.36, u_cont: 6.97, u_disc: 1.19
-l_recon_loss: 69.89, l_cont: 9.52, l_disc: 0.35, class: 0.31
-
-Epoch: 23 Average loss: 170.32 Test Accuracy: 0.9631
-u_recon_loss: 79.91, u_cont: 9.51, u_disc: 1.14
-l_recon_loss: 67.39, l_cont: 11.76, l_disc: 0.34, class: 0.26
-
-Epoch: 24 Average loss: 163.57 Test Accuracy: 0.9626
-u_recon_loss: 77.86, u_cont: 8.86, u_disc: 1.10
-l_recon_loss: 64.29, l_cont: 10.91, l_disc: 0.29, class: 0.25
-
-Epoch: 25 Average loss: 158.82 Test Accuracy: 0.9597
-u_recon_loss: 76.47, u_cont: 8.59, u_disc: 1.09
-l_recon_loss: 61.91, l_cont: 10.31, l_disc: 0.25, class: 0.21
-
-Epoch: 26 Average loss: 152.80 Test Accuracy: 0.9631
-u_recon_loss: 74.94, u_cont: 6.73, u_disc: 1.05
-l_recon_loss: 59.81, l_cont: 9.87, l_disc: 0.23, class: 0.17
-
-Epoch: 27 Average loss: 152.68 Test Accuracy: 0.9618
-u_recon_loss: 73.83, u_cont: 8.44, u_disc: 1.03
-l_recon_loss: 57.76, l_cont: 11.23, l_disc: 0.23, class: 0.16
-
-Epoch: 28 Average loss: 149.51 Test Accuracy: 0.9634
-u_recon_loss: 72.81, u_cont: 8.24, u_disc: 1.00
-l_recon_loss: 56.62, l_cont: 10.50, l_disc: 0.20, class: 0.14
-
-Epoch: 29 Average loss: 143.84 Test Accuracy: 0.9629
-u_recon_loss: 71.24, u_cont: 6.75, u_disc: 0.96
-l_recon_loss: 54.54, l_cont: 10.02, l_disc: 0.19, class: 0.14
-
-Epoch: 30 Average loss: 144.19 Test Accuracy: 0.9664
-u_recon_loss: 70.37, u_cont: 8.77, u_disc: 0.92
-l_recon_loss: 52.60, l_cont: 11.18, l_disc: 0.21, class: 0.13
-
-Epoch: 31 Average loss: 139.34 Test Accuracy: 0.9652
-u_recon_loss: 69.47, u_cont: 7.68, u_disc: 0.91
-l_recon_loss: 50.20, l_cont: 10.75, l_disc: 0.19, class: 0.14
-
-Epoch: 32 Average loss: 133.97 Test Accuracy: 0.966
-u_recon_loss: 67.97, u_cont: 6.51, u_disc: 0.88
-l_recon_loss: 48.79, l_cont: 9.52, l_disc: 0.18, class: 0.11
-
-Epoch: 33 Average loss: 136.15 Test Accuracy: 0.9646
-u_recon_loss: 67.36, u_cont: 8.89, u_disc: 0.87
-l_recon_loss: 46.87, l_cont: 11.87, l_disc: 0.17, class: 0.11
-
-Epoch: 34 Average loss: 132.64 Test Accuracy: 0.9663
-u_recon_loss: 66.61, u_cont: 8.02, u_disc: 0.87
-l_recon_loss: 45.71, l_cont: 11.19, l_disc: 0.17, class: 0.07
-
-Epoch: 35 Average loss: 130.12 Test Accuracy: 0.9673
-u_recon_loss: 65.90, u_cont: 7.97, u_disc: 0.85
-l_recon_loss: 44.15, l_cont: 11.05, l_disc: 0.13, class: 0.07
-
-Epoch: 36 Average loss: 129.97 Test Accuracy: 0.9672
-u_recon_loss: 65.36, u_cont: 8.75, u_disc: 0.83
-l_recon_loss: 42.97, l_cont: 11.85, l_disc: 0.15, class: 0.06
-
-Epoch: 37 Average loss: 129.54 Test Accuracy: 0.9683
-u_recon_loss: 64.67, u_cont: 9.64, u_disc: 0.82
-l_recon_loss: 42.12, l_cont: 12.09, l_disc: 0.14, class: 0.06
-
-Epoch: 38 Average loss: 123.31 Test Accuracy: 0.9683
-u_recon_loss: 64.01, u_cont: 7.57, u_disc: 0.80
-l_recon_loss: 40.60, l_cont: 10.15, l_disc: 0.11, class: 0.07
-
-Epoch: 39 Average loss: 123.40 Test Accuracy: 0.9672
-u_recon_loss: 63.20, u_cont: 8.84, u_disc: 0.78
-l_recon_loss: 38.80, l_cont: 11.61, l_disc: 0.12, class: 0.06
-
-Epoch: 40 Average loss: 122.56 Test Accuracy: 0.9689
-u_recon_loss: 62.85, u_cont: 8.98, u_disc: 0.77
-l_recon_loss: 38.14, l_cont: 11.65, l_disc: 0.11, class: 0.05
-
-Epoch: 41 Average loss: 119.37 Test Accuracy: 0.967
-u_recon_loss: 62.18, u_cont: 8.75, u_disc: 0.75
-l_recon_loss: 36.43, l_cont: 11.07, l_disc: 0.14, class: 0.04
-
-Epoch: 42 Average loss: 124.42 Test Accuracy: 0.9687
-u_recon_loss: 61.75, u_cont: 11.24, u_disc: 0.74
-l_recon_loss: 35.82, l_cont: 14.76, l_disc: 0.08, class: 0.03
-
-Epoch: 43 Average loss: 118.47 Test Accuracy: 0.9681
-u_recon_loss: 61.34, u_cont: 9.45, u_disc: 0.72
-l_recon_loss: 34.95, l_cont: 11.89, l_disc: 0.08, class: 0.04
-
-Epoch: 44 Average loss: 117.23 Test Accuracy: 0.9674
-u_recon_loss: 60.63, u_cont: 9.63, u_disc: 0.73
-l_recon_loss: 33.60, l_cont: 12.56, l_disc: 0.08, class: 0.01
-
-Epoch: 45 Average loss: 114.70 Test Accuracy: 0.9692
-u_recon_loss: 60.03, u_cont: 8.89, u_disc: 0.71
-l_recon_loss: 32.87, l_cont: 12.09, l_disc: 0.07, class: 0.03
-
-Epoch: 46 Average loss: 114.41 Test Accuracy: 0.9692
-u_recon_loss: 59.80, u_cont: 9.57, u_disc: 0.71
-l_recon_loss: 32.21, l_cont: 12.03, l_disc: 0.07, class: 0.03
-
-Epoch: 47 Average loss: 110.54 Test Accuracy: 0.9685
-u_recon_loss: 59.12, u_cont: 8.65, u_disc: 0.71
-l_recon_loss: 31.02, l_cont: 10.94, l_disc: 0.08, class: 0.02
-
-Epoch: 48 Average loss: 110.91 Test Accuracy: 0.9679
-u_recon_loss: 58.65, u_cont: 8.73, u_disc: 0.71
-l_recon_loss: 30.29, l_cont: 12.43, l_disc: 0.09, class: 0.01
-
-Epoch: 49 Average loss: 110.14 Test Accuracy: 0.9683
-u_recon_loss: 58.29, u_cont: 9.43, u_disc: 0.70
-l_recon_loss: 29.24, l_cont: 12.40, l_disc: 0.07, class: 0.00
-
-Epoch: 50 Average loss: 111.69 Test Accuracy: 0.9702
-u_recon_loss: 57.94, u_cont: 10.43, u_disc: 0.69
-l_recon_loss: 28.66, l_cont: 13.89, l_disc: 0.07, class: 0.01
-
-Epoch: 51 Average loss: 106.46 Test Accuracy: 0.9692
-u_recon_loss: 57.45, u_cont: 8.72, u_disc: 0.68
-l_recon_loss: 27.95, l_cont: 11.59, l_disc: 0.05, class: 0.00
-
-Epoch: 52 Average loss: 105.11 Test Accuracy: 0.9696
-u_recon_loss: 56.99, u_cont: 8.79, u_disc: 0.68
-l_recon_loss: 27.06, l_cont: 11.55, l_disc: 0.04, class: 0.00
-
-Epoch: 53 Average loss: 106.04 Test Accuracy: 0.9695
-u_recon_loss: 56.72, u_cont: 9.59, u_disc: 0.68
-l_recon_loss: 26.48, l_cont: 12.51, l_disc: 0.05, class: 0.00
-
-Epoch: 54 Average loss: 103.67 Test Accuracy: 0.9685
-u_recon_loss: 56.37, u_cont: 8.68, u_disc: 0.68
-l_recon_loss: 25.84, l_cont: 12.05, l_disc: 0.05, class: 0.00
-
-Epoch: 55 Average loss: 102.39 Test Accuracy: 0.9705
-u_recon_loss: 56.11, u_cont: 8.43, u_disc: 0.68
-l_recon_loss: 25.51, l_cont: 11.61, l_disc: 0.05, class: 0.00
-
-Epoch: 56 Average loss: 100.08 Test Accuracy: 0.9697
-u_recon_loss: 55.63, u_cont: 7.43, u_disc: 0.67
-l_recon_loss: 24.85, l_cont: 11.45, l_disc: 0.05, class: 0.00
-
-Epoch: 57 Average loss: 98.14 Test Accuracy: 0.9704
-u_recon_loss: 55.66, u_cont: 7.35, u_disc: 0.68
-l_recon_loss: 24.45, l_cont: 9.95, l_disc: 0.05, class: 0.00
-
-Epoch: 58 Average loss: 102.12 Test Accuracy: 0.9705
-u_recon_loss: 55.41, u_cont: 9.91, u_disc: 0.67
-l_recon_loss: 24.13, l_cont: 11.96, l_disc: 0.04, class: 0.00
-
-Epoch: 59 Average loss: 98.18 Test Accuracy: 0.9711
-u_recon_loss: 55.02, u_cont: 8.04, u_disc: 0.67
-l_recon_loss: 23.50, l_cont: 10.90, l_disc: 0.05, class: 0.00
-
-Epoch: 60 Average loss: 96.95 Test Accuracy: 0.9704
-u_recon_loss: 54.87, u_cont: 8.62, u_disc: 0.66
-l_recon_loss: 22.92, l_cont: 9.83, l_disc: 0.05, class: 0.00
-
-Epoch: 61 Average loss: 102.58 Test Accuracy: 0.9701
-u_recon_loss: 54.90, u_cont: 10.31, u_disc: 0.68
-l_recon_loss: 23.23, l_cont: 13.39, l_disc: 0.05, class: 0.00
-
-Epoch: 62 Average loss: 101.26 Test Accuracy: 0.9718
-u_recon_loss: 54.61, u_cont: 10.23, u_disc: 0.66
-l_recon_loss: 22.83, l_cont: 12.86, l_disc: 0.05, class: 0.00
-
-Epoch: 63 Average loss: 96.09 Test Accuracy: 0.972
-u_recon_loss: 54.39, u_cont: 8.23, u_disc: 0.64
-l_recon_loss: 22.34, l_cont: 10.43, l_disc: 0.05, class: 0.00
-
-Epoch: 64 Average loss: 98.99 Test Accuracy: 0.9713
-u_recon_loss: 54.33, u_cont: 9.46, u_disc: 0.66
-l_recon_loss: 22.13, l_cont: 12.37, l_disc: 0.05, class: 0.00
-
-Epoch: 65 Average loss: 93.56 Test Accuracy: 0.972
-u_recon_loss: 53.96, u_cont: 7.57, u_disc: 0.66
-l_recon_loss: 21.28, l_cont: 10.04, l_disc: 0.05, class: 0.00
-
-Epoch: 66 Average loss: 93.35 Test Accuracy: 0.9713
-u_recon_loss: 53.88, u_cont: 7.79, u_disc: 0.65
-l_recon_loss: 21.11, l_cont: 9.87, l_disc: 0.04, class: 0.00
-
-Epoch: 67 Average loss: 96.19 Test Accuracy: 0.9724
-u_recon_loss: 53.89, u_cont: 8.72, u_disc: 0.65
-l_recon_loss: 20.99, l_cont: 11.90, l_disc: 0.04, class: 0.00
-
-Epoch: 68 Average loss: 91.14 Test Accuracy: 0.9714
-u_recon_loss: 53.59, u_cont: 6.91, u_disc: 0.64
-l_recon_loss: 20.52, l_cont: 9.44, l_disc: 0.04, class: 0.00
-
-Epoch: 69 Average loss: 91.02 Test Accuracy: 0.9736
-u_recon_loss: 53.42, u_cont: 7.16, u_disc: 0.63
-l_recon_loss: 20.48, l_cont: 9.27, l_disc: 0.05, class: 0.00
-
-Epoch: 70 Average loss: 92.29 Test Accuracy: 0.9719
-u_recon_loss: 53.27, u_cont: 8.12, u_disc: 0.62
-l_recon_loss: 20.10, l_cont: 10.14, l_disc: 0.04, class: 0.00
-
-Epoch: 71 Average loss: 90.29 Test Accuracy: 0.9717
-u_recon_loss: 53.05, u_cont: 7.25, u_disc: 0.63
-l_recon_loss: 19.86, l_cont: 9.46, l_disc: 0.04, class: 0.00
-
-Epoch: 72 Average loss: 90.50 Test Accuracy: 0.9718
-u_recon_loss: 52.84, u_cont: 7.40, u_disc: 0.61
-l_recon_loss: 19.63, l_cont: 9.98, l_disc: 0.03, class: 0.00
-
-Epoch: 73 Average loss: 93.37 Test Accuracy: 0.974
-u_recon_loss: 53.03, u_cont: 8.84, u_disc: 0.64
-l_recon_loss: 19.72, l_cont: 11.09, l_disc: 0.04, class: 0.00
-
-Epoch: 74 Average loss: 88.90 Test Accuracy: 0.9732
-u_recon_loss: 52.66, u_cont: 6.90, u_disc: 0.64
-l_recon_loss: 19.12, l_cont: 9.54, l_disc: 0.04, class: 0.00
-
-Epoch: 75 Average loss: 88.97 Test Accuracy: 0.9728
-u_recon_loss: 52.72, u_cont: 7.57, u_disc: 0.59
-l_recon_loss: 18.85, l_cont: 9.19, l_disc: 0.04, class: 0.00
-
-Epoch: 76 Average loss: 87.23 Test Accuracy: 0.9716
-u_recon_loss: 52.45, u_cont: 6.68, u_disc: 0.60
-l_recon_loss: 18.54, l_cont: 8.93, l_disc: 0.03, class: 0.00
-
-Epoch: 77 Average loss: 88.44 Test Accuracy: 0.9735
-u_recon_loss: 52.29, u_cont: 7.17, u_disc: 0.60
-l_recon_loss: 18.83, l_cont: 9.51, l_disc: 0.04, class: 0.00
-
-Epoch: 78 Average loss: 86.48 Test Accuracy: 0.9719
-u_recon_loss: 52.27, u_cont: 6.01, u_disc: 0.60
-l_recon_loss: 18.43, l_cont: 9.14, l_disc: 0.04, class: 0.00
-
-Epoch: 79 Average loss: 85.46 Test Accuracy: 0.9726
-u_recon_loss: 52.10, u_cont: 5.98, u_disc: 0.59
-l_recon_loss: 18.21, l_cont: 8.55, l_disc: 0.03, class: 0.00
-
-Epoch: 80 Average loss: 88.05 Test Accuracy: 0.9729
-u_recon_loss: 52.07, u_cont: 7.45, u_disc: 0.58
-l_recon_loss: 18.02, l_cont: 9.90, l_disc: 0.03, class: 0.00
-
-Epoch: 81 Average loss: 91.92 Test Accuracy: 0.9735
-u_recon_loss: 52.04, u_cont: 9.51, u_disc: 0.58
-l_recon_loss: 18.17, l_cont: 11.58, l_disc: 0.04, class: 0.00
-
-Epoch: 82 Average loss: 85.61 Test Accuracy: 0.9741
-u_recon_loss: 51.93, u_cont: 6.89, u_disc: 0.58
-l_recon_loss: 17.80, l_cont: 8.37, l_disc: 0.03, class: 0.00
-
-Epoch: 83 Average loss: 85.94 Test Accuracy: 0.9735
-u_recon_loss: 51.72, u_cont: 7.04, u_disc: 0.57
-l_recon_loss: 17.39, l_cont: 9.18, l_disc: 0.03, class: 0.00
-
-Epoch: 84 Average loss: 85.54 Test Accuracy: 0.973
-u_recon_loss: 51.62, u_cont: 6.97, u_disc: 0.58
-l_recon_loss: 17.23, l_cont: 9.10, l_disc: 0.03, class: 0.00
-
-Epoch: 85 Average loss: 82.68 Test Accuracy: 0.9744
-u_recon_loss: 51.58, u_cont: 5.72, u_disc: 0.56
-l_recon_loss: 17.26, l_cont: 7.53, l_disc: 0.03, class: 0.00
-
-Epoch: 86 Average loss: 85.12 Test Accuracy: 0.9745
-u_recon_loss: 51.62, u_cont: 6.95, u_disc: 0.56
-l_recon_loss: 17.19, l_cont: 8.78, l_disc: 0.03, class: 0.00
-
-Epoch: 87 Average loss: 83.34 Test Accuracy: 0.9734
-u_recon_loss: 51.45, u_cont: 6.01, u_disc: 0.57
-l_recon_loss: 17.00, l_cont: 8.27, l_disc: 0.03, class: 0.00
-
-Epoch: 88 Average loss: 85.11 Test Accuracy: 0.9735
-u_recon_loss: 51.39, u_cont: 7.19, u_disc: 0.55
-l_recon_loss: 16.76, l_cont: 9.19, l_disc: 0.03, class: 0.00
-
-Epoch: 89 Average loss: 85.53 Test Accuracy: 0.9734
-u_recon_loss: 51.25, u_cont: 7.31, u_disc: 0.55
-l_recon_loss: 16.65, l_cont: 9.72, l_disc: 0.03, class: 0.00
-
-Epoch: 90 Average loss: 82.36 Test Accuracy: 0.9745
-u_recon_loss: 51.21, u_cont: 6.12, u_disc: 0.54
-l_recon_loss: 16.59, l_cont: 7.86, l_disc: 0.03, class: 0.00
-
-Epoch: 91 Average loss: 83.79 Test Accuracy: 0.9734
-u_recon_loss: 51.00, u_cont: 6.79, u_disc: 0.54
-l_recon_loss: 16.39, l_cont: 9.04, l_disc: 0.03, class: 0.00
-
-Epoch: 92 Average loss: 84.65 Test Accuracy: 0.9731
-u_recon_loss: 50.97, u_cont: 7.81, u_disc: 0.54
-l_recon_loss: 16.20, l_cont: 9.09, l_disc: 0.03, class: 0.00
-
-Epoch: 93 Average loss: 83.72 Test Accuracy: 0.9738
-u_recon_loss: 50.93, u_cont: 6.81, u_disc: 0.54
-l_recon_loss: 16.35, l_cont: 9.06, l_disc: 0.03, class: 0.00
-
-Epoch: 94 Average loss: 80.90 Test Accuracy: 0.9744
-u_recon_loss: 50.73, u_cont: 6.09, u_disc: 0.54
-l_recon_loss: 15.98, l_cont: 7.53, l_disc: 0.03, class: 0.00
-
-Epoch: 95 Average loss: 84.09 Test Accuracy: 0.9738
-u_recon_loss: 50.92, u_cont: 7.34, u_disc: 0.51
-l_recon_loss: 16.20, l_cont: 9.09, l_disc: 0.02, class: 0.00
-
-Epoch: 96 Average loss: 82.71 Test Accuracy: 0.9743
-u_recon_loss: 50.67, u_cont: 7.00, u_disc: 0.52
-l_recon_loss: 15.96, l_cont: 8.53, l_disc: 0.03, class: 0.00
-
-Epoch: 97 Average loss: 84.01 Test Accuracy: 0.9727
-u_recon_loss: 50.68, u_cont: 7.62, u_disc: 0.51
-l_recon_loss: 15.83, l_cont: 9.34, l_disc: 0.02, class: 0.00
-
-Epoch: 98 Average loss: 82.15 Test Accuracy: 0.9745
-u_recon_loss: 50.56, u_cont: 6.64, u_disc: 0.52
-l_recon_loss: 15.74, l_cont: 8.67, l_disc: 0.03, class: 0.00
-
-Epoch: 99 Average loss: 81.11 Test Accuracy: 0.9755
-u_recon_loss: 50.39, u_cont: 6.56, u_disc: 0.52
-l_recon_loss: 15.55, l_cont: 8.07, l_disc: 0.03, class: 0.00
-
-Epoch: 100 Average loss: 82.42 Test Accuracy: 0.9747
-u_recon_loss: 50.38, u_cont: 6.92, u_disc: 0.50
-l_recon_loss: 15.56, l_cont: 9.04, l_disc: 0.03, class: 0.00
-
-Epoch: 101 Average loss: 80.87 Test Accuracy: 0.9748
-u_recon_loss: 50.24, u_cont: 6.65, u_disc: 0.51
-l_recon_loss: 15.42, l_cont: 8.02, l_disc: 0.02, class: 0.00
-
-Epoch: 102 Average loss: 79.17 Test Accuracy: 0.9742
-u_recon_loss: 50.06, u_cont: 5.72, u_disc: 0.50
-l_recon_loss: 15.32, l_cont: 7.54, l_disc: 0.02, class: 0.00
-
-Epoch: 103 Average loss: 79.97 Test Accuracy: 0.9741
-u_recon_loss: 49.95, u_cont: 6.16, u_disc: 0.50
-l_recon_loss: 15.14, l_cont: 8.20, l_disc: 0.03, class: 0.00
-
-Epoch: 104 Average loss: 79.10 Test Accuracy: 0.9747
-u_recon_loss: 50.05, u_cont: 6.08, u_disc: 0.49
-l_recon_loss: 15.05, l_cont: 7.41, l_disc: 0.02, class: 0.00
-
-Epoch: 105 Average loss: 79.61 Test Accuracy: 0.974
-u_recon_loss: 49.85, u_cont: 6.05, u_disc: 0.48
-l_recon_loss: 14.96, l_cont: 8.25, l_disc: 0.03, class: 0.00
-
-Epoch: 106 Average loss: 78.18 Test Accuracy: 0.9737
-u_recon_loss: 49.77, u_cont: 5.67, u_disc: 0.48
-l_recon_loss: 14.77, l_cont: 7.47, l_disc: 0.02, class: 0.00
-
-Epoch: 107 Average loss: 76.68 Test Accuracy: 0.9743
-u_recon_loss: 49.58, u_cont: 5.11, u_disc: 0.47
-l_recon_loss: 14.63, l_cont: 6.86, l_disc: 0.02, class: 0.00
-
-Epoch: 108 Average loss: 80.44 Test Accuracy: 0.9742
-u_recon_loss: 49.82, u_cont: 6.30, u_disc: 0.48
-l_recon_loss: 14.94, l_cont: 8.88, l_disc: 0.02, class: 0.00
-
-Epoch: 109 Average loss: 77.22 Test Accuracy: 0.9741
-u_recon_loss: 49.44, u_cont: 4.95, u_disc: 0.47
-l_recon_loss: 14.61, l_cont: 7.72, l_disc: 0.02, class: 0.00
-
-Epoch: 110 Average loss: 78.19 Test Accuracy: 0.9741
-u_recon_loss: 49.35, u_cont: 5.55, u_disc: 0.47
-l_recon_loss: 14.60, l_cont: 8.20, l_disc: 0.02, class: 0.00
-
-Epoch: 111 Average loss: 75.79 Test Accuracy: 0.9739
-u_recon_loss: 49.35, u_cont: 4.93, u_disc: 0.46
-l_recon_loss: 14.46, l_cont: 6.57, l_disc: 0.02, class: 0.00
-
-Epoch: 112 Average loss: 77.69 Test Accuracy: 0.975
-u_recon_loss: 49.27, u_cont: 5.73, u_disc: 0.46
-l_recon_loss: 14.47, l_cont: 7.75, l_disc: 0.02, class: 0.00
-
-Epoch: 113 Average loss: 78.02 Test Accuracy: 0.9749
-u_recon_loss: 49.26, u_cont: 6.15, u_disc: 0.46
-l_recon_loss: 14.39, l_cont: 7.73, l_disc: 0.02, class: 0.00
-
-Epoch: 114 Average loss: 78.62 Test Accuracy: 0.9747
-u_recon_loss: 49.07, u_cont: 6.47, u_disc: 0.45
-l_recon_loss: 14.18, l_cont: 8.43, l_disc: 0.02, class: 0.00
-
-Epoch: 115 Average loss: 79.07 Test Accuracy: 0.9753
-u_recon_loss: 49.06, u_cont: 6.56, u_disc: 0.45
-l_recon_loss: 14.35, l_cont: 8.64, l_disc: 0.02, class: 0.00
-
-Epoch: 116 Average loss: 77.99 Test Accuracy: 0.9745
-u_recon_loss: 49.02, u_cont: 6.30, u_disc: 0.45
-l_recon_loss: 14.25, l_cont: 7.95, l_disc: 0.02, class: 0.00
-
-Epoch: 117 Average loss: 76.77 Test Accuracy: 0.9745
-u_recon_loss: 48.83, u_cont: 5.76, u_disc: 0.44
-l_recon_loss: 14.17, l_cont: 7.55, l_disc: 0.02, class: 0.00
-
-Epoch: 118 Average loss: 75.83 Test Accuracy: 0.9751
-u_recon_loss: 48.71, u_cont: 5.42, u_disc: 0.44
-l_recon_loss: 14.08, l_cont: 7.15, l_disc: 0.02, class: 0.00
-
-Epoch: 119 Average loss: 76.64 Test Accuracy: 0.9745
-u_recon_loss: 48.70, u_cont: 5.85, u_disc: 0.44
-l_recon_loss: 13.93, l_cont: 7.69, l_disc: 0.02, class: 0.00
-
-Epoch: 120 Average loss: 79.83 Test Accuracy: 0.9751
-u_recon_loss: 48.79, u_cont: 7.24, u_disc: 0.43
-l_recon_loss: 14.26, l_cont: 9.08, l_disc: 0.02, class: 0.00
-
-Epoch: 121 Average loss: 76.42 Test Accuracy: 0.9747
-u_recon_loss: 48.37, u_cont: 6.13, u_disc: 0.43
-l_recon_loss: 13.70, l_cont: 7.77, l_disc: 0.02, class: 0.00
-
-Epoch: 122 Average loss: 78.39 Test Accuracy: 0.9743
-u_recon_loss: 48.54, u_cont: 6.90, u_disc: 0.44
-l_recon_loss: 13.85, l_cont: 8.65, l_disc: 0.02, class: 0.00
-
-Epoch: 123 Average loss: 75.95 Test Accuracy: 0.9746
-u_recon_loss: 48.53, u_cont: 5.91, u_disc: 0.43
-l_recon_loss: 13.88, l_cont: 7.18, l_disc: 0.02, class: 0.00
-
-Epoch: 124 Average loss: 76.87 Test Accuracy: 0.9753
-u_recon_loss: 48.39, u_cont: 6.31, u_disc: 0.43
-l_recon_loss: 13.84, l_cont: 7.88, l_disc: 0.02, class: 0.00
-
-Epoch: 125 Average loss: 75.16 Test Accuracy: 0.9743
-u_recon_loss: 48.27, u_cont: 5.73, u_disc: 0.42
-l_recon_loss: 13.77, l_cont: 6.95, l_disc: 0.02, class: 0.00
-
-Epoch: 126 Average loss: 74.46 Test Accuracy: 0.9751
-u_recon_loss: 48.00, u_cont: 5.40, u_disc: 0.42
-l_recon_loss: 13.45, l_cont: 7.18, l_disc: 0.02, class: 0.00
-
-Epoch: 127 Average loss: 74.22 Test Accuracy: 0.9746
-u_recon_loss: 48.15, u_cont: 5.22, u_disc: 0.41
-l_recon_loss: 13.50, l_cont: 6.92, l_disc: 0.02, class: 0.00
-
-Epoch: 128 Average loss: 73.68 Test Accuracy: 0.9742
-u_recon_loss: 48.00, u_cont: 4.88, u_disc: 0.41
-l_recon_loss: 13.44, l_cont: 6.92, l_disc: 0.02, class: 0.00
-
-Epoch: 129 Average loss: 74.59 Test Accuracy: 0.974
-u_recon_loss: 47.97, u_cont: 5.24, u_disc: 0.41
-l_recon_loss: 13.45, l_cont: 7.51, l_disc: 0.01, class: 0.00
-
-Epoch: 130 Average loss: 75.10 Test Accuracy: 0.9745
-u_recon_loss: 47.85, u_cont: 5.93, u_disc: 0.41
-l_recon_loss: 13.15, l_cont: 7.75, l_disc: 0.02, class: 0.00
-
-Epoch: 131 Average loss: 77.45 Test Accuracy: 0.9745
-u_recon_loss: 48.10, u_cont: 6.86, u_disc: 0.41
-l_recon_loss: 13.54, l_cont: 8.52, l_disc: 0.01, class: 0.00
-
-Epoch: 132 Average loss: 74.41 Test Accuracy: 0.9738
-u_recon_loss: 47.75, u_cont: 5.76, u_disc: 0.39
-l_recon_loss: 13.00, l_cont: 7.49, l_disc: 0.01, class: 0.00
-
-Epoch: 133 Average loss: 73.94 Test Accuracy: 0.9747
-u_recon_loss: 47.64, u_cont: 5.95, u_disc: 0.40
-l_recon_loss: 13.06, l_cont: 6.86, l_disc: 0.02, class: 0.00
-
-Epoch: 134 Average loss: 76.18 Test Accuracy: 0.9748
-u_recon_loss: 47.80, u_cont: 6.57, u_disc: 0.40
-l_recon_loss: 13.27, l_cont: 8.13, l_disc: 0.02, class: 0.00
-
-Epoch: 135 Average loss: 72.68 Test Accuracy: 0.9742
-u_recon_loss: 47.57, u_cont: 5.04, u_disc: 0.40
-l_recon_loss: 13.05, l_cont: 6.60, l_disc: 0.02, class: 0.00
-
-Epoch: 136 Average loss: 74.67 Test Accuracy: 0.9757
-u_recon_loss: 47.56, u_cont: 5.98, u_disc: 0.39
-l_recon_loss: 12.91, l_cont: 7.80, l_disc: 0.02, class: 0.00
-
-Epoch: 137 Average loss: 73.70 Test Accuracy: 0.9748
-u_recon_loss: 47.47, u_cont: 5.65, u_disc: 0.40
-l_recon_loss: 12.86, l_cont: 7.30, l_disc: 0.02, class: 0.00
-
-Epoch: 138 Average loss: 73.29 Test Accuracy: 0.9746
-u_recon_loss: 47.45, u_cont: 5.59, u_disc: 0.40
-l_recon_loss: 12.92, l_cont: 6.92, l_disc: 0.02, class: 0.00
-
-Epoch: 139 Average loss: 75.68 Test Accuracy: 0.9748
-u_recon_loss: 47.51, u_cont: 6.29, u_disc: 0.40
-l_recon_loss: 13.15, l_cont: 8.31, l_disc: 0.02, class: 0.00
-
-Epoch: 140 Average loss: 74.95 Test Accuracy: 0.9745
-u_recon_loss: 47.61, u_cont: 6.15, u_disc: 0.39
-l_recon_loss: 13.12, l_cont: 7.67, l_disc: 0.02, class: 0.00
-
-Epoch: 141 Average loss: 74.24 Test Accuracy: 0.9739
-u_recon_loss: 47.29, u_cont: 5.87, u_disc: 0.38
-l_recon_loss: 12.79, l_cont: 7.88, l_disc: 0.02, class: 0.00
-
-Epoch: 142 Average loss: 72.44 Test Accuracy: 0.9739
-u_recon_loss: 47.18, u_cont: 5.27, u_disc: 0.38
-l_recon_loss: 12.85, l_cont: 6.73, l_disc: 0.02, class: 0.00
-
-Epoch: 143 Average loss: 71.11 Test Accuracy: 0.9761
-u_recon_loss: 47.04, u_cont: 4.55, u_disc: 0.38
-l_recon_loss: 12.62, l_cont: 6.50, l_disc: 0.01, class: 0.00
-
-Epoch: 144 Average loss: 71.37 Test Accuracy: 0.9757
-u_recon_loss: 46.97, u_cont: 4.69, u_disc: 0.38
-l_recon_loss: 12.50, l_cont: 6.81, l_disc: 0.01, class: 0.00
-
-Epoch: 145 Average loss: 73.69 Test Accuracy: 0.9742
-u_recon_loss: 47.07, u_cont: 5.94, u_disc: 0.38
-l_recon_loss: 12.72, l_cont: 7.56, l_disc: 0.02, class: 0.00
-
-Epoch: 146 Average loss: 71.58 Test Accuracy: 0.976
-u_recon_loss: 46.97, u_cont: 5.04, u_disc: 0.37
-l_recon_loss: 12.47, l_cont: 6.72, l_disc: 0.01, class: 0.00
-
-Epoch: 147 Average loss: 71.26 Test Accuracy: 0.9754
-u_recon_loss: 46.88, u_cont: 4.82, u_disc: 0.38
-l_recon_loss: 12.47, l_cont: 6.69, l_disc: 0.01, class: 0.00
-
-Epoch: 148 Average loss: 72.10 Test Accuracy: 0.976
-u_recon_loss: 46.91, u_cont: 5.26, u_disc: 0.38
-l_recon_loss: 12.44, l_cont: 7.10, l_disc: 0.02, class: 0.00
-
-Epoch: 149 Average loss: 72.60 Test Accuracy: 0.9757
-u_recon_loss: 46.87, u_cont: 6.00, u_disc: 0.38
-l_recon_loss: 12.42, l_cont: 6.91, l_disc: 0.01, class: 0.00
-
-Epoch: 150 Average loss: 72.89 Test Accuracy: 0.9751
-u_recon_loss: 46.88, u_cont: 5.97, u_disc: 0.38
-l_recon_loss: 12.35, l_cont: 7.30, l_disc: 0.02, class: 0.00
-
-Epoch: 151 Average loss: 71.64 Test Accuracy: 0.9755
-u_recon_loss: 46.80, u_cont: 5.01, u_disc: 0.38
-l_recon_loss: 12.48, l_cont: 6.96, l_disc: 0.01, class: 0.00
-
-Epoch: 152 Average loss: 70.36 Test Accuracy: 0.9748
-u_recon_loss: 46.61, u_cont: 4.58, u_disc: 0.37
-l_recon_loss: 12.20, l_cont: 6.58, l_disc: 0.02, class: 0.00
-
-Epoch: 153 Average loss: 72.62 Test Accuracy: 0.975
-u_recon_loss: 46.74, u_cont: 6.08, u_disc: 0.37
-l_recon_loss: 12.33, l_cont: 7.09, l_disc: 0.02, class: 0.00
-
-Epoch: 154 Average loss: 71.57 Test Accuracy: 0.9743
-u_recon_loss: 46.64, u_cont: 5.37, u_disc: 0.37
-l_recon_loss: 12.24, l_cont: 6.94, l_disc: 0.01, class: 0.00
-
-Epoch: 155 Average loss: 70.38 Test Accuracy: 0.9767
-u_recon_loss: 46.60, u_cont: 4.82, u_disc: 0.37
-l_recon_loss: 12.22, l_cont: 6.36, l_disc: 0.02, class: 0.00
-
-Epoch: 156 Average loss: 71.28 Test Accuracy: 0.9758
-u_recon_loss: 46.55, u_cont: 4.98, u_disc: 0.36
-l_recon_loss: 12.19, l_cont: 7.18, l_disc: 0.01, class: 0.00
-
-Epoch: 157 Average loss: 70.51 Test Accuracy: 0.9744
-u_recon_loss: 46.28, u_cont: 5.04, u_disc: 0.37
-l_recon_loss: 12.03, l_cont: 6.77, l_disc: 0.01, class: 0.00
-
-Epoch: 158 Average loss: 70.51 Test Accuracy: 0.9765
-u_recon_loss: 46.53, u_cont: 4.93, u_disc: 0.35
-l_recon_loss: 12.22, l_cont: 6.47, l_disc: 0.01, class: 0.00
-
-Epoch: 159 Average loss: 70.87 Test Accuracy: 0.9751
-u_recon_loss: 46.41, u_cont: 5.29, u_disc: 0.36
-l_recon_loss: 12.01, l_cont: 6.80, l_disc: 0.01, class: 0.00
-
-Epoch: 160 Average loss: 70.27 Test Accuracy: 0.976
-u_recon_loss: 46.33, u_cont: 4.89, u_disc: 0.35
-l_recon_loss: 11.99, l_cont: 6.69, l_disc: 0.02, class: 0.00
-
-Epoch: 161 Average loss: 69.31 Test Accuracy: 0.9743
-u_recon_loss: 46.24, u_cont: 4.40, u_disc: 0.35
-l_recon_loss: 11.89, l_cont: 6.41, l_disc: 0.01, class: 0.00
-
-Epoch: 162 Average loss: 69.11 Test Accuracy: 0.9752
-u_recon_loss: 46.25, u_cont: 4.26, u_disc: 0.36
-l_recon_loss: 11.97, l_cont: 6.27, l_disc: 0.01, class: 0.00
-
-Epoch: 163 Average loss: 69.06 Test Accuracy: 0.9757
-u_recon_loss: 46.12, u_cont: 4.39, u_disc: 0.34
-l_recon_loss: 11.69, l_cont: 6.50, l_disc: 0.01, class: 0.00
-
-Epoch: 164 Average loss: 69.64 Test Accuracy: 0.9768
-u_recon_loss: 46.16, u_cont: 4.86, u_disc: 0.35
-l_recon_loss: 11.79, l_cont: 6.47, l_disc: 0.01, class: 0.00
-
-Epoch: 165 Average loss: 69.64 Test Accuracy: 0.9759
-u_recon_loss: 46.17, u_cont: 4.80, u_disc: 0.35
-l_recon_loss: 12.02, l_cont: 6.29, l_disc: 0.01, class: 0.00
-
-Epoch: 166 Average loss: 69.58 Test Accuracy: 0.9765
-u_recon_loss: 46.12, u_cont: 4.62, u_disc: 0.34
-l_recon_loss: 11.88, l_cont: 6.61, l_disc: 0.01, class: 0.00
-
-Epoch: 167 Average loss: 69.15 Test Accuracy: 0.9754
-u_recon_loss: 45.98, u_cont: 4.63, u_disc: 0.34
-l_recon_loss: 11.74, l_cont: 6.44, l_disc: 0.01, class: 0.00
-
-Epoch: 168 Average loss: 68.75 Test Accuracy: 0.9761
-u_recon_loss: 45.94, u_cont: 4.59, u_disc: 0.34
-l_recon_loss: 11.57, l_cont: 6.29, l_disc: 0.02, class: 0.00
-
-Epoch: 169 Average loss: 69.78 Test Accuracy: 0.9759
-u_recon_loss: 45.88, u_cont: 5.11, u_disc: 0.34
-l_recon_loss: 11.71, l_cont: 6.73, l_disc: 0.01, class: 0.00
-
-Epoch: 170 Average loss: 69.70 Test Accuracy: 0.975
-u_recon_loss: 45.94, u_cont: 5.20, u_disc: 0.34
-l_recon_loss: 11.72, l_cont: 6.48, l_disc: 0.01, class: 0.00
-
-Epoch: 171 Average loss: 69.00 Test Accuracy: 0.9757
-u_recon_loss: 45.81, u_cont: 4.81, u_disc: 0.33
-l_recon_loss: 11.56, l_cont: 6.49, l_disc: 0.01, class: 0.00
-
-Epoch: 172 Average loss: 71.66 Test Accuracy: 0.9766
-u_recon_loss: 45.90, u_cont: 6.18, u_disc: 0.33
-l_recon_loss: 11.70, l_cont: 7.53, l_disc: 0.01, class: 0.00
-
-Epoch: 173 Average loss: 70.63 Test Accuracy: 0.9761
-u_recon_loss: 45.89, u_cont: 5.85, u_disc: 0.33
-l_recon_loss: 11.70, l_cont: 6.84, l_disc: 0.02, class: 0.00
-
-Epoch: 174 Average loss: 69.89 Test Accuracy: 0.9759
-u_recon_loss: 45.88, u_cont: 5.23, u_disc: 0.33
-l_recon_loss: 11.74, l_cont: 6.69, l_disc: 0.02, class: 0.00
-
-Epoch: 175 Average loss: 70.50 Test Accuracy: 0.976
-u_recon_loss: 45.79, u_cont: 5.64, u_disc: 0.33
-l_recon_loss: 11.60, l_cont: 7.13, l_disc: 0.01, class: 0.00
-
-Epoch: 176 Average loss: 70.74 Test Accuracy: 0.9767
-u_recon_loss: 45.76, u_cont: 5.56, u_disc: 0.34
-l_recon_loss: 11.72, l_cont: 7.36, l_disc: 0.01, class: 0.00
-
-Epoch: 177 Average loss: 69.04 Test Accuracy: 0.975
-u_recon_loss: 45.59, u_cont: 5.06, u_disc: 0.34
-l_recon_loss: 11.45, l_cont: 6.60, l_disc: 0.01, class: 0.00
-
-Epoch: 178 Average loss: 67.50 Test Accuracy: 0.977
-u_recon_loss: 45.46, u_cont: 4.64, u_disc: 0.32
-l_recon_loss: 11.13, l_cont: 5.94, l_disc: 0.01, class: 0.00
-
-Epoch: 179 Average loss: 67.79 Test Accuracy: 0.9764
-u_recon_loss: 45.52, u_cont: 4.39, u_disc: 0.33
-l_recon_loss: 11.41, l_cont: 6.13, l_disc: 0.01, class: 0.00
-
-Epoch: 180 Average loss: 68.23 Test Accuracy: 0.9747
-u_recon_loss: 45.54, u_cont: 4.91, u_disc: 0.33
-l_recon_loss: 11.39, l_cont: 6.04, l_disc: 0.01, class: 0.00
-
-Epoch: 181 Average loss: 70.36 Test Accuracy: 0.9754
-u_recon_loss: 45.46, u_cont: 5.67, u_disc: 0.33
-l_recon_loss: 11.45, l_cont: 7.43, l_disc: 0.01, class: 0.00
-
-Epoch: 182 Average loss: 69.00 Test Accuracy: 0.9765
-u_recon_loss: 45.53, u_cont: 5.34, u_disc: 0.33
-l_recon_loss: 11.50, l_cont: 6.28, l_disc: 0.01, class: 0.00
-
-Epoch: 183 Average loss: 68.09 Test Accuracy: 0.9754
-u_recon_loss: 45.41, u_cont: 4.93, u_disc: 0.31
-l_recon_loss: 11.26, l_cont: 6.16, l_disc: 0.01, class: 0.00
-
-Epoch: 184 Average loss: 68.16 Test Accuracy: 0.976
-u_recon_loss: 45.34, u_cont: 4.80, u_disc: 0.33
-l_recon_loss: 11.26, l_cont: 6.43, l_disc: 0.01, class: 0.00
-
-Epoch: 185 Average loss: 68.94 Test Accuracy: 0.9756
-u_recon_loss: 45.48, u_cont: 4.95, u_disc: 0.31
-l_recon_loss: 11.43, l_cont: 6.76, l_disc: 0.01, class: 0.00
-
-Epoch: 186 Average loss: 67.61 Test Accuracy: 0.9763
-u_recon_loss: 45.20, u_cont: 4.73, u_disc: 0.33
-l_recon_loss: 11.11, l_cont: 6.22, l_disc: 0.01, class: 0.00
-
-Epoch: 187 Average loss: 67.63 Test Accuracy: 0.9754
-u_recon_loss: 45.34, u_cont: 4.81, u_disc: 0.32
-l_recon_loss: 11.30, l_cont: 5.84, l_disc: 0.01, class: 0.00
-
-Epoch: 188 Average loss: 69.29 Test Accuracy: 0.9761
-u_recon_loss: 45.25, u_cont: 5.50, u_disc: 0.32
-l_recon_loss: 11.26, l_cont: 6.94, l_disc: 0.02, class: 0.00
-
-Epoch: 189 Average loss: 67.13 Test Accuracy: 0.9768
-u_recon_loss: 45.14, u_cont: 4.62, u_disc: 0.31
-l_recon_loss: 11.17, l_cont: 5.87, l_disc: 0.01, class: 0.00
-
-Epoch: 190 Average loss: 65.93 Test Accuracy: 0.9769
-u_recon_loss: 45.09, u_cont: 4.08, u_disc: 0.32
-l_recon_loss: 11.00, l_cont: 5.42, l_disc: 0.01, class: 0.00
-
-Epoch: 191 Average loss: 69.27 Test Accuracy: 0.9756
-u_recon_loss: 45.20, u_cont: 5.44, u_disc: 0.32
-l_recon_loss: 11.11, l_cont: 7.19, l_disc: 0.01, class: 0.00
-
-Epoch: 192 Average loss: 66.39 Test Accuracy: 0.9757
-u_recon_loss: 44.98, u_cont: 4.27, u_disc: 0.30
-l_recon_loss: 10.99, l_cont: 5.84, l_disc: 0.01, class: 0.00
-
-Epoch: 193 Average loss: 68.10 Test Accuracy: 0.977
-u_recon_loss: 44.94, u_cont: 5.05, u_disc: 0.31
-l_recon_loss: 10.98, l_cont: 6.81, l_disc: 0.01, class: 0.00
-
-Epoch: 194 Average loss: 66.92 Test Accuracy: 0.9753
-u_recon_loss: 45.10, u_cont: 4.51, u_disc: 0.30
-l_recon_loss: 11.00, l_cont: 6.00, l_disc: 0.01, class: 0.00
-
-Epoch: 195 Average loss: 68.33 Test Accuracy: 0.9769
-u_recon_loss: 45.04, u_cont: 5.43, u_disc: 0.31
-l_recon_loss: 11.02, l_cont: 6.52, l_disc: 0.01, class: 0.00
-
-Epoch: 196 Average loss: 68.47 Test Accuracy: 0.9767
-u_recon_loss: 44.98, u_cont: 5.55, u_disc: 0.32
-l_recon_loss: 10.85, l_cont: 6.76, l_disc: 0.01, class: 0.00
-
-Epoch: 197 Average loss: 66.63 Test Accuracy: 0.9759
-u_recon_loss: 44.90, u_cont: 4.37, u_disc: 0.31
-l_recon_loss: 11.02, l_cont: 6.03, l_disc: 0.01, class: 0.00
-
-Epoch: 198 Average loss: 66.58 Test Accuracy: 0.975
-u_recon_loss: 45.01, u_cont: 4.43, u_disc: 0.31
-l_recon_loss: 11.02, l_cont: 5.79, l_disc: 0.01, class: 0.00
-
-Epoch: 199 Average loss: 65.76 Test Accuracy: 0.9766
-u_recon_loss: 44.84, u_cont: 4.19, u_disc: 0.30
-l_recon_loss: 10.73, l_cont: 5.69, l_disc: 0.01, class: 0.00
-
-Epoch: 200 Average loss: 67.01 Test Accuracy: 0.9759
-u_recon_loss: 44.67, u_cont: 4.80, u_disc: 0.30
-l_recon_loss: 10.83, l_cont: 6.41, l_disc: 0.01, class: 0.00
-
-Epoch: 201 Average loss: 67.36 Test Accuracy: 0.9759
-u_recon_loss: 44.78, u_cont: 4.91, u_disc: 0.30
-l_recon_loss: 11.04, l_cont: 6.31, l_disc: 0.01, class: 0.00
-
-Epoch: 202 Average loss: 65.60 Test Accuracy: 0.976
-u_recon_loss: 44.70, u_cont: 4.09, u_disc: 0.30
-l_recon_loss: 10.80, l_cont: 5.70, l_disc: 0.01, class: 0.00
-
-Epoch: 203 Average loss: 67.01 Test Accuracy: 0.9747
-u_recon_loss: 44.72, u_cont: 4.98, u_disc: 0.30
-l_recon_loss: 10.81, l_cont: 6.20, l_disc: 0.01, class: 0.00
-
-Epoch: 204 Average loss: 68.11 Test Accuracy: 0.9765
-u_recon_loss: 44.77, u_cont: 5.20, u_disc: 0.30
-l_recon_loss: 10.95, l_cont: 6.87, l_disc: 0.01, class: 0.00
-
-Epoch: 205 Average loss: 64.60 Test Accuracy: 0.9762
-u_recon_loss: 44.64, u_cont: 3.86, u_disc: 0.29
-l_recon_loss: 10.74, l_cont: 5.06, l_disc: 0.01, class: 0.00
-
-Epoch: 206 Average loss: 65.71 Test Accuracy: 0.9763
-u_recon_loss: 44.65, u_cont: 4.25, u_disc: 0.30
-l_recon_loss: 10.85, l_cont: 5.66, l_disc: 0.01, class: 0.00
-
-Epoch: 207 Average loss: 66.03 Test Accuracy: 0.9771
-u_recon_loss: 44.64, u_cont: 4.54, u_disc: 0.30
-l_recon_loss: 10.71, l_cont: 5.83, l_disc: 0.01, class: 0.00
-
-Epoch: 208 Average loss: 65.58 Test Accuracy: 0.9768
-u_recon_loss: 44.48, u_cont: 4.28, u_disc: 0.29
-l_recon_loss: 10.54, l_cont: 5.99, l_disc: 0.01, class: 0.00
-
-Epoch: 209 Average loss: 65.80 Test Accuracy: 0.976
-u_recon_loss: 44.46, u_cont: 4.30, u_disc: 0.30
-l_recon_loss: 10.62, l_cont: 6.11, l_disc: 0.01, class: 0.00
-
-Epoch: 210 Average loss: 64.52 Test Accuracy: 0.9759
-u_recon_loss: 44.41, u_cont: 3.86, u_disc: 0.29
-l_recon_loss: 10.55, l_cont: 5.41, l_disc: 0.01, class: 0.00
-
-Epoch: 211 Average loss: 65.47 Test Accuracy: 0.9762
-u_recon_loss: 44.54, u_cont: 4.22, u_disc: 0.29
-l_recon_loss: 10.72, l_cont: 5.70, l_disc: 0.01, class: 0.00
-
-Epoch: 212 Average loss: 64.86 Test Accuracy: 0.9755
-u_recon_loss: 44.29, u_cont: 4.12, u_disc: 0.29
-l_recon_loss: 10.63, l_cont: 5.52, l_disc: 0.01, class: 0.00
-
-Epoch: 213 Average loss: 64.46 Test Accuracy: 0.976
-u_recon_loss: 44.40, u_cont: 3.88, u_disc: 0.30
-l_recon_loss: 10.52, l_cont: 5.35, l_disc: 0.02, class: 0.00
-
-Epoch: 214 Average loss: 64.81 Test Accuracy: 0.9758
-u_recon_loss: 44.32, u_cont: 4.10, u_disc: 0.29
-l_recon_loss: 10.48, l_cont: 5.62, l_disc: 0.01, class: 0.00
-
-Epoch: 215 Average loss: 63.90 Test Accuracy: 0.976
-u_recon_loss: 44.28, u_cont: 3.60, u_disc: 0.29
-l_recon_loss: 10.51, l_cont: 5.21, l_disc: 0.01, class: 0.00
-
-Epoch: 216 Average loss: 63.71 Test Accuracy: 0.9759
-u_recon_loss: 44.24, u_cont: 3.53, u_disc: 0.29
-l_recon_loss: 10.46, l_cont: 5.18, l_disc: 0.01, class: 0.00
-
-Epoch: 217 Average loss: 66.41 Test Accuracy: 0.9766
-u_recon_loss: 44.38, u_cont: 4.84, u_disc: 0.29
-l_recon_loss: 10.67, l_cont: 6.22, l_disc: 0.01, class: 0.00
-
-Epoch: 218 Average loss: 63.69 Test Accuracy: 0.9767
-u_recon_loss: 44.19, u_cont: 3.78, u_disc: 0.28
-l_recon_loss: 10.34, l_cont: 5.09, l_disc: 0.01, class: 0.00
-
-Epoch: 219 Average loss: 65.57 Test Accuracy: 0.9763
-u_recon_loss: 44.19, u_cont: 4.53, u_disc: 0.29
-l_recon_loss: 10.55, l_cont: 6.01, l_disc: 0.01, class: 0.00
-
-Epoch: 220 Average loss: 63.97 Test Accuracy: 0.9751
-u_recon_loss: 44.12, u_cont: 4.00, u_disc: 0.28
-l_recon_loss: 10.34, l_cont: 5.21, l_disc: 0.01, class: 0.00
-
-Epoch: 221 Average loss: 64.44 Test Accuracy: 0.9758
-u_recon_loss: 44.19, u_cont: 4.01, u_disc: 0.28
-l_recon_loss: 10.55, l_cont: 5.40, l_disc: 0.01, class: 0.00
-
-Epoch: 222 Average loss: 64.46 Test Accuracy: 0.9756
-u_recon_loss: 44.15, u_cont: 3.93, u_disc: 0.28
-l_recon_loss: 10.39, l_cont: 5.72, l_disc: 0.01, class: 0.00
-
-Epoch: 223 Average loss: 65.91 Test Accuracy: 0.9763
-u_recon_loss: 44.09, u_cont: 4.83, u_disc: 0.28
-l_recon_loss: 10.45, l_cont: 6.25, l_disc: 0.01, class: 0.00
-
-Epoch: 224 Average loss: 64.04 Test Accuracy: 0.9759
-u_recon_loss: 44.01, u_cont: 3.93, u_disc: 0.28
-l_recon_loss: 10.51, l_cont: 5.30, l_disc: 0.01, class: 0.00
-
-Epoch: 225 Average loss: 63.53 Test Accuracy: 0.9762
-u_recon_loss: 43.97, u_cont: 3.48, u_disc: 0.28
-l_recon_loss: 10.39, l_cont: 5.40, l_disc: 0.01, class: 0.00
-
-Epoch: 226 Average loss: 64.17 Test Accuracy: 0.9762
-u_recon_loss: 43.98, u_cont: 4.06, u_disc: 0.28
-l_recon_loss: 10.19, l_cont: 5.65, l_disc: 0.01, class: 0.00
-
-Epoch: 227 Average loss: 63.82 Test Accuracy: 0.9755
-u_recon_loss: 43.89, u_cont: 3.83, u_disc: 0.27
-l_recon_loss: 10.33, l_cont: 5.49, l_disc: 0.01, class: 0.00
-
-Epoch: 228 Average loss: 62.64 Test Accuracy: 0.9762
-u_recon_loss: 43.86, u_cont: 3.26, u_disc: 0.28
-l_recon_loss: 10.21, l_cont: 5.03, l_disc: 0.01, class: 0.00
-
-Epoch: 229 Average loss: 64.14 Test Accuracy: 0.9746
-u_recon_loss: 43.98, u_cont: 3.96, u_disc: 0.28
-l_recon_loss: 10.49, l_cont: 5.43, l_disc: 0.01, class: 0.00
-
-Epoch: 230 Average loss: 62.80 Test Accuracy: 0.9757
-u_recon_loss: 43.83, u_cont: 3.49, u_disc: 0.28
-l_recon_loss: 10.31, l_cont: 4.88, l_disc: 0.01, class: 0.00
-
-Epoch: 231 Average loss: 64.18 Test Accuracy: 0.976
-u_recon_loss: 43.89, u_cont: 4.19, u_disc: 0.28
-l_recon_loss: 10.27, l_cont: 5.55, l_disc: 0.01, class: 0.00
-
-Epoch: 232 Average loss: 64.18 Test Accuracy: 0.976
-u_recon_loss: 43.88, u_cont: 4.18, u_disc: 0.28
-l_recon_loss: 10.35, l_cont: 5.48, l_disc: 0.01, class: 0.00
-
-Epoch: 233 Average loss: 63.15 Test Accuracy: 0.9764
-u_recon_loss: 43.80, u_cont: 3.60, u_disc: 0.27
-l_recon_loss: 10.16, l_cont: 5.30, l_disc: 0.01, class: 0.00
-
-Epoch: 234 Average loss: 64.82 Test Accuracy: 0.9767
-u_recon_loss: 43.73, u_cont: 4.78, u_disc: 0.27
-l_recon_loss: 10.06, l_cont: 5.96, l_disc: 0.01, class: 0.00
-
-Epoch: 235 Average loss: 65.08 Test Accuracy: 0.9768
-u_recon_loss: 43.83, u_cont: 4.79, u_disc: 0.27
-l_recon_loss: 10.26, l_cont: 5.91, l_disc: 0.01, class: 0.00
-
-Epoch: 236 Average loss: 64.01 Test Accuracy: 0.9774
-u_recon_loss: 43.74, u_cont: 4.34, u_disc: 0.27
-l_recon_loss: 10.21, l_cont: 5.43, l_disc: 0.01, class: 0.00
-
-Epoch: 237 Average loss: 64.01 Test Accuracy: 0.9772
-u_recon_loss: 43.79, u_cont: 4.36, u_disc: 0.27
-l_recon_loss: 10.22, l_cont: 5.38, l_disc: 0.01, class: 0.00
-
-Epoch: 238 Average loss: 65.62 Test Accuracy: 0.9766
-u_recon_loss: 43.86, u_cont: 4.93, u_disc: 0.27
-l_recon_loss: 10.35, l_cont: 6.21, l_disc: 0.01, class: 0.00
-
-Epoch: 239 Average loss: 61.85 Test Accuracy: 0.9769
-u_recon_loss: 43.72, u_cont: 3.05, u_disc: 0.26
-l_recon_loss: 10.14, l_cont: 4.66, l_disc: 0.01, class: 0.00
-
-Epoch: 240 Average loss: 62.78 Test Accuracy: 0.9766
-u_recon_loss: 43.71, u_cont: 3.53, u_disc: 0.27
-l_recon_loss: 10.27, l_cont: 4.98, l_disc: 0.01, class: 0.00
-
-Epoch: 241 Average loss: 62.85 Test Accuracy: 0.977
-u_recon_loss: 43.57, u_cont: 3.65, u_disc: 0.26
-l_recon_loss: 10.09, l_cont: 5.27, l_disc: 0.01, class: 0.00
-
-Epoch: 242 Average loss: 62.43 Test Accuracy: 0.9763
-u_recon_loss: 43.44, u_cont: 3.78, u_disc: 0.27
-l_recon_loss: 9.86, l_cont: 5.07, l_disc: 0.01, class: 0.00
-
-Epoch: 243 Average loss: 62.17 Test Accuracy: 0.9773
-u_recon_loss: 43.49, u_cont: 3.47, u_disc: 0.27
-l_recon_loss: 10.10, l_cont: 4.83, l_disc: 0.01, class: 0.00
-
-Epoch: 244 Average loss: 64.92 Test Accuracy: 0.9768
-u_recon_loss: 43.61, u_cont: 4.92, u_disc: 0.27
-l_recon_loss: 10.17, l_cont: 5.95, l_disc: 0.01, class: 0.00
-
-Epoch: 245 Average loss: 62.22 Test Accuracy: 0.9775
-u_recon_loss: 43.45, u_cont: 3.44, u_disc: 0.26
-l_recon_loss: 9.96, l_cont: 5.10, l_disc: 0.01, class: 0.00
-
-Epoch: 246 Average loss: 65.15 Test Accuracy: 0.9782
-u_recon_loss: 43.60, u_cont: 5.11, u_disc: 0.26
-l_recon_loss: 10.20, l_cont: 5.96, l_disc: 0.01, class: 0.00
-
-Epoch: 247 Average loss: 62.71 Test Accuracy: 0.9773
-u_recon_loss: 43.47, u_cont: 3.77, u_disc: 0.27
-l_recon_loss: 10.06, l_cont: 5.13, l_disc: 0.01, class: 0.00
-
-Epoch: 248 Average loss: 65.75 Test Accuracy: 0.9773
-u_recon_loss: 43.55, u_cont: 5.34, u_disc: 0.27
-l_recon_loss: 10.15, l_cont: 6.42, l_disc: 0.01, class: 0.00
-
-Epoch: 249 Average loss: 65.37 Test Accuracy: 0.9774
-u_recon_loss: 43.54, u_cont: 4.68, u_disc: 0.27
-l_recon_loss: 10.18, l_cont: 6.69, l_disc: 0.01, class: 0.00
-
-Epoch: 250 Average loss: 62.88 Test Accuracy: 0.9775
-u_recon_loss: 43.34, u_cont: 3.96, u_disc: 0.27
-l_recon_loss: 9.90, l_cont: 5.40, l_disc: 0.01, class: 0.00
-
-Epoch: 251 Average loss: 62.95 Test Accuracy: 0.9774
-u_recon_loss: 43.38, u_cont: 4.32, u_disc: 0.27
-l_recon_loss: 9.90, l_cont: 5.06, l_disc: 0.01, class: 0.00
-
-Epoch: 252 Average loss: 62.69 Test Accuracy: 0.9773
-u_recon_loss: 43.36, u_cont: 3.98, u_disc: 0.26
-l_recon_loss: 10.03, l_cont: 5.05, l_disc: 0.01, class: 0.00
-
-Epoch: 253 Average loss: 64.36 Test Accuracy: 0.976
-u_recon_loss: 43.48, u_cont: 4.88, u_disc: 0.26
-l_recon_loss: 10.04, l_cont: 5.68, l_disc: 0.01, class: 0.00
-
-Epoch: 254 Average loss: 63.74 Test Accuracy: 0.9766
-u_recon_loss: 43.34, u_cont: 4.40, u_disc: 0.26
-l_recon_loss: 9.87, l_cont: 5.86, l_disc: 0.01, class: 0.00
-
-Epoch: 255 Average loss: 62.05 Test Accuracy: 0.976
-u_recon_loss: 43.25, u_cont: 3.76, u_disc: 0.27
-l_recon_loss: 9.93, l_cont: 4.83, l_disc: 0.01, class: 0.00
-
-Epoch: 256 Average loss: 62.03 Test Accuracy: 0.9758
-u_recon_loss: 43.23, u_cont: 3.69, u_disc: 0.26
-l_recon_loss: 9.91, l_cont: 4.93, l_disc: 0.01, class: 0.00
-
-Epoch: 257 Average loss: 63.12 Test Accuracy: 0.9765
-u_recon_loss: 43.35, u_cont: 4.06, u_disc: 0.26
-l_recon_loss: 9.93, l_cont: 5.50, l_disc: 0.01, class: 0.00
-
-Epoch: 258 Average loss: 61.41 Test Accuracy: 0.9764
-u_recon_loss: 43.26, u_cont: 3.32, u_disc: 0.26
-l_recon_loss: 9.90, l_cont: 4.65, l_disc: 0.01, class: 0.00
-
-Epoch: 259 Average loss: 63.42 Test Accuracy: 0.9773
-u_recon_loss: 43.16, u_cont: 4.36, u_disc: 0.27
-l_recon_loss: 9.79, l_cont: 5.82, l_disc: 0.01, class: 0.00
-
-Epoch: 260 Average loss: 61.44 Test Accuracy: 0.9765
-u_recon_loss: 43.11, u_cont: 3.37, u_disc: 0.26
-l_recon_loss: 9.78, l_cont: 4.92, l_disc: 0.01, class: 0.00
-
-Epoch: 261 Average loss: 61.46 Test Accuracy: 0.9767
-u_recon_loss: 43.17, u_cont: 3.50, u_disc: 0.26
-l_recon_loss: 9.77, l_cont: 4.76, l_disc: 0.01, class: 0.00
-
-Epoch: 262 Average loss: 62.29 Test Accuracy: 0.976
-u_recon_loss: 43.19, u_cont: 4.00, u_disc: 0.26
-l_recon_loss: 9.94, l_cont: 4.90, l_disc: 0.01, class: 0.00
-
-Epoch: 263 Average loss: 63.17 Test Accuracy: 0.9765
-u_recon_loss: 43.17, u_cont: 4.41, u_disc: 0.27
-l_recon_loss: 9.94, l_cont: 5.37, l_disc: 0.01, class: 0.00
-
-Epoch: 264 Average loss: 60.39 Test Accuracy: 0.9764
-u_recon_loss: 43.04, u_cont: 2.84, u_disc: 0.27
-l_recon_loss: 9.78, l_cont: 4.46, l_disc: 0.01, class: 0.00
-
-Epoch: 265 Average loss: 62.61 Test Accuracy: 0.9759
-u_recon_loss: 43.16, u_cont: 3.96, u_disc: 0.26
-l_recon_loss: 9.98, l_cont: 5.25, l_disc: 0.01, class: 0.00
-
-Epoch: 266 Average loss: 61.03 Test Accuracy: 0.975
-u_recon_loss: 43.00, u_cont: 3.26, u_disc: 0.26
-l_recon_loss: 9.65, l_cont: 4.85, l_disc: 0.01, class: 0.00
-
-Epoch: 267 Average loss: 59.69 Test Accuracy: 0.9757
-u_recon_loss: 42.96, u_cont: 2.69, u_disc: 0.27
-l_recon_loss: 9.59, l_cont: 4.17, l_disc: 0.01, class: 0.00
-
-Epoch: 268 Average loss: 61.58 Test Accuracy: 0.9764
-u_recon_loss: 42.95, u_cont: 3.50, u_disc: 0.27
-l_recon_loss: 9.73, l_cont: 5.13, l_disc: 0.01, class: 0.00
-
-Epoch: 269 Average loss: 62.61 Test Accuracy: 0.9768
-u_recon_loss: 43.12, u_cont: 4.22, u_disc: 0.26
-l_recon_loss: 9.79, l_cont: 5.22, l_disc: 0.01, class: 0.00
-
-Epoch: 270 Average loss: 61.80 Test Accuracy: 0.9767
-u_recon_loss: 43.06, u_cont: 3.72, u_disc: 0.27
-l_recon_loss: 9.76, l_cont: 4.98, l_disc: 0.01, class: 0.00
-
-Epoch: 271 Average loss: 60.13 Test Accuracy: 0.9767
-u_recon_loss: 42.97, u_cont: 3.26, u_disc: 0.25
-l_recon_loss: 9.65, l_cont: 3.99, l_disc: 0.01, class: 0.00
-
-Epoch: 272 Average loss: 59.46 Test Accuracy: 0.9769
-u_recon_loss: 42.94, u_cont: 2.64, u_disc: 0.25
-l_recon_loss: 9.59, l_cont: 4.03, l_disc: 0.01, class: 0.00
-
-Epoch: 273 Average loss: 61.09 Test Accuracy: 0.9769
-u_recon_loss: 42.94, u_cont: 3.38, u_disc: 0.25
-l_recon_loss: 9.68, l_cont: 4.82, l_disc: 0.01, class: 0.00
-
-Epoch: 274 Average loss: 60.55 Test Accuracy: 0.9758
-u_recon_loss: 42.88, u_cont: 3.31, u_disc: 0.26
-l_recon_loss: 9.57, l_cont: 4.51, l_disc: 0.01, class: 0.00
-
-Epoch: 275 Average loss: 60.79 Test Accuracy: 0.9769
-u_recon_loss: 42.92, u_cont: 3.17, u_disc: 0.26
-l_recon_loss: 9.70, l_cont: 4.73, l_disc: 0.01, class: 0.00
-
-Epoch: 276 Average loss: 61.67 Test Accuracy: 0.976
-u_recon_loss: 42.91, u_cont: 3.67, u_disc: 0.25
-l_recon_loss: 9.62, l_cont: 5.20, l_disc: 0.01, class: 0.00
-
-Epoch: 277 Average loss: 59.43 Test Accuracy: 0.9771
-u_recon_loss: 42.74, u_cont: 2.75, u_disc: 0.25
-l_recon_loss: 9.53, l_cont: 4.16, l_disc: 0.01, class: 0.00
-
-Epoch: 278 Average loss: 61.06 Test Accuracy: 0.9775
-u_recon_loss: 42.85, u_cont: 3.76, u_disc: 0.25
-l_recon_loss: 9.57, l_cont: 4.61, l_disc: 0.01, class: 0.00
-
-Epoch: 279 Average loss: 60.37 Test Accuracy: 0.9765
-u_recon_loss: 42.79, u_cont: 3.22, u_disc: 0.25
-l_recon_loss: 9.58, l_cont: 4.51, l_disc: 0.01, class: 0.00
-
-Epoch: 280 Average loss: 60.38 Test Accuracy: 0.977
-u_recon_loss: 42.77, u_cont: 3.22, u_disc: 0.24
-l_recon_loss: 9.64, l_cont: 4.50, l_disc: 0.01, class: 0.00
-
-Epoch: 281 Average loss: 60.34 Test Accuracy: 0.9771
-u_recon_loss: 42.71, u_cont: 3.08, u_disc: 0.25
-l_recon_loss: 9.50, l_cont: 4.79, l_disc: 0.01, class: 0.00
-
-Epoch: 282 Average loss: 60.92 Test Accuracy: 0.9771
-u_recon_loss: 42.73, u_cont: 3.57, u_disc: 0.25
-l_recon_loss: 9.54, l_cont: 4.82, l_disc: 0.01, class: 0.00
-
-Epoch: 283 Average loss: 61.17 Test Accuracy: 0.9759
-u_recon_loss: 42.57, u_cont: 3.58, u_disc: 0.25
-l_recon_loss: 9.55, l_cont: 5.22, l_disc: 0.01, class: 0.00
-
-Epoch: 284 Average loss: 59.53 Test Accuracy: 0.9769
-u_recon_loss: 42.67, u_cont: 2.77, u_disc: 0.24
-l_recon_loss: 9.59, l_cont: 4.26, l_disc: 0.01, class: 0.00
-
-Epoch: 285 Average loss: 59.75 Test Accuracy: 0.978
-u_recon_loss: 42.67, u_cont: 2.85, u_disc: 0.24
-l_recon_loss: 9.54, l_cont: 4.43, l_disc: 0.01, class: 0.00
-
-Epoch: 286 Average loss: 59.49 Test Accuracy: 0.9767
-u_recon_loss: 42.65, u_cont: 2.74, u_disc: 0.24
-l_recon_loss: 9.61, l_cont: 4.24, l_disc: 0.01, class: 0.00
-
-Epoch: 287 Average loss: 60.47 Test Accuracy: 0.9762
-u_recon_loss: 42.61, u_cont: 3.22, u_disc: 0.25
-l_recon_loss: 9.57, l_cont: 4.82, l_disc: 0.01, class: 0.00
-
-Epoch: 288 Average loss: 60.77 Test Accuracy: 0.9771
-u_recon_loss: 42.60, u_cont: 3.40, u_disc: 0.25
-l_recon_loss: 9.45, l_cont: 5.07, l_disc: 0.01, class: 0.00
-
-Epoch: 289 Average loss: 59.13 Test Accuracy: 0.9762
-u_recon_loss: 42.52, u_cont: 2.69, u_disc: 0.24
-l_recon_loss: 9.42, l_cont: 4.24, l_disc: 0.01, class: 0.00
-
-Epoch: 290 Average loss: 60.54 Test Accuracy: 0.9776
-u_recon_loss: 42.56, u_cont: 3.49, u_disc: 0.25
-l_recon_loss: 9.39, l_cont: 4.84, l_disc: 0.01, class: 0.00
-
-Epoch: 291 Average loss: 61.27 Test Accuracy: 0.9769
-u_recon_loss: 42.68, u_cont: 3.71, u_disc: 0.25
-l_recon_loss: 9.63, l_cont: 5.00, l_disc: 0.01, class: 0.00
-
-Epoch: 292 Average loss: 60.47 Test Accuracy: 0.9775
-u_recon_loss: 42.55, u_cont: 3.47, u_disc: 0.24
-l_recon_loss: 9.51, l_cont: 4.69, l_disc: 0.01, class: 0.00
-
-Epoch: 293 Average loss: 60.97 Test Accuracy: 0.9767
-u_recon_loss: 42.63, u_cont: 3.64, u_disc: 0.24
-l_recon_loss: 9.60, l_cont: 4.85, l_disc: 0.01, class: 0.00
-
-Epoch: 294 Average loss: 59.87 Test Accuracy: 0.9763
-u_recon_loss: 42.45, u_cont: 3.28, u_disc: 0.24
-l_recon_loss: 9.32, l_cont: 4.57, l_disc: 0.01, class: 0.00
-
-Epoch: 295 Average loss: 59.89 Test Accuracy: 0.9765
-u_recon_loss: 42.46, u_cont: 3.28, u_disc: 0.24
-l_recon_loss: 9.44, l_cont: 4.46, l_disc: 0.01, class: 0.00
-
-Epoch: 296 Average loss: 59.60 Test Accuracy: 0.9772
-u_recon_loss: 42.42, u_cont: 2.99, u_disc: 0.24
-l_recon_loss: 9.39, l_cont: 4.55, l_disc: 0.01, class: 0.00
-
-Epoch: 297 Average loss: 57.79 Test Accuracy: 0.9767
-u_recon_loss: 42.36, u_cont: 2.18, u_disc: 0.23
-l_recon_loss: 9.27, l_cont: 3.75, l_disc: 0.01, class: 0.00
-
-Epoch: 298 Average loss: 59.68 Test Accuracy: 0.9769
-u_recon_loss: 42.46, u_cont: 3.03, u_disc: 0.24
-l_recon_loss: 9.41, l_cont: 4.54, l_disc: 0.01, class: 0.00
-
-Epoch: 299 Average loss: 61.01 Test Accuracy: 0.9765
-u_recon_loss: 42.51, u_cont: 3.78, u_disc: 0.23
-l_recon_loss: 9.38, l_cont: 5.11, l_disc: 0.01, class: 0.00
+Epoch: 0 Average loss: 522.72 Test Accuracy: 0.6319
+u_recon_loss: 257.32, u_cont: 1.19, u_disc: 0.81
+l_recon_loss: 245.90, l_cont: 1.69, l_disc: 1.22, class: 14.58
+
+Epoch: 1 Average loss: 388.82 Test Accuracy: 0.7885
+u_recon_loss: 193.56, u_cont: 2.96, u_disc: 2.72
+l_recon_loss: 172.80, l_cont: 4.03, l_disc: 3.53, class: 9.23
+
+Epoch: 2 Average loss: 352.32 Test Accuracy: 0.8348
+u_recon_loss: 173.08, u_cont: 3.47, u_disc: 2.66
+l_recon_loss: 157.36, l_cont: 4.55, l_disc: 4.12, class: 7.10
+
+Epoch: 3 Average loss: 325.29 Test Accuracy: 0.8517
+u_recon_loss: 157.73, u_cont: 3.72, u_disc: 2.31
+l_recon_loss: 147.04, l_cont: 4.95, l_disc: 4.07, class: 5.47
+
+Epoch: 4 Average loss: 303.00 Test Accuracy: 0.8683
+u_recon_loss: 144.97, u_cont: 3.26, u_disc: 2.09
+l_recon_loss: 139.95, l_cont: 4.68, l_disc: 3.91, class: 4.13
+
+Epoch: 5 Average loss: 285.55 Test Accuracy: 0.8849
+u_recon_loss: 134.58, u_cont: 4.15, u_disc: 1.58
+l_recon_loss: 133.36, l_cont: 5.16, l_disc: 3.51, class: 3.21
+
+Epoch: 6 Average loss: 272.06 Test Accuracy: 0.9114
+u_recon_loss: 127.57, u_cont: 3.67, u_disc: 1.48
+l_recon_loss: 128.50, l_cont: 5.40, l_disc: 2.94, class: 2.49
+
+Epoch: 7 Average loss: 265.52 Test Accuracy: 0.9274
+u_recon_loss: 123.79, u_cont: 4.08, u_disc: 3.49
+l_recon_loss: 123.64, l_cont: 5.75, l_disc: 2.73, class: 2.04
+
+Epoch: 8 Average loss: 255.60 Test Accuracy: 0.9323
+u_recon_loss: 120.71, u_cont: 4.07, u_disc: 2.69
+l_recon_loss: 119.37, l_cont: 5.29, l_disc: 1.72, class: 1.76
+
+Epoch: 9 Average loss: 249.23 Test Accuracy: 0.9328
+u_recon_loss: 118.40, u_cont: 3.97, u_disc: 2.27
+l_recon_loss: 116.56, l_cont: 5.29, l_disc: 1.41, class: 1.33
+
+Epoch: 10 Average loss: 243.02 Test Accuracy: 0.938
+u_recon_loss: 116.24, u_cont: 4.09, u_disc: 2.04
+l_recon_loss: 112.96, l_cont: 5.57, l_disc: 1.05, class: 1.06
+
+Epoch: 11 Average loss: 237.47 Test Accuracy: 0.9387
+u_recon_loss: 114.54, u_cont: 3.85, u_disc: 1.85
+l_recon_loss: 110.39, l_cont: 5.00, l_disc: 0.88, class: 0.96
+
+Epoch: 12 Average loss: 233.32 Test Accuracy: 0.9414
+u_recon_loss: 113.17, u_cont: 3.72, u_disc: 1.69
+l_recon_loss: 108.16, l_cont: 5.08, l_disc: 0.71, class: 0.77
+
+Epoch: 13 Average loss: 230.58 Test Accuracy: 0.9436
+u_recon_loss: 112.36, u_cont: 3.71, u_disc: 1.58
+l_recon_loss: 106.87, l_cont: 4.66, l_disc: 0.71, class: 0.68
+
+Epoch: 14 Average loss: 228.91 Test Accuracy: 0.9458
+u_recon_loss: 111.51, u_cont: 4.40, u_disc: 1.47
+l_recon_loss: 104.94, l_cont: 5.33, l_disc: 0.63, class: 0.63
+
+Epoch: 15 Average loss: 225.01 Test Accuracy: 0.9521
+u_recon_loss: 110.75, u_cont: 3.82, u_disc: 1.42
+l_recon_loss: 103.02, l_cont: 4.91, l_disc: 0.58, class: 0.53
+
+Epoch: 16 Average loss: 224.28 Test Accuracy: 0.9485
+u_recon_loss: 110.13, u_cont: 4.50, u_disc: 1.34
+l_recon_loss: 102.01, l_cont: 5.37, l_disc: 0.48, class: 0.45
+
+Epoch: 17 Average loss: 223.31 Test Accuracy: 0.9448
+u_recon_loss: 109.95, u_cont: 4.95, u_disc: 1.24
+l_recon_loss: 100.84, l_cont: 5.56, l_disc: 0.43, class: 0.34
+
+Epoch: 18 Average loss: 219.56 Test Accuracy: 0.9481
+u_recon_loss: 109.15, u_cont: 4.37, u_disc: 1.20
+l_recon_loss: 99.09, l_cont: 5.12, l_disc: 0.33, class: 0.30
+
+Epoch: 19 Average loss: 221.09 Test Accuracy: 0.9521
+u_recon_loss: 109.08, u_cont: 5.57, u_disc: 1.14
+l_recon_loss: 97.89, l_cont: 6.80, l_disc: 0.32, class: 0.30
+
+Epoch: 20 Average loss: 219.70 Test Accuracy: 0.954
+u_recon_loss: 108.79, u_cont: 5.45, u_disc: 1.11
+l_recon_loss: 97.25, l_cont: 6.56, l_disc: 0.26, class: 0.27
+
+Epoch: 21 Average loss: 220.64 Test Accuracy: 0.95
+u_recon_loss: 108.71, u_cont: 5.95, u_disc: 1.08
+l_recon_loss: 97.49, l_cont: 6.88, l_disc: 0.29, class: 0.24
+
+Epoch: 22 Average loss: 217.48 Test Accuracy: 0.9518
+u_recon_loss: 108.37, u_cont: 5.04, u_disc: 1.05
+l_recon_loss: 95.99, l_cont: 6.56, l_disc: 0.29, class: 0.19
+
+Epoch: 23 Average loss: 217.95 Test Accuracy: 0.9516
+u_recon_loss: 108.44, u_cont: 6.06, u_disc: 1.02
+l_recon_loss: 94.96, l_cont: 7.04, l_disc: 0.25, class: 0.19
+
+Epoch: 24 Average loss: 216.92 Test Accuracy: 0.9514
+u_recon_loss: 108.30, u_cont: 5.90, u_disc: 1.00
+l_recon_loss: 94.30, l_cont: 7.06, l_disc: 0.23, class: 0.15
+
+Epoch: 25 Average loss: 215.96 Test Accuracy: 0.9491
+u_recon_loss: 108.29, u_cont: 5.61, u_disc: 0.98
+l_recon_loss: 93.77, l_cont: 7.00, l_disc: 0.21, class: 0.11
+
+Epoch: 26 Average loss: 213.32 Test Accuracy: 0.9498
+u_recon_loss: 107.87, u_cont: 5.29, u_disc: 0.96
+l_recon_loss: 92.48, l_cont: 6.48, l_disc: 0.17, class: 0.08
+
+Epoch: 27 Average loss: 215.12 Test Accuracy: 0.9495
+u_recon_loss: 108.05, u_cont: 6.17, u_disc: 0.93
+l_recon_loss: 91.95, l_cont: 7.73, l_disc: 0.21, class: 0.08
+
+Epoch: 28 Average loss: 212.29 Test Accuracy: 0.9502
+u_recon_loss: 107.78, u_cont: 5.49, u_disc: 0.89
+l_recon_loss: 90.91, l_cont: 6.99, l_disc: 0.15, class: 0.08
+
+Epoch: 29 Average loss: 214.50 Test Accuracy: 0.9486
+u_recon_loss: 108.02, u_cont: 5.92, u_disc: 0.89
+l_recon_loss: 91.86, l_cont: 7.59, l_disc: 0.14, class: 0.08
+
+Epoch: 30 Average loss: 213.51 Test Accuracy: 0.9508
+u_recon_loss: 108.07, u_cont: 6.26, u_disc: 0.89
+l_recon_loss: 90.78, l_cont: 7.33, l_disc: 0.14, class: 0.04
+
+Epoch: 31 Average loss: 213.22 Test Accuracy: 0.9522
+u_recon_loss: 107.91, u_cont: 6.41, u_disc: 0.89
+l_recon_loss: 90.08, l_cont: 7.77, l_disc: 0.12, class: 0.04
+
+Epoch: 32 Average loss: 214.57 Test Accuracy: 0.9508
+u_recon_loss: 107.78, u_cont: 7.28, u_disc: 0.86
+l_recon_loss: 89.60, l_cont: 8.92, l_disc: 0.09, class: 0.05
+
+Epoch: 33 Average loss: 211.52 Test Accuracy: 0.9502
+u_recon_loss: 107.68, u_cont: 6.42, u_disc: 0.86
+l_recon_loss: 88.82, l_cont: 7.62, l_disc: 0.11, class: 0.02
+
+Epoch: 34 Average loss: 213.53 Test Accuracy: 0.951
+u_recon_loss: 107.84, u_cont: 7.19, u_disc: 0.83
+l_recon_loss: 88.41, l_cont: 9.13, l_disc: 0.10, class: 0.03
+
+Epoch: 35 Average loss: 210.29 Test Accuracy: 0.9507
+u_recon_loss: 107.70, u_cont: 6.10, u_disc: 0.83
+l_recon_loss: 87.59, l_cont: 7.97, l_disc: 0.10, class: 0.01
+
+Epoch: 36 Average loss: 209.41 Test Accuracy: 0.952
+u_recon_loss: 107.77, u_cont: 6.13, u_disc: 0.81
+l_recon_loss: 87.11, l_cont: 7.50, l_disc: 0.08, class: 0.01
+
+Epoch: 37 Average loss: 210.97 Test Accuracy: 0.9536
+u_recon_loss: 107.58, u_cont: 6.87, u_disc: 0.80
+l_recon_loss: 87.38, l_cont: 8.26, l_disc: 0.07, class: 0.01
+
+Epoch: 38 Average loss: 211.32 Test Accuracy: 0.9512
+u_recon_loss: 108.01, u_cont: 6.88, u_disc: 0.79
+l_recon_loss: 87.21, l_cont: 8.35, l_disc: 0.07, class: 0.01
+
+Epoch: 39 Average loss: 212.31 Test Accuracy: 0.9521
+u_recon_loss: 107.94, u_cont: 7.72, u_disc: 0.79
+l_recon_loss: 86.30, l_cont: 9.49, l_disc: 0.06, class: 0.00
+
+Epoch: 40 Average loss: 211.90 Test Accuracy: 0.9509
+u_recon_loss: 107.78, u_cont: 7.49, u_disc: 0.79
+l_recon_loss: 86.23, l_cont: 9.56, l_disc: 0.05, class: 0.00
+
+Epoch: 41 Average loss: 206.82 Test Accuracy: 0.9493
+u_recon_loss: 107.51, u_cont: 5.78, u_disc: 0.76
+l_recon_loss: 85.27, l_cont: 7.44, l_disc: 0.06, class: 0.00
+
+Epoch: 42 Average loss: 212.91 Test Accuracy: 0.951
+u_recon_loss: 107.75, u_cont: 8.63, u_disc: 0.77
+l_recon_loss: 85.40, l_cont: 10.28, l_disc: 0.07, class: 0.01
+
+Epoch: 43 Average loss: 206.95 Test Accuracy: 0.9498
+u_recon_loss: 107.63, u_cont: 6.57, u_disc: 0.76
+l_recon_loss: 84.04, l_cont: 7.91, l_disc: 0.05, class: 0.00
+
+Epoch: 44 Average loss: 207.42 Test Accuracy: 0.9485
+u_recon_loss: 107.74, u_cont: 6.64, u_disc: 0.75
+l_recon_loss: 84.15, l_cont: 8.10, l_disc: 0.05, class: 0.00
+
+Epoch: 45 Average loss: 209.26 Test Accuracy: 0.9508
+u_recon_loss: 107.95, u_cont: 6.81, u_disc: 0.73
+l_recon_loss: 85.12, l_cont: 8.59, l_disc: 0.05, class: 0.00
+
+Epoch: 46 Average loss: 208.76 Test Accuracy: 0.9507
+u_recon_loss: 107.77, u_cont: 7.42, u_disc: 0.74
+l_recon_loss: 83.47, l_cont: 9.30, l_disc: 0.05, class: 0.00
+
+Epoch: 47 Average loss: 205.74 Test Accuracy: 0.953
+u_recon_loss: 107.71, u_cont: 6.35, u_disc: 0.73
+l_recon_loss: 82.76, l_cont: 8.13, l_disc: 0.05, class: 0.00
+
+Epoch: 48 Average loss: 208.92 Test Accuracy: 0.9502
+u_recon_loss: 107.87, u_cont: 7.62, u_disc: 0.73
+l_recon_loss: 83.51, l_cont: 9.14, l_disc: 0.04, class: 0.00
+
+Epoch: 49 Average loss: 207.63 Test Accuracy: 0.9513
+u_recon_loss: 107.80, u_cont: 7.34, u_disc: 0.74
+l_recon_loss: 82.42, l_cont: 9.26, l_disc: 0.06, class: 0.00
+
+Epoch: 50 Average loss: 210.59 Test Accuracy: 0.9513
+u_recon_loss: 107.94, u_cont: 9.00, u_disc: 0.74
+l_recon_loss: 82.20, l_cont: 10.65, l_disc: 0.05, class: 0.00
+
+Epoch: 51 Average loss: 208.02 Test Accuracy: 0.9478
+u_recon_loss: 107.81, u_cont: 8.28, u_disc: 0.73
+l_recon_loss: 81.36, l_cont: 9.78, l_disc: 0.06, class: 0.00
+
+Epoch: 52 Average loss: 206.59 Test Accuracy: 0.949
+u_recon_loss: 107.65, u_cont: 7.75, u_disc: 0.73
+l_recon_loss: 81.02, l_cont: 9.39, l_disc: 0.04, class: 0.00
+
+Epoch: 53 Average loss: 207.28 Test Accuracy: 0.9488
+u_recon_loss: 107.82, u_cont: 7.71, u_disc: 0.71
+l_recon_loss: 81.91, l_cont: 9.09, l_disc: 0.04, class: 0.00
+
+Epoch: 54 Average loss: 206.57 Test Accuracy: 0.9521
+u_recon_loss: 107.85, u_cont: 7.56, u_disc: 0.72
+l_recon_loss: 81.02, l_cont: 9.37, l_disc: 0.05, class: 0.00
+
+Epoch: 55 Average loss: 207.61 Test Accuracy: 0.9508
+u_recon_loss: 108.17, u_cont: 8.09, u_disc: 0.71
+l_recon_loss: 80.87, l_cont: 9.73, l_disc: 0.04, class: 0.00
+
+Epoch: 56 Average loss: 208.04 Test Accuracy: 0.9526
+u_recon_loss: 107.77, u_cont: 8.89, u_disc: 0.73
+l_recon_loss: 80.39, l_cont: 10.22, l_disc: 0.05, class: 0.00
+
+Epoch: 57 Average loss: 205.18 Test Accuracy: 0.95
+u_recon_loss: 107.73, u_cont: 7.69, u_disc: 0.76
+l_recon_loss: 79.64, l_cont: 9.30, l_disc: 0.05, class: 0.00
+
+Epoch: 58 Average loss: 204.52 Test Accuracy: 0.949
+u_recon_loss: 107.62, u_cont: 7.50, u_disc: 0.74
+l_recon_loss: 79.33, l_cont: 9.30, l_disc: 0.04, class: 0.00
+
+Epoch: 59 Average loss: 203.42 Test Accuracy: 0.951
+u_recon_loss: 107.82, u_cont: 7.01, u_disc: 0.76
+l_recon_loss: 78.87, l_cont: 8.88, l_disc: 0.06, class: 0.00
+
+Epoch: 60 Average loss: 207.16 Test Accuracy: 0.9503
+u_recon_loss: 107.74, u_cont: 9.29, u_disc: 0.75
+l_recon_loss: 78.91, l_cont: 10.43, l_disc: 0.04, class: 0.00
+
+Epoch: 61 Average loss: 204.04 Test Accuracy: 0.9477
+u_recon_loss: 107.80, u_cont: 7.37, u_disc: 0.76
+l_recon_loss: 79.29, l_cont: 8.76, l_disc: 0.05, class: 0.00
+
+Epoch: 62 Average loss: 204.34 Test Accuracy: 0.9495
+u_recon_loss: 107.98, u_cont: 7.60, u_disc: 0.75
+l_recon_loss: 78.91, l_cont: 9.05, l_disc: 0.05, class: 0.00
+
+Epoch: 63 Average loss: 203.49 Test Accuracy: 0.9522
+u_recon_loss: 107.60, u_cont: 7.82, u_disc: 0.75
+l_recon_loss: 77.64, l_cont: 9.63, l_disc: 0.05, class: 0.00
+
+Epoch: 64 Average loss: 200.11 Test Accuracy: 0.9506
+u_recon_loss: 107.55, u_cont: 6.27, u_disc: 0.76
+l_recon_loss: 77.59, l_cont: 7.88, l_disc: 0.05, class: 0.00
+
+Epoch: 65 Average loss: 201.17 Test Accuracy: 0.9486
+u_recon_loss: 107.95, u_cont: 6.25, u_disc: 0.79
+l_recon_loss: 77.58, l_cont: 8.54, l_disc: 0.05, class: 0.00
+
+Epoch: 66 Average loss: 199.64 Test Accuracy: 0.9501
+u_recon_loss: 107.59, u_cont: 6.48, u_disc: 0.75
+l_recon_loss: 76.62, l_cont: 8.13, l_disc: 0.05, class: 0.00
+
+Epoch: 67 Average loss: 200.59 Test Accuracy: 0.9522
+u_recon_loss: 107.90, u_cont: 6.85, u_disc: 0.77
+l_recon_loss: 76.54, l_cont: 8.46, l_disc: 0.06, class: 0.00
+
+Epoch: 68 Average loss: 200.70 Test Accuracy: 0.9489
+u_recon_loss: 107.65, u_cont: 7.09, u_disc: 0.79
+l_recon_loss: 76.25, l_cont: 8.87, l_disc: 0.05, class: 0.00
+
+Epoch: 69 Average loss: 200.16 Test Accuracy: 0.9498
+u_recon_loss: 107.62, u_cont: 6.60, u_disc: 0.79
+l_recon_loss: 76.79, l_cont: 8.30, l_disc: 0.05, class: 0.00
+
+Epoch: 70 Average loss: 198.28 Test Accuracy: 0.9509
+u_recon_loss: 107.67, u_cont: 6.15, u_disc: 0.79
+l_recon_loss: 75.93, l_cont: 7.68, l_disc: 0.06, class: 0.00
+
+Epoch: 71 Average loss: 200.78 Test Accuracy: 0.9468
+u_recon_loss: 107.87, u_cont: 7.05, u_disc: 0.79
+l_recon_loss: 76.30, l_cont: 8.71, l_disc: 0.05, class: 0.00
+
+Epoch: 72 Average loss: 197.71 Test Accuracy: 0.9518
+u_recon_loss: 107.60, u_cont: 6.11, u_disc: 0.78
+l_recon_loss: 75.28, l_cont: 7.89, l_disc: 0.05, class: 0.00
+
+Epoch: 73 Average loss: 198.53 Test Accuracy: 0.949
+u_recon_loss: 107.91, u_cont: 6.31, u_disc: 0.80
+l_recon_loss: 75.46, l_cont: 7.99, l_disc: 0.06, class: 0.00
+
+Epoch: 74 Average loss: 199.88 Test Accuracy: 0.951
+u_recon_loss: 107.66, u_cont: 7.56, u_disc: 0.79
+l_recon_loss: 74.74, l_cont: 9.08, l_disc: 0.05, class: 0.00
+
+Epoch: 75 Average loss: 196.11 Test Accuracy: 0.9519
+u_recon_loss: 107.67, u_cont: 5.95, u_disc: 0.81
+l_recon_loss: 74.00, l_cont: 7.62, l_disc: 0.05, class: 0.00
+
+Epoch: 76 Average loss: 197.90 Test Accuracy: 0.9506
+u_recon_loss: 107.81, u_cont: 6.47, u_disc: 0.82
+l_recon_loss: 74.72, l_cont: 8.04, l_disc: 0.04, class: 0.00
+
+Epoch: 77 Average loss: 198.42 Test Accuracy: 0.9501
+u_recon_loss: 107.57, u_cont: 6.84, u_disc: 0.82
+l_recon_loss: 74.55, l_cont: 8.61, l_disc: 0.04, class: 0.00
+
+Epoch: 78 Average loss: 199.04 Test Accuracy: 0.9486
+u_recon_loss: 107.70, u_cont: 7.66, u_disc: 0.82
+l_recon_loss: 73.76, l_cont: 9.04, l_disc: 0.05, class: 0.00
+
+Epoch: 79 Average loss: 196.32 Test Accuracy: 0.9485
+u_recon_loss: 107.59, u_cont: 6.15, u_disc: 0.80
+l_recon_loss: 73.54, l_cont: 8.19, l_disc: 0.04, class: 0.00
+
+Epoch: 80 Average loss: 195.47 Test Accuracy: 0.9494
+u_recon_loss: 107.52, u_cont: 6.31, u_disc: 0.82
+l_recon_loss: 73.24, l_cont: 7.53, l_disc: 0.06, class: 0.00
+
+Epoch: 81 Average loss: 195.07 Test Accuracy: 0.9495
+u_recon_loss: 107.69, u_cont: 5.94, u_disc: 0.82
+l_recon_loss: 72.84, l_cont: 7.74, l_disc: 0.04, class: 0.00
+
+Epoch: 82 Average loss: 193.67 Test Accuracy: 0.9514
+u_recon_loss: 107.45, u_cont: 5.62, u_disc: 0.81
+l_recon_loss: 72.36, l_cont: 7.38, l_disc: 0.04, class: 0.00
+
+Epoch: 83 Average loss: 193.95 Test Accuracy: 0.9468
+u_recon_loss: 107.72, u_cont: 5.81, u_disc: 0.81
+l_recon_loss: 72.06, l_cont: 7.51, l_disc: 0.04, class: 0.00
+
+Epoch: 84 Average loss: 195.23 Test Accuracy: 0.9483
+u_recon_loss: 107.59, u_cont: 6.54, u_disc: 0.83
+l_recon_loss: 72.07, l_cont: 8.14, l_disc: 0.05, class: 0.00
+
+Epoch: 85 Average loss: 193.88 Test Accuracy: 0.9519
+u_recon_loss: 107.59, u_cont: 5.91, u_disc: 0.81
+l_recon_loss: 72.19, l_cont: 7.33, l_disc: 0.05, class: 0.00
+
+Epoch: 86 Average loss: 194.35 Test Accuracy: 0.9499
+u_recon_loss: 107.48, u_cont: 6.09, u_disc: 0.82
+l_recon_loss: 72.15, l_cont: 7.76, l_disc: 0.05, class: 0.00
+
+Epoch: 87 Average loss: 193.64 Test Accuracy: 0.9505
+u_recon_loss: 107.59, u_cont: 5.79, u_disc: 0.84
+l_recon_loss: 71.97, l_cont: 7.39, l_disc: 0.05, class: 0.00
+
+Epoch: 88 Average loss: 192.90 Test Accuracy: 0.9508
+u_recon_loss: 107.41, u_cont: 5.95, u_disc: 0.83
+l_recon_loss: 70.81, l_cont: 7.85, l_disc: 0.05, class: 0.00
+
+Epoch: 89 Average loss: 193.05 Test Accuracy: 0.9523
+u_recon_loss: 107.49, u_cont: 6.24, u_disc: 0.80
+l_recon_loss: 70.56, l_cont: 7.91, l_disc: 0.05, class: 0.00
+
+Epoch: 90 Average loss: 193.73 Test Accuracy: 0.9521
+u_recon_loss: 107.97, u_cont: 6.31, u_disc: 0.81
+l_recon_loss: 71.03, l_cont: 7.54, l_disc: 0.05, class: 0.00
+
+Epoch: 91 Average loss: 194.79 Test Accuracy: 0.951
+u_recon_loss: 107.96, u_cont: 6.19, u_disc: 0.86
+l_recon_loss: 71.34, l_cont: 8.39, l_disc: 0.05, class: 0.00
+
+Epoch: 92 Average loss: 191.21 Test Accuracy: 0.9513
+u_recon_loss: 107.25, u_cont: 5.83, u_disc: 0.85
+l_recon_loss: 69.48, l_cont: 7.75, l_disc: 0.04, class: 0.00
+
+Epoch: 93 Average loss: 191.24 Test Accuracy: 0.9521
+u_recon_loss: 107.40, u_cont: 5.69, u_disc: 0.83
+l_recon_loss: 70.19, l_cont: 7.07, l_disc: 0.05, class: 0.00
+
+Epoch: 94 Average loss: 190.89 Test Accuracy: 0.9501
+u_recon_loss: 107.40, u_cont: 5.78, u_disc: 0.81
+l_recon_loss: 69.50, l_cont: 7.35, l_disc: 0.04, class: 0.00
+
+Epoch: 95 Average loss: 191.18 Test Accuracy: 0.9526
+u_recon_loss: 107.65, u_cont: 5.28, u_disc: 0.86
+l_recon_loss: 70.19, l_cont: 7.13, l_disc: 0.05, class: 0.00
+
+Epoch: 96 Average loss: 192.81 Test Accuracy: 0.9538
+u_recon_loss: 107.64, u_cont: 6.62, u_disc: 0.85
+l_recon_loss: 69.33, l_cont: 8.33, l_disc: 0.04, class: 0.00
+
+Epoch: 97 Average loss: 190.21 Test Accuracy: 0.9506
+u_recon_loss: 107.63, u_cont: 5.48, u_disc: 0.87
+l_recon_loss: 69.09, l_cont: 7.08, l_disc: 0.06, class: 0.00
+
+Epoch: 98 Average loss: 189.94 Test Accuracy: 0.952
+u_recon_loss: 107.63, u_cont: 5.42, u_disc: 0.85
+l_recon_loss: 68.81, l_cont: 7.19, l_disc: 0.04, class: 0.00
+
+Epoch: 99 Average loss: 191.63 Test Accuracy: 0.95
+u_recon_loss: 107.81, u_cont: 6.44, u_disc: 0.87
+l_recon_loss: 68.56, l_cont: 7.90, l_disc: 0.05, class: 0.00
+
+Epoch: 100 Average loss: 186.60 Test Accuracy: 0.9458
+u_recon_loss: 107.30, u_cont: 4.38, u_disc: 0.84
+l_recon_loss: 67.97, l_cont: 6.07, l_disc: 0.05, class: 0.00
+
+Epoch: 101 Average loss: 190.96 Test Accuracy: 0.9494
+u_recon_loss: 107.90, u_cont: 5.13, u_disc: 0.88
+l_recon_loss: 69.78, l_cont: 7.20, l_disc: 0.06, class: 0.00
+
+Epoch: 102 Average loss: 191.14 Test Accuracy: 0.948
+u_recon_loss: 107.80, u_cont: 5.74, u_disc: 0.87
+l_recon_loss: 69.08, l_cont: 7.61, l_disc: 0.04, class: 0.00
+
+Epoch: 103 Average loss: 190.23 Test Accuracy: 0.9481
+u_recon_loss: 107.75, u_cont: 5.79, u_disc: 0.86
+l_recon_loss: 68.54, l_cont: 7.24, l_disc: 0.05, class: 0.00
+
+Epoch: 104 Average loss: 189.62 Test Accuracy: 0.9516
+u_recon_loss: 107.35, u_cont: 6.22, u_disc: 0.87
+l_recon_loss: 67.20, l_cont: 7.94, l_disc: 0.05, class: 0.00
+
+Epoch: 105 Average loss: 189.64 Test Accuracy: 0.9502
+u_recon_loss: 107.86, u_cont: 5.94, u_disc: 0.87
+l_recon_loss: 67.71, l_cont: 7.20, l_disc: 0.05, class: 0.00
+
+Epoch: 106 Average loss: 190.16 Test Accuracy: 0.9533
+u_recon_loss: 107.64, u_cont: 6.29, u_disc: 0.87
+l_recon_loss: 67.28, l_cont: 8.03, l_disc: 0.05, class: 0.00
+
+Epoch: 107 Average loss: 188.09 Test Accuracy: 0.9519
+u_recon_loss: 107.68, u_cont: 5.45, u_disc: 0.86
+l_recon_loss: 66.89, l_cont: 7.16, l_disc: 0.05, class: 0.00
+
+Epoch: 108 Average loss: 187.64 Test Accuracy: 0.9535
+u_recon_loss: 107.69, u_cont: 4.97, u_disc: 0.84
+l_recon_loss: 67.16, l_cont: 6.92, l_disc: 0.05, class: 0.00
+
+Epoch: 109 Average loss: 187.78 Test Accuracy: 0.9495
+u_recon_loss: 107.42, u_cont: 5.05, u_disc: 0.87
+l_recon_loss: 67.52, l_cont: 6.87, l_disc: 0.05, class: 0.00
+
+Epoch: 110 Average loss: 187.43 Test Accuracy: 0.9475
+u_recon_loss: 107.23, u_cont: 5.58, u_disc: 0.89
+l_recon_loss: 66.44, l_cont: 7.24, l_disc: 0.05, class: 0.00
+
+Epoch: 111 Average loss: 187.75 Test Accuracy: 0.9486
+u_recon_loss: 107.46, u_cont: 5.53, u_disc: 0.88
+l_recon_loss: 66.25, l_cont: 7.59, l_disc: 0.04, class: 0.00
+
+Epoch: 112 Average loss: 184.74 Test Accuracy: 0.9522
+u_recon_loss: 107.21, u_cont: 5.12, u_disc: 0.86
+l_recon_loss: 65.19, l_cont: 6.30, l_disc: 0.04, class: 0.00
+
+Epoch: 113 Average loss: 188.99 Test Accuracy: 0.9492
+u_recon_loss: 107.67, u_cont: 6.31, u_disc: 0.89
+l_recon_loss: 66.37, l_cont: 7.70, l_disc: 0.05, class: 0.00
+
+Epoch: 114 Average loss: 187.55 Test Accuracy: 0.9494
+u_recon_loss: 107.61, u_cont: 6.03, u_disc: 0.88
+l_recon_loss: 65.52, l_cont: 7.45, l_disc: 0.05, class: 0.00
+
+Epoch: 115 Average loss: 186.10 Test Accuracy: 0.9474
+u_recon_loss: 107.21, u_cont: 6.37, u_disc: 0.87
+l_recon_loss: 64.40, l_cont: 7.20, l_disc: 0.05, class: 0.00
+
+Epoch: 116 Average loss: 186.86 Test Accuracy: 0.9495
+u_recon_loss: 107.55, u_cont: 5.85, u_disc: 0.89
+l_recon_loss: 65.20, l_cont: 7.30, l_disc: 0.06, class: 0.00
+
+Epoch: 117 Average loss: 187.30 Test Accuracy: 0.9536
+u_recon_loss: 107.37, u_cont: 6.18, u_disc: 0.89
+l_recon_loss: 65.16, l_cont: 7.65, l_disc: 0.05, class: 0.00
+
+Epoch: 118 Average loss: 185.20 Test Accuracy: 0.9507
+u_recon_loss: 107.38, u_cont: 5.57, u_disc: 0.91
+l_recon_loss: 64.75, l_cont: 6.54, l_disc: 0.05, class: 0.00
+
+Epoch: 119 Average loss: 184.94 Test Accuracy: 0.9531
+u_recon_loss: 107.70, u_cont: 4.54, u_disc: 0.90
+l_recon_loss: 65.57, l_cont: 6.19, l_disc: 0.05, class: 0.00
+
+Epoch: 120 Average loss: 184.17 Test Accuracy: 0.9505
+u_recon_loss: 107.31, u_cont: 5.47, u_disc: 0.90
+l_recon_loss: 63.67, l_cont: 6.77, l_disc: 0.05, class: 0.00
+
+Epoch: 121 Average loss: 184.52 Test Accuracy: 0.9518
+u_recon_loss: 107.65, u_cont: 4.91, u_disc: 0.87
+l_recon_loss: 64.37, l_cont: 6.66, l_disc: 0.05, class: 0.00
+
+Epoch: 122 Average loss: 183.63 Test Accuracy: 0.95
+u_recon_loss: 107.55, u_cont: 4.79, u_disc: 0.88
+l_recon_loss: 63.90, l_cont: 6.45, l_disc: 0.05, class: 0.00
+
+Epoch: 123 Average loss: 185.09 Test Accuracy: 0.9471
+u_recon_loss: 107.69, u_cont: 5.65, u_disc: 0.88
+l_recon_loss: 63.89, l_cont: 6.94, l_disc: 0.04, class: 0.00
+
+Epoch: 124 Average loss: 181.61 Test Accuracy: 0.9514
+u_recon_loss: 107.31, u_cont: 4.78, u_disc: 0.89
+l_recon_loss: 62.52, l_cont: 6.05, l_disc: 0.06, class: 0.00
+
+Epoch: 125 Average loss: 184.40 Test Accuracy: 0.9499
+u_recon_loss: 107.58, u_cont: 4.85, u_disc: 0.90
+l_recon_loss: 64.40, l_cont: 6.62, l_disc: 0.05, class: 0.00
+
+Epoch: 126 Average loss: 185.62 Test Accuracy: 0.9504
+u_recon_loss: 107.31, u_cont: 6.08, u_disc: 0.91
+l_recon_loss: 63.37, l_cont: 7.89, l_disc: 0.05, class: 0.00
+
+Epoch: 127 Average loss: 184.17 Test Accuracy: 0.9503
+u_recon_loss: 107.78, u_cont: 4.91, u_disc: 0.93
+l_recon_loss: 64.08, l_cont: 6.40, l_disc: 0.07, class: 0.00
+
+Epoch: 128 Average loss: 180.33 Test Accuracy: 0.9529
+u_recon_loss: 107.38, u_cont: 4.38, u_disc: 0.93
+l_recon_loss: 62.02, l_cont: 5.56, l_disc: 0.06, class: 0.00
+
+Epoch: 129 Average loss: 186.31 Test Accuracy: 0.95
+u_recon_loss: 107.82, u_cont: 6.23, u_disc: 0.93
+l_recon_loss: 63.36, l_cont: 7.91, l_disc: 0.06, class: 0.00
+
+Epoch: 130 Average loss: 183.35 Test Accuracy: 0.9536
+u_recon_loss: 107.66, u_cont: 5.35, u_disc: 0.93
+l_recon_loss: 62.81, l_cont: 6.54, l_disc: 0.06, class: 0.00
+
+Epoch: 131 Average loss: 182.79 Test Accuracy: 0.9526
+u_recon_loss: 107.55, u_cont: 5.01, u_disc: 0.97
+l_recon_loss: 62.80, l_cont: 6.41, l_disc: 0.05, class: 0.00
+
+Epoch: 132 Average loss: 181.18 Test Accuracy: 0.9484
+u_recon_loss: 107.47, u_cont: 4.82, u_disc: 0.93
+l_recon_loss: 61.73, l_cont: 6.18, l_disc: 0.05, class: 0.00
+
+Epoch: 133 Average loss: 182.95 Test Accuracy: 0.953
+u_recon_loss: 107.27, u_cont: 5.35, u_disc: 0.93
+l_recon_loss: 62.50, l_cont: 6.84, l_disc: 0.05, class: 0.00
+
+Epoch: 134 Average loss: 181.72 Test Accuracy: 0.9465
+u_recon_loss: 107.28, u_cont: 5.42, u_disc: 0.96
+l_recon_loss: 61.55, l_cont: 6.46, l_disc: 0.05, class: 0.00
+
+Epoch: 135 Average loss: 179.96 Test Accuracy: 0.9514
+u_recon_loss: 107.39, u_cont: 4.41, u_disc: 0.93
+l_recon_loss: 61.47, l_cont: 5.69, l_disc: 0.05, class: 0.00
+
+Epoch: 136 Average loss: 183.16 Test Accuracy: 0.9475
+u_recon_loss: 107.85, u_cont: 5.58, u_disc: 0.95
+l_recon_loss: 61.73, l_cont: 6.99, l_disc: 0.05, class: 0.00
+
+Epoch: 137 Average loss: 185.27 Test Accuracy: 0.9498
+u_recon_loss: 108.02, u_cont: 5.67, u_disc: 0.97
+l_recon_loss: 63.51, l_cont: 7.05, l_disc: 0.05, class: 0.00
+
+Epoch: 138 Average loss: 183.91 Test Accuracy: 0.9495
+u_recon_loss: 107.51, u_cont: 6.57, u_disc: 0.96
+l_recon_loss: 61.07, l_cont: 7.75, l_disc: 0.05, class: 0.00
+
+Epoch: 139 Average loss: 181.76 Test Accuracy: 0.9495
+u_recon_loss: 107.25, u_cont: 5.68, u_disc: 0.98
+l_recon_loss: 60.85, l_cont: 6.94, l_disc: 0.05, class: 0.00
+
+Epoch: 140 Average loss: 180.52 Test Accuracy: 0.9498
+u_recon_loss: 107.23, u_cont: 5.32, u_disc: 0.98
+l_recon_loss: 60.23, l_cont: 6.70, l_disc: 0.06, class: 0.00
+
+Epoch: 141 Average loss: 179.47 Test Accuracy: 0.9511
+u_recon_loss: 107.18, u_cont: 4.95, u_disc: 0.97
+l_recon_loss: 60.17, l_cont: 6.15, l_disc: 0.06, class: 0.00
+
+Epoch: 142 Average loss: 181.26 Test Accuracy: 0.9511
+u_recon_loss: 107.36, u_cont: 5.77, u_disc: 0.97
+l_recon_loss: 60.10, l_cont: 6.98, l_disc: 0.07, class: 0.00
+
+Epoch: 143 Average loss: 181.51 Test Accuracy: 0.9513
+u_recon_loss: 107.37, u_cont: 5.79, u_disc: 0.98
+l_recon_loss: 60.47, l_cont: 6.85, l_disc: 0.05, class: 0.00
+
+Epoch: 144 Average loss: 179.11 Test Accuracy: 0.9518
+u_recon_loss: 107.36, u_cont: 5.27, u_disc: 0.95
+l_recon_loss: 59.15, l_cont: 6.34, l_disc: 0.04, class: 0.00
+
+Epoch: 145 Average loss: 183.80 Test Accuracy: 0.9525
+u_recon_loss: 107.81, u_cont: 6.47, u_disc: 0.99
+l_recon_loss: 60.71, l_cont: 7.76, l_disc: 0.06, class: 0.00
+
+Epoch: 146 Average loss: 180.57 Test Accuracy: 0.9483
+u_recon_loss: 107.54, u_cont: 5.42, u_disc: 0.99
+l_recon_loss: 60.10, l_cont: 6.46, l_disc: 0.05, class: 0.00
+
+Epoch: 147 Average loss: 180.08 Test Accuracy: 0.9509
+u_recon_loss: 107.24, u_cont: 5.69, u_disc: 1.01
+l_recon_loss: 59.53, l_cont: 6.55, l_disc: 0.06, class: 0.00
+
+Epoch: 148 Average loss: 178.81 Test Accuracy: 0.9487
+u_recon_loss: 107.45, u_cont: 4.74, u_disc: 0.99
+l_recon_loss: 59.44, l_cont: 6.14, l_disc: 0.05, class: 0.00
+
+Epoch: 149 Average loss: 180.31 Test Accuracy: 0.9491
+u_recon_loss: 107.38, u_cont: 5.49, u_disc: 1.00
+l_recon_loss: 59.39, l_cont: 7.00, l_disc: 0.05, class: 0.00
+
+Epoch: 150 Average loss: 180.17 Test Accuracy: 0.9513
+u_recon_loss: 107.29, u_cont: 5.46, u_disc: 1.02
+l_recon_loss: 59.72, l_cont: 6.61, l_disc: 0.06, class: 0.00
+
+Epoch: 151 Average loss: 180.56 Test Accuracy: 0.9508
+u_recon_loss: 107.53, u_cont: 5.75, u_disc: 1.02
+l_recon_loss: 59.04, l_cont: 7.15, l_disc: 0.06, class: 0.00
+
+Epoch: 152 Average loss: 178.87 Test Accuracy: 0.9522
+u_recon_loss: 107.37, u_cont: 5.35, u_disc: 1.04
+l_recon_loss: 58.56, l_cont: 6.49, l_disc: 0.05, class: 0.00
+
+Epoch: 153 Average loss: 177.85 Test Accuracy: 0.9502
+u_recon_loss: 107.29, u_cont: 4.58, u_disc: 1.03
+l_recon_loss: 58.68, l_cont: 6.21, l_disc: 0.06, class: 0.00
+
+Epoch: 154 Average loss: 178.97 Test Accuracy: 0.9512
+u_recon_loss: 107.55, u_cont: 5.22, u_disc: 1.01
+l_recon_loss: 58.68, l_cont: 6.44, l_disc: 0.06, class: 0.00
+
+Epoch: 155 Average loss: 177.02 Test Accuracy: 0.9462
+u_recon_loss: 106.96, u_cont: 5.24, u_disc: 1.03
+l_recon_loss: 57.42, l_cont: 6.31, l_disc: 0.06, class: 0.00
+
+Epoch: 156 Average loss: 178.14 Test Accuracy: 0.9514
+u_recon_loss: 107.36, u_cont: 5.05, u_disc: 1.03
+l_recon_loss: 58.17, l_cont: 6.47, l_disc: 0.05, class: 0.00
+
+Epoch: 157 Average loss: 178.28 Test Accuracy: 0.9503
+u_recon_loss: 107.54, u_cont: 4.89, u_disc: 1.05
+l_recon_loss: 58.30, l_cont: 6.43, l_disc: 0.06, class: 0.00
+
+Epoch: 158 Average loss: 179.76 Test Accuracy: 0.952
+u_recon_loss: 107.48, u_cont: 5.26, u_disc: 1.06
+l_recon_loss: 59.14, l_cont: 6.76, l_disc: 0.06, class: 0.00
+
+Epoch: 159 Average loss: 178.25 Test Accuracy: 0.9509
+u_recon_loss: 107.33, u_cont: 5.30, u_disc: 1.05
+l_recon_loss: 58.08, l_cont: 6.44, l_disc: 0.06, class: 0.00
+
+Epoch: 160 Average loss: 178.91 Test Accuracy: 0.948
+u_recon_loss: 107.37, u_cont: 5.97, u_disc: 1.07
+l_recon_loss: 57.47, l_cont: 6.95, l_disc: 0.06, class: 0.00
+
+Epoch: 161 Average loss: 176.53 Test Accuracy: 0.9481
+u_recon_loss: 106.87, u_cont: 5.19, u_disc: 1.08
+l_recon_loss: 56.60, l_cont: 6.72, l_disc: 0.06, class: 0.00
+
+Epoch: 162 Average loss: 176.03 Test Accuracy: 0.9516
+u_recon_loss: 107.10, u_cont: 5.14, u_disc: 1.06
+l_recon_loss: 56.65, l_cont: 6.01, l_disc: 0.06, class: 0.00
+
+Epoch: 163 Average loss: 176.50 Test Accuracy: 0.9505
+u_recon_loss: 107.08, u_cont: 5.07, u_disc: 1.10
+l_recon_loss: 56.88, l_cont: 6.29, l_disc: 0.07, class: 0.00
+
+Epoch: 164 Average loss: 178.01 Test Accuracy: 0.9478
+u_recon_loss: 107.35, u_cont: 5.34, u_disc: 1.09
+l_recon_loss: 57.23, l_cont: 6.93, l_disc: 0.06, class: 0.00
+
+Epoch: 165 Average loss: 177.32 Test Accuracy: 0.9476
+u_recon_loss: 107.30, u_cont: 5.15, u_disc: 1.10
+l_recon_loss: 57.21, l_cont: 6.50, l_disc: 0.07, class: 0.00
+
+Epoch: 166 Average loss: 174.48 Test Accuracy: 0.948
+u_recon_loss: 107.03, u_cont: 4.18, u_disc: 1.10
+l_recon_loss: 56.53, l_cont: 5.58, l_disc: 0.06, class: 0.00
+
+Epoch: 167 Average loss: 174.99 Test Accuracy: 0.9497
+u_recon_loss: 107.05, u_cont: 5.01, u_disc: 1.10
+l_recon_loss: 55.77, l_cont: 6.00, l_disc: 0.05, class: 0.00
+
+Epoch: 168 Average loss: 175.31 Test Accuracy: 0.9493
+u_recon_loss: 107.00, u_cont: 5.28, u_disc: 1.10
+l_recon_loss: 55.53, l_cont: 6.35, l_disc: 0.05, class: 0.00
+
+Epoch: 169 Average loss: 176.33 Test Accuracy: 0.9508
+u_recon_loss: 107.14, u_cont: 5.28, u_disc: 1.13
+l_recon_loss: 56.48, l_cont: 6.22, l_disc: 0.06, class: 0.00
+
+Epoch: 170 Average loss: 176.06 Test Accuracy: 0.9498
+u_recon_loss: 106.95, u_cont: 5.46, u_disc: 1.12
+l_recon_loss: 55.92, l_cont: 6.54, l_disc: 0.06, class: 0.00
+
+Epoch: 171 Average loss: 176.02 Test Accuracy: 0.9489
+u_recon_loss: 107.09, u_cont: 5.27, u_disc: 1.15
+l_recon_loss: 55.76, l_cont: 6.67, l_disc: 0.07, class: 0.00
+
+Epoch: 172 Average loss: 175.51 Test Accuracy: 0.9471
+u_recon_loss: 107.20, u_cont: 4.73, u_disc: 1.16
+l_recon_loss: 56.53, l_cont: 5.82, l_disc: 0.07, class: 0.00
+
+Epoch: 173 Average loss: 176.35 Test Accuracy: 0.9484
+u_recon_loss: 107.12, u_cont: 5.38, u_disc: 1.15
+l_recon_loss: 56.08, l_cont: 6.54, l_disc: 0.07, class: 0.00
+
+Epoch: 174 Average loss: 174.40 Test Accuracy: 0.9487
+u_recon_loss: 107.02, u_cont: 4.90, u_disc: 1.14
+l_recon_loss: 55.47, l_cont: 5.80, l_disc: 0.06, class: 0.00
+
+Epoch: 175 Average loss: 177.36 Test Accuracy: 0.9471
+u_recon_loss: 107.14, u_cont: 6.41, u_disc: 1.13
+l_recon_loss: 55.60, l_cont: 7.02, l_disc: 0.06, class: 0.00
+
+Epoch: 176 Average loss: 174.13 Test Accuracy: 0.9512
+u_recon_loss: 106.94, u_cont: 5.30, u_disc: 1.15
+l_recon_loss: 54.54, l_cont: 6.14, l_disc: 0.06, class: 0.00
+
+Epoch: 177 Average loss: 175.62 Test Accuracy: 0.95
+u_recon_loss: 107.02, u_cont: 5.57, u_disc: 1.13
+l_recon_loss: 55.06, l_cont: 6.77, l_disc: 0.06, class: 0.00
+
+Epoch: 178 Average loss: 174.37 Test Accuracy: 0.9489
+u_recon_loss: 107.10, u_cont: 4.49, u_disc: 1.15
+l_recon_loss: 55.51, l_cont: 6.04, l_disc: 0.07, class: 0.00
+
+Epoch: 179 Average loss: 174.16 Test Accuracy: 0.9494
+u_recon_loss: 106.91, u_cont: 5.12, u_disc: 1.16
+l_recon_loss: 54.62, l_cont: 6.29, l_disc: 0.06, class: 0.00
+
+Epoch: 180 Average loss: 174.39 Test Accuracy: 0.9493
+u_recon_loss: 106.82, u_cont: 5.24, u_disc: 1.18
+l_recon_loss: 54.17, l_cont: 6.91, l_disc: 0.07, class: 0.00
+
+Epoch: 181 Average loss: 174.86 Test Accuracy: 0.9488
+u_recon_loss: 107.20, u_cont: 4.95, u_disc: 1.16
+l_recon_loss: 55.33, l_cont: 6.14, l_disc: 0.07, class: 0.00
+
+Epoch: 182 Average loss: 172.22 Test Accuracy: 0.9502
+u_recon_loss: 106.76, u_cont: 4.14, u_disc: 1.16
+l_recon_loss: 54.51, l_cont: 5.57, l_disc: 0.07, class: 0.00
+
+Epoch: 183 Average loss: 174.65 Test Accuracy: 0.947
+u_recon_loss: 106.94, u_cont: 5.43, u_disc: 1.16
+l_recon_loss: 54.67, l_cont: 6.39, l_disc: 0.06, class: 0.00
+
+Epoch: 184 Average loss: 170.84 Test Accuracy: 0.9495
+u_recon_loss: 106.39, u_cont: 4.44, u_disc: 1.17
+l_recon_loss: 52.71, l_cont: 6.08, l_disc: 0.06, class: 0.00
+
+Epoch: 185 Average loss: 170.27 Test Accuracy: 0.9475
+u_recon_loss: 106.68, u_cont: 3.83, u_disc: 1.17
+l_recon_loss: 53.39, l_cont: 5.13, l_disc: 0.07, class: 0.00
+
+Epoch: 186 Average loss: 172.35 Test Accuracy: 0.9443
+u_recon_loss: 106.99, u_cont: 4.16, u_disc: 1.19
+l_recon_loss: 54.05, l_cont: 5.87, l_disc: 0.08, class: 0.00
+
+Epoch: 187 Average loss: 172.27 Test Accuracy: 0.9448
+u_recon_loss: 106.99, u_cont: 4.03, u_disc: 1.19
+l_recon_loss: 54.26, l_cont: 5.72, l_disc: 0.08, class: 0.00
+
+Epoch: 188 Average loss: 171.22 Test Accuracy: 0.9491
+u_recon_loss: 106.71, u_cont: 4.21, u_disc: 1.21
+l_recon_loss: 53.13, l_cont: 5.88, l_disc: 0.07, class: 0.00
+
+Epoch: 189 Average loss: 169.17 Test Accuracy: 0.9481
+u_recon_loss: 106.56, u_cont: 3.81, u_disc: 1.20
+l_recon_loss: 52.39, l_cont: 5.15, l_disc: 0.06, class: 0.00
+
+Epoch: 190 Average loss: 171.69 Test Accuracy: 0.9489
+u_recon_loss: 106.90, u_cont: 4.32, u_disc: 1.19
+l_recon_loss: 53.84, l_cont: 5.38, l_disc: 0.07, class: 0.00
+
+Epoch: 191 Average loss: 171.32 Test Accuracy: 0.9484
+u_recon_loss: 106.61, u_cont: 4.86, u_disc: 1.22
+l_recon_loss: 52.78, l_cont: 5.78, l_disc: 0.07, class: 0.00
+
+Epoch: 192 Average loss: 171.96 Test Accuracy: 0.9474
+u_recon_loss: 106.75, u_cont: 4.79, u_disc: 1.22
+l_recon_loss: 52.81, l_cont: 6.32, l_disc: 0.07, class: 0.00
+
+Epoch: 193 Average loss: 172.41 Test Accuracy: 0.9488
+u_recon_loss: 106.83, u_cont: 4.56, u_disc: 1.26
+l_recon_loss: 53.60, l_cont: 6.08, l_disc: 0.08, class: 0.00
+
+Epoch: 194 Average loss: 168.86 Test Accuracy: 0.9479
+u_recon_loss: 106.58, u_cont: 3.72, u_disc: 1.23
+l_recon_loss: 51.91, l_cont: 5.35, l_disc: 0.07, class: 0.00
+
+Epoch: 195 Average loss: 171.76 Test Accuracy: 0.9498
+u_recon_loss: 106.75, u_cont: 4.91, u_disc: 1.24
+l_recon_loss: 52.46, l_cont: 6.32, l_disc: 0.07, class: 0.00
+
+Epoch: 196 Average loss: 172.12 Test Accuracy: 0.9477
+u_recon_loss: 106.78, u_cont: 5.42, u_disc: 1.24
+l_recon_loss: 52.34, l_cont: 6.27, l_disc: 0.07, class: 0.00
+
+Epoch: 197 Average loss: 173.26 Test Accuracy: 0.9466
+u_recon_loss: 106.57, u_cont: 6.47, u_disc: 1.22
+l_recon_loss: 51.85, l_cont: 7.07, l_disc: 0.07, class: 0.00
+
+Epoch: 198 Average loss: 172.28 Test Accuracy: 0.9467
+u_recon_loss: 106.49, u_cont: 5.53, u_disc: 1.25
+l_recon_loss: 52.30, l_cont: 6.62, l_disc: 0.08, class: 0.00
+
+Epoch: 199 Average loss: 170.11 Test Accuracy: 0.9455
+u_recon_loss: 106.66, u_cont: 4.49, u_disc: 1.26
+l_recon_loss: 51.89, l_cont: 5.72, l_disc: 0.07, class: 0.00
+
+Epoch: 200 Average loss: 169.59 Test Accuracy: 0.9484
+u_recon_loss: 106.60, u_cont: 4.23, u_disc: 1.27
+l_recon_loss: 51.96, l_cont: 5.47, l_disc: 0.07, class: 0.00
+
+Epoch: 201 Average loss: 168.62 Test Accuracy: 0.9521
+u_recon_loss: 106.37, u_cont: 4.10, u_disc: 1.27
+l_recon_loss: 51.40, l_cont: 5.40, l_disc: 0.08, class: 0.00
+
+Epoch: 202 Average loss: 167.97 Test Accuracy: 0.9499
+u_recon_loss: 106.43, u_cont: 3.87, u_disc: 1.26
+l_recon_loss: 51.34, l_cont: 4.98, l_disc: 0.07, class: 0.00
+
+Epoch: 203 Average loss: 170.15 Test Accuracy: 0.9476
+u_recon_loss: 106.81, u_cont: 4.37, u_disc: 1.28
+l_recon_loss: 52.01, l_cont: 5.61, l_disc: 0.07, class: 0.00
+
+Epoch: 204 Average loss: 168.84 Test Accuracy: 0.9495
+u_recon_loss: 106.51, u_cont: 4.30, u_disc: 1.29
+l_recon_loss: 50.94, l_cont: 5.71, l_disc: 0.08, class: 0.00
+
+Epoch: 205 Average loss: 166.64 Test Accuracy: 0.9513
+u_recon_loss: 106.09, u_cont: 3.96, u_disc: 1.28
+l_recon_loss: 49.85, l_cont: 5.37, l_disc: 0.08, class: 0.00
+
+Epoch: 206 Average loss: 168.95 Test Accuracy: 0.9461
+u_recon_loss: 106.60, u_cont: 4.04, u_disc: 1.28
+l_recon_loss: 51.72, l_cont: 5.23, l_disc: 0.08, class: 0.00
+
+Epoch: 207 Average loss: 169.60 Test Accuracy: 0.9475
+u_recon_loss: 106.55, u_cont: 4.26, u_disc: 1.31
+l_recon_loss: 51.82, l_cont: 5.58, l_disc: 0.08, class: 0.00
+
+Epoch: 208 Average loss: 171.00 Test Accuracy: 0.9495
+u_recon_loss: 106.49, u_cont: 5.17, u_disc: 1.32
+l_recon_loss: 51.57, l_cont: 6.38, l_disc: 0.08, class: 0.00
+
+Epoch: 209 Average loss: 168.64 Test Accuracy: 0.947
+u_recon_loss: 106.68, u_cont: 4.22, u_disc: 1.33
+l_recon_loss: 51.14, l_cont: 5.19, l_disc: 0.08, class: 0.00
+
+Epoch: 210 Average loss: 166.28 Test Accuracy: 0.9484
+u_recon_loss: 106.15, u_cont: 3.70, u_disc: 1.35
+l_recon_loss: 49.84, l_cont: 5.16, l_disc: 0.08, class: 0.00
+
+Epoch: 211 Average loss: 166.20 Test Accuracy: 0.9485
+u_recon_loss: 106.20, u_cont: 3.72, u_disc: 1.31
+l_recon_loss: 49.84, l_cont: 5.05, l_disc: 0.08, class: 0.00
+
+Epoch: 212 Average loss: 167.09 Test Accuracy: 0.9474
+u_recon_loss: 106.46, u_cont: 3.94, u_disc: 1.33
+l_recon_loss: 49.98, l_cont: 5.29, l_disc: 0.08, class: 0.00
+
+Epoch: 213 Average loss: 167.36 Test Accuracy: 0.9471
+u_recon_loss: 106.28, u_cont: 4.10, u_disc: 1.37
+l_recon_loss: 50.15, l_cont: 5.36, l_disc: 0.09, class: 0.00
+
+Epoch: 214 Average loss: 169.97 Test Accuracy: 0.9472
+u_recon_loss: 106.72, u_cont: 4.23, u_disc: 1.37
+l_recon_loss: 51.72, l_cont: 5.82, l_disc: 0.09, class: 0.00
+
+Epoch: 215 Average loss: 168.91 Test Accuracy: 0.9469
+u_recon_loss: 106.54, u_cont: 4.19, u_disc: 1.36
+l_recon_loss: 51.25, l_cont: 5.48, l_disc: 0.08, class: 0.00
+
+Epoch: 216 Average loss: 166.49 Test Accuracy: 0.9477
+u_recon_loss: 105.85, u_cont: 3.97, u_disc: 1.39
+l_recon_loss: 49.62, l_cont: 5.56, l_disc: 0.09, class: 0.00
+
+Epoch: 217 Average loss: 164.62 Test Accuracy: 0.9469
+u_recon_loss: 105.85, u_cont: 3.64, u_disc: 1.39
+l_recon_loss: 48.66, l_cont: 4.99, l_disc: 0.09, class: 0.00
+
+Epoch: 218 Average loss: 166.89 Test Accuracy: 0.9458
+u_recon_loss: 106.25, u_cont: 3.83, u_disc: 1.37
+l_recon_loss: 50.01, l_cont: 5.33, l_disc: 0.09, class: 0.00
+
+Epoch: 219 Average loss: 166.51 Test Accuracy: 0.9465
+u_recon_loss: 106.03, u_cont: 3.86, u_disc: 1.37
+l_recon_loss: 49.78, l_cont: 5.40, l_disc: 0.08, class: 0.00
+
+Epoch: 220 Average loss: 165.02 Test Accuracy: 0.9486
+u_recon_loss: 106.11, u_cont: 3.41, u_disc: 1.38
+l_recon_loss: 49.08, l_cont: 4.96, l_disc: 0.08, class: 0.00
+
+Epoch: 221 Average loss: 163.91 Test Accuracy: 0.945
+u_recon_loss: 105.73, u_cont: 3.46, u_disc: 1.39
+l_recon_loss: 48.47, l_cont: 4.76, l_disc: 0.09, class: 0.00
+
+Epoch: 222 Average loss: 165.50 Test Accuracy: 0.9448
+u_recon_loss: 105.64, u_cont: 4.13, u_disc: 1.38
+l_recon_loss: 48.56, l_cont: 5.71, l_disc: 0.08, class: 0.00
+
+Epoch: 223 Average loss: 163.30 Test Accuracy: 0.947
+u_recon_loss: 105.58, u_cont: 3.69, u_disc: 1.34
+l_recon_loss: 47.68, l_cont: 4.93, l_disc: 0.08, class: 0.00
+
+Epoch: 224 Average loss: 165.81 Test Accuracy: 0.945
+u_recon_loss: 105.87, u_cont: 3.86, u_disc: 1.39
+l_recon_loss: 49.41, l_cont: 5.18, l_disc: 0.08, class: 0.00
+
+Epoch: 225 Average loss: 164.95 Test Accuracy: 0.9481
+u_recon_loss: 105.72, u_cont: 4.29, u_disc: 1.41
+l_recon_loss: 48.16, l_cont: 5.29, l_disc: 0.08, class: 0.00
+
+Epoch: 226 Average loss: 164.83 Test Accuracy: 0.9455
+u_recon_loss: 105.85, u_cont: 3.77, u_disc: 1.42
+l_recon_loss: 48.64, l_cont: 5.06, l_disc: 0.09, class: 0.00
+
+Epoch: 227 Average loss: 163.78 Test Accuracy: 0.9486
+u_recon_loss: 105.91, u_cont: 3.47, u_disc: 1.42
+l_recon_loss: 48.32, l_cont: 4.58, l_disc: 0.09, class: 0.00
+
+Epoch: 228 Average loss: 167.27 Test Accuracy: 0.9442
+u_recon_loss: 106.14, u_cont: 4.39, u_disc: 1.45
+l_recon_loss: 49.06, l_cont: 6.12, l_disc: 0.10, class: 0.00
+
+Epoch: 229 Average loss: 165.70 Test Accuracy: 0.9458
+u_recon_loss: 105.68, u_cont: 4.34, u_disc: 1.42
+l_recon_loss: 48.48, l_cont: 5.69, l_disc: 0.09, class: 0.00
+
+Epoch: 230 Average loss: 163.43 Test Accuracy: 0.9454
+u_recon_loss: 105.45, u_cont: 3.63, u_disc: 1.41
+l_recon_loss: 47.62, l_cont: 5.24, l_disc: 0.08, class: 0.00
+
+Epoch: 231 Average loss: 163.29 Test Accuracy: 0.9446
+u_recon_loss: 105.42, u_cont: 4.00, u_disc: 1.40
+l_recon_loss: 47.15, l_cont: 5.24, l_disc: 0.08, class: 0.00
+
+Epoch: 232 Average loss: 163.09 Test Accuracy: 0.9443
+u_recon_loss: 105.43, u_cont: 3.91, u_disc: 1.45
+l_recon_loss: 47.11, l_cont: 5.09, l_disc: 0.09, class: 0.00
+
+Epoch: 233 Average loss: 164.18 Test Accuracy: 0.9462
+u_recon_loss: 105.66, u_cont: 3.96, u_disc: 1.46
+l_recon_loss: 47.61, l_cont: 5.40, l_disc: 0.09, class: 0.00
+
+Epoch: 234 Average loss: 165.92 Test Accuracy: 0.9462
+u_recon_loss: 105.88, u_cont: 4.77, u_disc: 1.45
+l_recon_loss: 48.05, l_cont: 5.66, l_disc: 0.10, class: 0.00
+
+Epoch: 235 Average loss: 164.82 Test Accuracy: 0.9471
+u_recon_loss: 105.71, u_cont: 4.42, u_disc: 1.50
+l_recon_loss: 47.67, l_cont: 5.42, l_disc: 0.10, class: 0.00
+
+Epoch: 236 Average loss: 161.83 Test Accuracy: 0.9472
+u_recon_loss: 105.53, u_cont: 3.42, u_disc: 1.47
+l_recon_loss: 46.87, l_cont: 4.45, l_disc: 0.09, class: 0.00
+
+Epoch: 237 Average loss: 163.35 Test Accuracy: 0.9477
+u_recon_loss: 105.50, u_cont: 4.42, u_disc: 1.47
+l_recon_loss: 46.34, l_cont: 5.52, l_disc: 0.10, class: 0.00
+
+Epoch: 238 Average loss: 167.38 Test Accuracy: 0.946
+u_recon_loss: 105.78, u_cont: 5.48, u_disc: 1.48
+l_recon_loss: 47.86, l_cont: 6.68, l_disc: 0.10, class: 0.00
+
+Epoch: 239 Average loss: 164.06 Test Accuracy: 0.9464
+u_recon_loss: 105.81, u_cont: 3.56, u_disc: 1.46
+l_recon_loss: 48.38, l_cont: 4.74, l_disc: 0.09, class: 0.00
+
+Epoch: 240 Average loss: 162.28 Test Accuracy: 0.9477
+u_recon_loss: 105.64, u_cont: 3.40, u_disc: 1.44
+l_recon_loss: 47.27, l_cont: 4.43, l_disc: 0.09, class: 0.00
+
+Epoch: 241 Average loss: 162.44 Test Accuracy: 0.9487
+u_recon_loss: 105.62, u_cont: 3.68, u_disc: 1.49
+l_recon_loss: 46.66, l_cont: 4.89, l_disc: 0.09, class: 0.00
+
+Epoch: 242 Average loss: 163.74 Test Accuracy: 0.9472
+u_recon_loss: 105.43, u_cont: 4.62, u_disc: 1.49
+l_recon_loss: 46.46, l_cont: 5.64, l_disc: 0.09, class: 0.00
+
+Epoch: 243 Average loss: 162.15 Test Accuracy: 0.9469
+u_recon_loss: 105.46, u_cont: 4.17, u_disc: 1.51
+l_recon_loss: 46.04, l_cont: 4.87, l_disc: 0.09, class: 0.00
+
+Epoch: 244 Average loss: 163.69 Test Accuracy: 0.9466
+u_recon_loss: 105.53, u_cont: 4.81, u_disc: 1.49
+l_recon_loss: 45.98, l_cont: 5.80, l_disc: 0.09, class: 0.00
+
+Epoch: 245 Average loss: 166.40 Test Accuracy: 0.9458
+u_recon_loss: 105.95, u_cont: 5.21, u_disc: 1.52
+l_recon_loss: 47.58, l_cont: 6.04, l_disc: 0.09, class: 0.00
+
+Epoch: 246 Average loss: 164.21 Test Accuracy: 0.9468
+u_recon_loss: 105.91, u_cont: 3.96, u_disc: 1.51
+l_recon_loss: 47.70, l_cont: 5.04, l_disc: 0.09, class: 0.00
+
+Epoch: 247 Average loss: 164.69 Test Accuracy: 0.945
+u_recon_loss: 105.47, u_cont: 4.63, u_disc: 1.54
+l_recon_loss: 47.03, l_cont: 5.92, l_disc: 0.10, class: 0.00
+
+Epoch: 248 Average loss: 161.00 Test Accuracy: 0.9444
+u_recon_loss: 105.03, u_cont: 3.73, u_disc: 1.56
+l_recon_loss: 45.85, l_cont: 4.72, l_disc: 0.10, class: 0.00
+
+Epoch: 249 Average loss: 161.34 Test Accuracy: 0.9451
+u_recon_loss: 105.16, u_cont: 4.06, u_disc: 1.54
+l_recon_loss: 45.46, l_cont: 5.01, l_disc: 0.09, class: 0.00
+
+Epoch: 250 Average loss: 163.53 Test Accuracy: 0.9467
+u_recon_loss: 105.83, u_cont: 3.91, u_disc: 1.56
+l_recon_loss: 47.21, l_cont: 4.91, l_disc: 0.10, class: 0.00
+
+Epoch: 251 Average loss: 161.79 Test Accuracy: 0.9458
+u_recon_loss: 105.33, u_cont: 3.60, u_disc: 1.54
+l_recon_loss: 46.28, l_cont: 4.94, l_disc: 0.09, class: 0.00
+
+Epoch: 252 Average loss: 160.78 Test Accuracy: 0.9459
+u_recon_loss: 105.32, u_cont: 3.58, u_disc: 1.56
+l_recon_loss: 45.75, l_cont: 4.48, l_disc: 0.10, class: 0.00
+
+Epoch: 253 Average loss: 161.86 Test Accuracy: 0.9461
+u_recon_loss: 105.23, u_cont: 4.23, u_disc: 1.57
+l_recon_loss: 45.46, l_cont: 5.27, l_disc: 0.10, class: 0.00
+
+Epoch: 254 Average loss: 162.32 Test Accuracy: 0.946
+u_recon_loss: 105.31, u_cont: 4.16, u_disc: 1.55
+l_recon_loss: 46.25, l_cont: 4.97, l_disc: 0.09, class: 0.00
+
+Epoch: 255 Average loss: 161.58 Test Accuracy: 0.9469
+u_recon_loss: 104.98, u_cont: 4.35, u_disc: 1.57
+l_recon_loss: 44.92, l_cont: 5.65, l_disc: 0.10, class: 0.00
+
+Epoch: 256 Average loss: 161.32 Test Accuracy: 0.9468
+u_recon_loss: 105.11, u_cont: 4.49, u_disc: 1.58
+l_recon_loss: 44.71, l_cont: 5.33, l_disc: 0.10, class: 0.00
+
+Epoch: 257 Average loss: 160.34 Test Accuracy: 0.9486
+u_recon_loss: 105.34, u_cont: 3.75, u_disc: 1.59
+l_recon_loss: 44.84, l_cont: 4.73, l_disc: 0.09, class: 0.00
+
+Epoch: 258 Average loss: 162.96 Test Accuracy: 0.9451
+u_recon_loss: 105.51, u_cont: 4.18, u_disc: 1.59
+l_recon_loss: 46.04, l_cont: 5.53, l_disc: 0.10, class: 0.00
+
+Epoch: 259 Average loss: 162.05 Test Accuracy: 0.9466
+u_recon_loss: 105.35, u_cont: 4.18, u_disc: 1.59
+l_recon_loss: 45.77, l_cont: 5.06, l_disc: 0.10, class: 0.00
+
+Epoch: 260 Average loss: 161.50 Test Accuracy: 0.945
+u_recon_loss: 105.24, u_cont: 4.01, u_disc: 1.58
+l_recon_loss: 45.48, l_cont: 5.09, l_disc: 0.10, class: 0.00
+
+Epoch: 261 Average loss: 161.46 Test Accuracy: 0.9458
+u_recon_loss: 105.21, u_cont: 3.80, u_disc: 1.62
+l_recon_loss: 45.71, l_cont: 5.00, l_disc: 0.11, class: 0.01
+
+Epoch: 262 Average loss: 159.63 Test Accuracy: 0.9448
+u_recon_loss: 104.86, u_cont: 3.66, u_disc: 1.60
+l_recon_loss: 44.69, l_cont: 4.71, l_disc: 0.10, class: 0.00
+
+Epoch: 263 Average loss: 159.86 Test Accuracy: 0.9476
+u_recon_loss: 104.91, u_cont: 3.84, u_disc: 1.61
+l_recon_loss: 44.60, l_cont: 4.79, l_disc: 0.10, class: 0.00
+
+Epoch: 264 Average loss: 160.13 Test Accuracy: 0.9458
+u_recon_loss: 104.80, u_cont: 3.89, u_disc: 1.62
+l_recon_loss: 44.56, l_cont: 5.16, l_disc: 0.10, class: 0.00
+
+Epoch: 265 Average loss: 162.30 Test Accuracy: 0.9457
+u_recon_loss: 104.82, u_cont: 5.12, u_disc: 1.65
+l_recon_loss: 44.58, l_cont: 6.03, l_disc: 0.10, class: 0.00
+
+Epoch: 266 Average loss: 161.00 Test Accuracy: 0.9469
+u_recon_loss: 105.03, u_cont: 4.45, u_disc: 1.62
+l_recon_loss: 44.54, l_cont: 5.25, l_disc: 0.10, class: 0.00
+
+Epoch: 267 Average loss: 162.19 Test Accuracy: 0.947
+u_recon_loss: 105.06, u_cont: 4.83, u_disc: 1.63
+l_recon_loss: 44.81, l_cont: 5.76, l_disc: 0.10, class: 0.00
+
+Epoch: 268 Average loss: 159.87 Test Accuracy: 0.9469
+u_recon_loss: 104.72, u_cont: 4.06, u_disc: 1.62
+l_recon_loss: 44.17, l_cont: 5.19, l_disc: 0.10, class: 0.00
+
+Epoch: 269 Average loss: 159.20 Test Accuracy: 0.9471
+u_recon_loss: 104.76, u_cont: 3.80, u_disc: 1.65
+l_recon_loss: 43.90, l_cont: 4.99, l_disc: 0.10, class: 0.00
+
+Epoch: 270 Average loss: 158.44 Test Accuracy: 0.9453
+u_recon_loss: 104.63, u_cont: 3.77, u_disc: 1.64
+l_recon_loss: 43.52, l_cont: 4.77, l_disc: 0.10, class: 0.00
+
+Epoch: 271 Average loss: 158.04 Test Accuracy: 0.9446
+u_recon_loss: 104.68, u_cont: 3.21, u_disc: 1.67
+l_recon_loss: 43.93, l_cont: 4.43, l_disc: 0.11, class: 0.00
+
+Epoch: 272 Average loss: 160.04 Test Accuracy: 0.9455
+u_recon_loss: 104.90, u_cont: 3.88, u_disc: 1.65
+l_recon_loss: 44.31, l_cont: 5.19, l_disc: 0.11, class: 0.00
+
+Epoch: 273 Average loss: 157.74 Test Accuracy: 0.9457
+u_recon_loss: 104.72, u_cont: 3.11, u_disc: 1.65
+l_recon_loss: 43.66, l_cont: 4.49, l_disc: 0.11, class: 0.00
+
+Epoch: 274 Average loss: 158.83 Test Accuracy: 0.9465
+u_recon_loss: 105.11, u_cont: 3.10, u_disc: 1.65
+l_recon_loss: 44.51, l_cont: 4.36, l_disc: 0.11, class: 0.01
+
+Epoch: 275 Average loss: 157.90 Test Accuracy: 0.948
+u_recon_loss: 104.92, u_cont: 2.88, u_disc: 1.62
+l_recon_loss: 44.21, l_cont: 4.18, l_disc: 0.10, class: 0.00
+
+Epoch: 276 Average loss: 160.10 Test Accuracy: 0.9475
+u_recon_loss: 104.79, u_cont: 4.02, u_disc: 1.64
+l_recon_loss: 44.28, l_cont: 5.26, l_disc: 0.10, class: 0.00
+
+Epoch: 277 Average loss: 158.07 Test Accuracy: 0.9499
+u_recon_loss: 104.43, u_cont: 3.71, u_disc: 1.64
+l_recon_loss: 43.29, l_cont: 4.89, l_disc: 0.10, class: 0.00
+
+Epoch: 278 Average loss: 157.94 Test Accuracy: 0.9437
+u_recon_loss: 104.69, u_cont: 3.64, u_disc: 1.66
+l_recon_loss: 43.28, l_cont: 4.57, l_disc: 0.10, class: 0.00
+
+Epoch: 279 Average loss: 158.54 Test Accuracy: 0.9466
+u_recon_loss: 104.53, u_cont: 3.32, u_disc: 1.67
+l_recon_loss: 44.00, l_cont: 4.91, l_disc: 0.10, class: 0.00
+
+Epoch: 280 Average loss: 159.23 Test Accuracy: 0.9473
+u_recon_loss: 104.60, u_cont: 4.19, u_disc: 1.69
+l_recon_loss: 43.55, l_cont: 5.10, l_disc: 0.10, class: 0.00
+
+Epoch: 281 Average loss: 155.89 Test Accuracy: 0.9458
+u_recon_loss: 104.35, u_cont: 3.15, u_disc: 1.68
+l_recon_loss: 42.53, l_cont: 4.08, l_disc: 0.10, class: 0.00
+
+Epoch: 282 Average loss: 157.06 Test Accuracy: 0.9436
+u_recon_loss: 104.18, u_cont: 3.55, u_disc: 1.69
+l_recon_loss: 42.53, l_cont: 5.00, l_disc: 0.10, class: 0.00
+
+Epoch: 283 Average loss: 156.64 Test Accuracy: 0.9472
+u_recon_loss: 104.35, u_cont: 3.45, u_disc: 1.68
+l_recon_loss: 42.55, l_cont: 4.51, l_disc: 0.10, class: 0.00
+
+Epoch: 284 Average loss: 158.62 Test Accuracy: 0.9462
+u_recon_loss: 104.69, u_cont: 3.70, u_disc: 1.73
+l_recon_loss: 43.42, l_cont: 4.97, l_disc: 0.11, class: 0.00
+
+Epoch: 285 Average loss: 159.81 Test Accuracy: 0.9457
+u_recon_loss: 104.58, u_cont: 4.68, u_disc: 1.73
+l_recon_loss: 43.56, l_cont: 5.13, l_disc: 0.12, class: 0.01
+
+Epoch: 286 Average loss: 157.16 Test Accuracy: 0.9472
+u_recon_loss: 104.50, u_cont: 3.29, u_disc: 1.74
+l_recon_loss: 43.10, l_cont: 4.40, l_disc: 0.12, class: 0.01
+
+Epoch: 287 Average loss: 158.36 Test Accuracy: 0.9492
+u_recon_loss: 104.22, u_cont: 4.48, u_disc: 1.71
+l_recon_loss: 42.37, l_cont: 5.47, l_disc: 0.11, class: 0.00
+
+Epoch: 288 Average loss: 155.00 Test Accuracy: 0.9453
+u_recon_loss: 104.14, u_cont: 2.94, u_disc: 1.74
+l_recon_loss: 42.01, l_cont: 4.06, l_disc: 0.10, class: 0.00
+
+Epoch: 289 Average loss: 154.49 Test Accuracy: 0.9452
+u_recon_loss: 103.99, u_cont: 2.99, u_disc: 1.74
+l_recon_loss: 41.41, l_cont: 4.24, l_disc: 0.10, class: 0.00
+
+Epoch: 290 Average loss: 155.80 Test Accuracy: 0.9462
+u_recon_loss: 104.23, u_cont: 3.16, u_disc: 1.72
+l_recon_loss: 42.16, l_cont: 4.42, l_disc: 0.10, class: 0.00
+
+Epoch: 291 Average loss: 154.36 Test Accuracy: 0.9487
+u_recon_loss: 104.18, u_cont: 2.63, u_disc: 1.73
+l_recon_loss: 41.55, l_cont: 4.17, l_disc: 0.10, class: 0.00
+
+Epoch: 292 Average loss: 155.72 Test Accuracy: 0.9466
+u_recon_loss: 104.10, u_cont: 3.55, u_disc: 1.74
+l_recon_loss: 41.70, l_cont: 4.53, l_disc: 0.10, class: 0.00
+
+Epoch: 293 Average loss: 155.54 Test Accuracy: 0.9452
+u_recon_loss: 104.25, u_cont: 3.19, u_disc: 1.75
+l_recon_loss: 41.70, l_cont: 4.53, l_disc: 0.11, class: 0.00
+
+Epoch: 294 Average loss: 158.91 Test Accuracy: 0.9454
+u_recon_loss: 104.80, u_cont: 3.67, u_disc: 1.75
+l_recon_loss: 43.66, l_cont: 4.91, l_disc: 0.11, class: 0.00
+
+Epoch: 295 Average loss: 155.47 Test Accuracy: 0.9434
+u_recon_loss: 103.95, u_cont: 3.23, u_disc: 1.75
+l_recon_loss: 42.22, l_cont: 4.21, l_disc: 0.10, class: 0.00
+
+Epoch: 296 Average loss: 156.60 Test Accuracy: 0.9448
+u_recon_loss: 104.24, u_cont: 3.86, u_disc: 1.78
+l_recon_loss: 41.62, l_cont: 4.99, l_disc: 0.11, class: 0.00
+
+Epoch: 297 Average loss: 156.00 Test Accuracy: 0.9423
+u_recon_loss: 104.43, u_cont: 2.88, u_disc: 1.75
+l_recon_loss: 42.51, l_cont: 4.33, l_disc: 0.11, class: 0.00
+
+Epoch: 298 Average loss: 155.70 Test Accuracy: 0.9467
+u_recon_loss: 104.23, u_cont: 3.23, u_disc: 1.75
+l_recon_loss: 41.93, l_cont: 4.44, l_disc: 0.11, class: 0.00
+
+Epoch: 299 Average loss: 157.34 Test Accuracy: 0.948
+u_recon_loss: 104.50, u_cont: 3.48, u_disc: 1.78
+l_recon_loss: 42.80, l_cont: 4.66, l_disc: 0.11, class: 0.00
 
