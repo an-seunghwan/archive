@@ -29,14 +29,16 @@ the problem of the extreme foreground-background class imbalance.
 """
 #%%
 import os
-os.chdir('/Users/anseunghwan/Documents/GitHub/archive/retinanet')
-import re
-import zipfile
+# os.chdir('/Users/anseunghwan/Documents/GitHub/archive/retinanet')
+os.chdir(r'D:\archive\retinanet')
+
+# import re
+# import zipfile
 
 import numpy as np
 import tensorflow as tf
 import tensorflow.keras as K
-from tqdm import tqdm
+import tqdm
 
 import matplotlib.pyplot as plt
 import tensorflow_datasets as tfds
@@ -141,16 +143,16 @@ model.summary()
 label_encoder = LabelEncoder()
 
 train_writer = tf.summary.create_file_writer(f'{log_path}/{current_time}/train')
-val_writer = tf.summary.create_file_writer(f'{log_path}/{current_time}/val')
-test_writer = tf.summary.create_file_writer(f'{log_path}/{current_time}/test')
+# val_writer = tf.summary.create_file_writer(f'{log_path}/{current_time}/val')
+# test_writer = tf.summary.create_file_writer(f'{log_path}/{current_time}/test')
 
 # total_length = sum(1 for _ in train_dataset)
 iteration = (ds_info.splits["train"].num_examples + ds_info.splits["validation"].num_examples) // batch_size
 #%%
 for epoch in range(epochs):
     loss_avg = tf.keras.metrics.Mean()
-    loss_box = tf.keras.metrics.Mean()
-    loss_clf = tf.keras.metrics.Mean()
+    loss_box_avg = tf.keras.metrics.Mean()
+    loss_clf_avg = tf.keras.metrics.Mean()
     accuracy = tf.keras.metrics.SparseCategoricalAccuracy()
     
     iter_ = iter(train_dataset)
@@ -177,15 +179,30 @@ for epoch in range(epochs):
         grads = tape.gradient(loss, model.trainable_variables) 
         optimizer.apply_gradients(zip(grads, model.trainable_variables)) 
         
+        loss_avg(loss)
+        loss_box_avg(box_loss)
+        loss_clf_avg(clf_loss)
         accuracy(cls_true, cls_pred)
         
         progress_bar.set_postfix({
             'EPOCH': f'{epoch:04d}',
             'Loss': f'{loss_avg.result():.4f}',
-            'Box': f'{loss_box.result():.4f}',
-            'CLS': f'{loss_clf.result():.4f}',
+            'Box': f'{loss_box_avg.result():.4f}',
+            'CLS': f'{loss_clf_avg.result():.4f}',
             'Accuracy': f'{accuracy.result():.3%}'
         })
+    
+    with train_writer.as_default():
+        tf.summary.scalar('loss', loss_avg.result(), step=epoch)
+        tf.summary.scalar('loss_box', loss_box_avg.result(), step=epoch)
+        tf.summary.scalar('loss_clf', loss_clf_avg.result(), step=epoch)
+        tf.summary.scalar('accuracy', accuracy.result(), step=epoch)
+
+    # Reset metrics every epoch
+    loss.reset_states()
+    loss_box_avg.reset_states()
+    loss_clf_avg.reset_states()
+    accuracy.reset_states()
 #%%
 """
 save model
@@ -195,6 +212,14 @@ if not os.path.exists(model_path):
     os.makedirs(model_path)
 model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format="h5")
 #%%
+# model_path = log_path + '/20220210-205432'
+# model_name = [x for x in os.listdir(model_path) if x.endswith('.h5')][0]
+# resnet50_backbone = get_backbone()
+# model = RetinaNet(num_classes, resnet50_backbone)
+# model.build(input_shape=[None, 512, 512, 3])
+# model.load_weights(model_path + '/' + model_name)
+# model.summary()
+# #%%
 # """
 # ## Implementing a custom layer to decode predictions
 # """
@@ -218,7 +243,7 @@ model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format
 #     def __init__(
 #         self,
 #         num_classes=20,
-#         confidence_threshold=0.05,
+#         confidence_threshold=0.5,
 #         nms_iou_threshold=0.5,
 #         max_detections_per_class=100,
 #         max_detections=100,
@@ -270,7 +295,7 @@ model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format
 # """
 # image = tf.keras.Input(shape=[512, 512, 3], name="image")
 # predictions = model(image, training=False)
-# detections = DecodePredictions(confidence_threshold=0.5)(image, predictions[0], predictions[1])
+# detections = DecodePredictions(confidence_threshold=0.1)(image, predictions[0], predictions[1])
 # inference_model = tf.keras.Model(inputs=image, outputs=detections)
 # #%%
 # """
@@ -284,13 +309,17 @@ model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format
 #     image = tf.keras.applications.resnet.preprocess_input(image)
 #     return tf.expand_dims(image, axis=0), ratio
 # #%%
-# for sample in test_dataset.take(2):
+# iter_ = iter(test_dataset)
+# #%%
+# flag = 0
+# for sample in iter_:
+#     flag += 1
 #     image = tf.cast(sample[0], dtype=tf.float32)
 #     input_image, ratio = prepare_image(image[0])
 #     detections = inference_model.predict(input_image)
 #     num_detections = detections.valid_detections[0]
 #     class_names = [
-#         classnum_dict(int(x)) for x in detections.nmsed_classes[0][:num_detections]
+#         classnum_dict.get(int(x)) for x in detections.nmsed_classes[0][:num_detections]
 #     ]
 #     visualize_detections(
 #         image[0],
@@ -298,4 +327,5 @@ model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format
 #         class_names,
 #         detections.nmsed_scores[0][:num_detections],
 #     )
+#     if flag == 10: break
 #%%
