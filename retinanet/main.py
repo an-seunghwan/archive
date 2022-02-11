@@ -296,12 +296,13 @@ for epoch in range(epochs):
             os.makedirs(model_path)
         model.save_weights(model_path + '/model_{}_epoch{}.h5'.format(current_time, epoch), save_format="h5")
         
+    if epoch % 3 == 0:
         """
         ## Building inference model
         """
         image = K.Input(shape=[512, 512, 3], name="image")
         predictions = model(image, training=False)
-        detections = DecodePredictions(confidence_threshold=0.1)(image, predictions[0], predictions[1])
+        detections = DecodePredictions(confidence_threshold=0.5)(image, predictions[0], predictions[1])
         inference_model = K.Model(inputs=image, outputs=detections)
         
         """
