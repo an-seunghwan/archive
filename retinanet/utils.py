@@ -65,7 +65,7 @@ def visualize_detections(
 ):
     """Visualize Detections"""
     image = np.array(image, dtype=np.uint8)
-    plt.figure(figsize=figsize)
+    fig = plt.figure(figsize=figsize)
     plt.axis("off")
     plt.imshow(image)
     ax = plt.gca()
@@ -85,6 +85,7 @@ def visualize_detections(
             clip_box=ax.clipbox,
             clip_on=True,
         )
-    plt.show()
-    return ax
+    # plt.show()
+    plt.close()
+    return fig
 #%%

@@ -31,6 +31,7 @@ the problem of the extreme foreground-background class imbalance.
 import os
 # os.chdir('/Users/anseunghwan/Documents/GitHub/archive/retinanet')
 os.chdir(r'D:\archive\retinanet')
+# os.chdir('/home1/prof/jeon/an/retinanet')
 
 # import re
 # import zipfile
@@ -54,7 +55,7 @@ from labeling import *
 #%%
 batch_size = 2
 num_classes = 20
-model_dir = "model/"
+# model_dir = "model/"
 epochs = 320
 #%%
 class_dict = {
@@ -120,6 +121,87 @@ classnum_dict = {y:x for x,y in class_dict.items()}
 #     )
 # plt.show()
 #%%
+"""
+## Implementing a custom layer to decode predictions
+"""
+
+class DecodePredictions(tf.keras.layers.Layer):
+    """A Keras layer that decodes predictions of the RetinaNet model.
+
+    Attributes:
+      num_classes: Number of classes in the dataset
+      confidence_threshold: Minimum class probability, below which detections
+        are pruned.
+      nms_iou_threshold: IOU threshold for the NMS operation
+      max_detections_per_class: Maximum number of detections to retain per
+       class.
+      max_detections: Maximum number of detections to retain across all
+        classes.
+      box_variance: The scaling factors used to scale the bounding box
+        predictions.
+    """
+
+    def __init__(
+        self,
+        num_classes=20,
+        confidence_threshold=0.5,
+        nms_iou_threshold=0.5,
+        max_detections_per_class=100,
+        max_detections=100,
+        box_variance=[0.1, 0.1, 0.2, 0.2],
+        **kwargs
+    ):
+        super(DecodePredictions, self).__init__(**kwargs)
+        self.num_classes = num_classes
+        self.confidence_threshold = confidence_threshold
+        self.nms_iou_threshold = nms_iou_threshold
+        self.max_detections_per_class = max_detections_per_class
+        self.max_detections = max_detections
+
+        self._anchor_box = AnchorBox()
+        self._box_variance = tf.convert_to_tensor(
+            [0.1, 0.1, 0.2, 0.2], dtype=tf.float32
+        )
+
+    def _decode_box_predictions(self, anchor_boxes, box_predictions):
+        boxes = box_predictions * self._box_variance
+        boxes = tf.concat(
+            [
+                boxes[:, :, :2] * anchor_boxes[:, :, 2:] + anchor_boxes[:, :, :2],
+                tf.math.exp(boxes[:, :, 2:]) * anchor_boxes[:, :, 2:],
+            ],
+            axis=-1,
+        )
+        boxes_transformed = convert_to_corners(boxes)
+        return boxes_transformed
+
+    def call(self, images, box_pred, cls_pred):
+        image_shape = tf.cast(tf.shape(images), dtype=tf.float32)
+        anchor_boxes = self._anchor_box.get_anchors(image_shape[1], image_shape[2])
+        cls_predictions = tf.nn.sigmoid(cls_pred)
+        boxes = self._decode_box_predictions(anchor_boxes[None, ...], box_pred)
+
+        return tf.image.combined_non_max_suppression(
+            tf.expand_dims(boxes, axis=2),
+            cls_predictions,
+            self.max_detections_per_class,
+            self.max_detections,
+            self.nms_iou_threshold,
+            self.confidence_threshold,
+            clip_boxes=False,
+        )
+#%%
+"""
+## Generating detections
+"""
+def prepare_image(image):
+    ratio = 512 / tf.reduce_max(tf.shape(image)[:2])
+    image_shape = [512, 512]
+    image_shape = tf.cast(image_shape, dtype=tf.float32)
+    image = tf.image.resize(image, tf.cast(image_shape, dtype=tf.int32))
+    image = tf.keras.applications.resnet.preprocess_input(image)
+    return tf.expand_dims(image, axis=0), ratio
+#%%
 '''dataset'''
 train_dataset, val_dataset, test_dataset, ds_info = fetch_dataset(batch_size)
 train_dataset = train_dataset.concatenate(val_dataset)
@@ -155,7 +237,8 @@ for epoch in range(epochs):
     loss_clf_avg = tf.keras.metrics.Mean()
     accuracy = tf.keras.metrics.SparseCategoricalAccuracy()
     
-    iter_ = iter(train_dataset)
+    train_iter = iter(train_dataset)
+    test_iter = iter(test_dataset)
     
     progress_bar = tqdm.tqdm(range(iteration), unit='batch')
     for batch_num in progress_bar:
@@ -169,7 +252,7 @@ for epoch in range(epochs):
         elif epoch_ < learning_rate_boundaries[4]: optimizer.lr = learning_rates[4]
         else: optimizer.lr = learning_rates[5]
 
-        image, bbox, label = next(iter_)
+        image, bbox, label = next(train_iter)
         image, bbox_true, cls_true = label_encoder.encode_batch(image, bbox, label)        
 
         with tf.GradientTape(persistent=True) as tape:
@@ -199,10 +282,61 @@ for epoch in range(epochs):
         tf.summary.scalar('accuracy', accuracy.result(), step=epoch)
 
     # Reset metrics every epoch
-    loss.reset_states()
+    loss_avg.reset_states()
     loss_box_avg.reset_states()
     loss_clf_avg.reset_states()
     accuracy.reset_states()
+    
+    if epoch % 50 == 0:
+        """
+        save model
+        """
+        model_path = f'{log_path}/{current_time}'
+        if not os.path.exists(model_path):
+            os.makedirs(model_path)
+        model.save_weights(model_path + '/model_{}_epoch{}.h5'.format(current_time, epoch), save_format="h5")
+        
+        """
+        ## Building inference model
+        """
+        image = K.Input(shape=[512, 512, 3], name="image")
+        predictions = model(image, training=False)
+        detections = DecodePredictions(confidence_threshold=0.1)(image, predictions[0], predictions[1])
+        inference_model = K.Model(inputs=image, outputs=detections)
+        
+        """
+        save results
+        """
+        flag = 0
+        results = []
+        for sample in test_iter:
+            flag += 1
+            image = tf.cast(sample[0], dtype=tf.float32)
+            input_image, ratio = prepare_image(image[0])
+            detections = inference_model.predict(input_image)
+            num_detections = detections.valid_detections[0]
+            class_names = [
+                classnum_dict.get(int(x)) for x in detections.nmsed_classes[0][:num_detections]
+            ]
+            fig = visualize_detections(
+                image[0],
+                detections.nmsed_boxes[0][:num_detections] / ratio,
+                class_names,
+                detections.nmsed_scores[0][:num_detections],
+            )
+            fig.canvas.draw()
+            results.append(np.array(fig.canvas.renderer._renderer))
+            if flag == 10: break
+        
+        fig, axes = plt.subplots(2, 5, figsize=(25, 10))
+        for i in range(len(results)):
+            axes.flatten()[i].imshow(results[i])
+            axes.flatten()[i].axis('off')
+        plt.tight_layout()
+        plt.savefig('{}/sample_{}.png'.format(model_path, epoch),
+                    dpi=200, bbox_inches="tight", pad_inches=0.1)
+        # plt.show()
+        plt.close()
 #%%
 """
 save model
@@ -219,113 +353,46 @@ model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format
 # model.build(input_shape=[None, 512, 512, 3])
 # model.load_weights(model_path + '/' + model_name)
 # model.summary()
-# #%%
-# """
-# ## Implementing a custom layer to decode predictions
-# """
+#%%
+"""
+## Building inference model
+"""
+image = tf.keras.Input(shape=[512, 512, 3], name="image")
+predictions = model(image, training=False)
+detections = DecodePredictions(confidence_threshold=0.1)(image, predictions[0], predictions[1])
+inference_model = tf.keras.Model(inputs=image, outputs=detections)
+#%%
+"""
+save results
+"""
+flag = 0
+results = []
+for sample in test_iter:
+    flag += 1
+    image = tf.cast(sample[0], dtype=tf.float32)
+    input_image, ratio = prepare_image(image[0])
+    detections = inference_model.predict(input_image)
+    num_detections = detections.valid_detections[0]
+    class_names = [
+        classnum_dict.get(int(x)) for x in detections.nmsed_classes[0][:num_detections]
+    ]
+    fig = visualize_detections(
+        image[0],
+        detections.nmsed_boxes[0][:num_detections] / ratio,
+        class_names,
+        detections.nmsed_scores[0][:num_detections],
+    )
+    fig.canvas.draw()
+    results.append(np.array(fig.canvas.renderer._renderer))
+    if flag == 10: break
 
-# class DecodePredictions(tf.keras.layers.Layer):
-#     """A Keras layer that decodes predictions of the RetinaNet model.
-
-#     Attributes:
-#       num_classes: Number of classes in the dataset
-#       confidence_threshold: Minimum class probability, below which detections
-#         are pruned.
-#       nms_iou_threshold: IOU threshold for the NMS operation
-#       max_detections_per_class: Maximum number of detections to retain per
-#        class.
-#       max_detections: Maximum number of detections to retain across all
-#         classes.
-#       box_variance: The scaling factors used to scale the bounding box
-#         predictions.
-#     """
-
-#     def __init__(
-#         self,
-#         num_classes=20,
-#         confidence_threshold=0.5,
-#         nms_iou_threshold=0.5,
-#         max_detections_per_class=100,
-#         max_detections=100,
-#         box_variance=[0.1, 0.1, 0.2, 0.2],
-#         **kwargs
-#     ):
-#         super(DecodePredictions, self).__init__(**kwargs)
-#         self.num_classes = num_classes
-#         self.confidence_threshold = confidence_threshold
-#         self.nms_iou_threshold = nms_iou_threshold
-#         self.max_detections_per_class = max_detections_per_class
-#         self.max_detections = max_detections
-
-#         self._anchor_box = AnchorBox()
-#         self._box_variance = tf.convert_to_tensor(
-#             [0.1, 0.1, 0.2, 0.2], dtype=tf.float32
-#         )
-
-#     def _decode_box_predictions(self, anchor_boxes, box_predictions):
-#         boxes = box_predictions * self._box_variance
-#         boxes = tf.concat(
-#             [
-#                 boxes[:, :, :2] * anchor_boxes[:, :, 2:] + anchor_boxes[:, :, :2],
-#                 tf.math.exp(boxes[:, :, 2:]) * anchor_boxes[:, :, 2:],
-#             ],
-#             axis=-1,
-#         )
-#         boxes_transformed = convert_to_corners(boxes)
-#         return boxes_transformed
-
-#     def call(self, images, box_pred, cls_pred):
-#         image_shape = tf.cast(tf.shape(images), dtype=tf.float32)
-#         anchor_boxes = self._anchor_box.get_anchors(image_shape[1], image_shape[2])
-#         cls_predictions = tf.nn.sigmoid(cls_pred)
-#         boxes = self._decode_box_predictions(anchor_boxes[None, ...], box_pred)
-
-#         return tf.image.combined_non_max_suppression(
-#             tf.expand_dims(boxes, axis=2),
-#             cls_predictions,
-#             self.max_detections_per_class,
-#             self.max_detections,
-#             self.nms_iou_threshold,
-#             self.confidence_threshold,
-#             clip_boxes=False,
-#         )
-# #%%
-# """
-# ## Building inference model
-# """
-# image = tf.keras.Input(shape=[512, 512, 3], name="image")
-# predictions = model(image, training=False)
-# detections = DecodePredictions(confidence_threshold=0.1)(image, predictions[0], predictions[1])
-# inference_model = tf.keras.Model(inputs=image, outputs=detections)
-# #%%
-# """
-# ## Generating detections
-# """
-# def prepare_image(image):
-#     ratio = 512 / tf.reduce_max(tf.shape(image)[:2])
-#     image_shape = [512, 512]
-#     image_shape = tf.cast(image_shape, dtype=tf.float32)
-#     image = tf.image.resize(image, tf.cast(image_shape, dtype=tf.int32))
-#     image = tf.keras.applications.resnet.preprocess_input(image)
-#     return tf.expand_dims(image, axis=0), ratio
-# #%%
-# iter_ = iter(test_dataset)
-# #%%
-# flag = 0
-# for sample in iter_:
-#     flag += 1
-#     image = tf.cast(sample[0], dtype=tf.float32)
-#     input_image, ratio = prepare_image(image[0])
-#     detections = inference_model.predict(input_image)
-#     num_detections = detections.valid_detections[0]
-#     class_names = [
-#         classnum_dict.get(int(x)) for x in detections.nmsed_classes[0][:num_detections]
-#     ]
-#     visualize_detections(
-#         image[0],
-#         detections.nmsed_boxes[0][:num_detections] / ratio,
-#         class_names,
-#         detections.nmsed_scores[0][:num_detections],
-#     )
-#     if flag == 10: break
+fig, axes = plt.subplots(2, 5, figsize=(25, 10))
+for i in range(len(results)):
+    axes.flatten()[i].imshow(results[i])
+    axes.flatten()[i].axis('off')
+plt.tight_layout()
+plt.savefig('{}/sample_{}.png'.format(model_path, epoch),
+            dpi=200, bbox_inches="tight", pad_inches=0.1)
+# plt.show()
+plt.close()
 #%%
