@@ -56,7 +56,7 @@ from labeling import *
 batch_size = 2
 num_classes = 20
 # model_dir = "model/"
-epochs = 320
+epochs = 75
 #%%
 class_dict = {
     'aeroplane': 1,
@@ -214,13 +214,13 @@ log_path = f'logs/voc2007'
 resnet50_backbone = get_backbone()
 model = RetinaNet(num_classes, resnet50_backbone)
 model.build(input_shape=[None, 512, 512, 3])
+model.summary()
 # loss_fn = RetinaNetLoss(num_classes)
 
-learning_rates = [2.5e-06, 0.000625, 0.00125, 0.0025, 0.00025, 2.5e-05]
-learning_rate_boundaries = [125, 250, 500, 240000, 360000]
+learning_rates = [2.5e-06, 0.000625, 0.00125, 0.0025, 0.00025]
+learning_rate_boundaries = [125, 250, 500, 175700]
 
 optimizer = K.optimizers.SGD(learning_rate=learning_rates[0], momentum=0.9)
-model.summary()
 
 label_encoder = LabelEncoder()
 
@@ -249,8 +249,7 @@ for epoch in range(epochs):
         elif epoch_ < learning_rate_boundaries[1]: optimizer.lr = learning_rates[1]
         elif epoch_ < learning_rate_boundaries[2]: optimizer.lr = learning_rates[2]
         elif epoch_ < learning_rate_boundaries[3]: optimizer.lr = learning_rates[3]
-        elif epoch_ < learning_rate_boundaries[4]: optimizer.lr = learning_rates[4]
-        else: optimizer.lr = learning_rates[5]
+        else: optimizer.lr = learning_rates[4]
 
         image, bbox, label = next(train_iter)
         image, bbox_true, cls_true = label_encoder.encode_batch(image, bbox, label)        
@@ -287,7 +286,7 @@ for epoch in range(epochs):
     loss_clf_avg.reset_states()
     accuracy.reset_states()
     
-    if epoch % 50 == 0:
+    if epoch % 10 == 0:
         """
         save model
         """
@@ -347,20 +346,12 @@ if not os.path.exists(model_path):
     os.makedirs(model_path)
 model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format="h5")
 #%%
-# model_path = log_path + '/20220210-205432'
-# model_name = [x for x in os.listdir(model_path) if x.endswith('.h5')][0]
-# resnet50_backbone = get_backbone()
-# model = RetinaNet(num_classes, resnet50_backbone)
-# model.build(input_shape=[None, 512, 512, 3])
-# model.load_weights(model_path + '/' + model_name)
-# model.summary()
-#%%
 """
 ## Building inference model
 """
 image = tf.keras.Input(shape=[512, 512, 3], name="image")
 predictions = model(image, training=False)
-detections = DecodePredictions(confidence_threshold=0.1)(image, predictions[0], predictions[1])
+detections = DecodePredictions(confidence_threshold=0.5)(image, predictions[0], predictions[1])
 inference_model = tf.keras.Model(inputs=image, outputs=detections)
 #%%
 """

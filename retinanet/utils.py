@@ -59,9 +59,9 @@ def convert_to_corners(boxes):
         axis=-1,
     )
 #%%
-'''FIXME'''
 def visualize_detections(
-    image, boxes, classes, scores, figsize=(7, 7), linewidth=1, color=[0, 0, 1]
+    image, boxes, classes, scores, gt_boxes, gt_classes, 
+    figsize=(7, 7), linewidth=1, color=[0, 0, 1], gt_color=[1, 0, 0]
 ):
     """Visualize Detections"""
     image = np.array(image, dtype=np.uint8)
@@ -69,6 +69,7 @@ def visualize_detections(
     plt.axis("off")
     plt.imshow(image)
     ax = plt.gca()
+    '''prediction'''
     for box, _cls, score in zip(boxes, classes, scores):
         text = "{}: {:.2f}".format(_cls, score)
         x1, y1, x2, y2 = box
@@ -82,6 +83,22 @@ def visualize_detections(
             y1,
             text,
             bbox={"facecolor": color, "alpha": 0.4},
+            clip_box=ax.clipbox,
+            clip_on=True,
+        )
+    '''ground-truth'''
+    for box, _cls, in zip(gt_boxes, gt_classes):
+        text = "{}".format(_cls)
+        x, y, w, h = box
+        patch = plt.Rectangle(
+            [x - w/2, y - h/2], w, h, fill=False, edgecolor=gt_color, linewidth=linewidth
+        )
+        ax.add_patch(patch)
+        ax.text(
+            x - w/2,
+            y - h/2,
+            text,
+            bbox={"facecolor": gt_color, "alpha": 0.4},
             clip_box=ax.clipbox,
             clip_on=True,
         )
