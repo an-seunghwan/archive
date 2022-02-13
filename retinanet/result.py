@@ -52,8 +52,6 @@ from labeling import *
 #%%
 batch_size = 2
 num_classes = 20
-# model_dir = "model/"
-epochs = 320
 #%%
 class_dict = {
     'aeroplane': 1,
