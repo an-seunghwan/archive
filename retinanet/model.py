@@ -119,12 +119,13 @@ class RetinaNet(K.Model):
         Currently supports ResNet50 only.
     """
 
-    def __init__(self, num_classes, backbone=None, **kwargs):
+    def __init__(self, num_classes, prob_init, backbone=None, **kwargs):
         super(RetinaNet, self).__init__(name="RetinaNet", **kwargs)
         self.fpn = FeaturePyramid(backbone)
         self.num_classes = num_classes
+        self.prob_init = prob_init
 
-        prior_probability = tf.constant_initializer(-np.log((1 - 0.01) / 0.01))
+        prior_probability = tf.constant_initializer(-np.log((1 - prob_init) / prob_init))
         self.cls_head = build_head(9 * num_classes, prior_probability)
         self.box_head = build_head(9 * 4, "zeros")
 
@@ -157,7 +158,7 @@ class RetinaNetBoxLoss(tf.losses.Loss):
     def call(self, y_true, y_pred):
         difference = y_true - y_pred
         absolute_difference = tf.abs(difference)
-        squared_difference = difference ** 2
+        squared_difference = tf.pow(difference, 2.)
         loss = tf.where(
             tf.less(absolute_difference, self._delta),
             0.5 * squared_difference,
@@ -176,21 +177,21 @@ class RetinaNetClassificationLoss(tf.losses.Loss):
         self._gamma = gamma
 
     def call(self, y_true, y_pred):
-        eps = 1e-8
         cross_entropy = tf.nn.sigmoid_cross_entropy_with_logits(
             labels=y_true, logits=y_pred
         )
         probs = tf.nn.sigmoid(y_pred)
+        pt = tf.where(tf.equal(y_true, 1.0), probs, 1.0 - probs)
         alpha = tf.where(tf.equal(y_true, 1.0), self._alpha, (1.0 - self._alpha))
-        pt = tf.where(tf.equal(y_true, 1.0), probs - eps, 1.0 - probs - eps)
-        loss = alpha * tf.pow(1.0 - pt, self._gamma) * cross_entropy
+        # loss = alpha * tf.pow(1.0 - pt, self._gamma) * cross_entropy
+        loss = alpha * tf.clip_by_value(tf.pow(1.0 - pt, self._gamma), 1e-10, 1.) * cross_entropy
         return tf.reduce_sum(loss, axis=-1)
 #%%
-def RetinaNetLoss(bbox_true, cls_true, box_pred, cls_pred):
-    num_classes=20
-    alpha=0.25
-    gamma=2.0
-    delta=1.0
+def RetinaNetLoss(bbox_true, cls_true, box_pred, cls_pred, PARAMS):
+    num_classes = PARAMS['num_classes']
+    alpha = PARAMS['alpha']
+    gamma = PARAMS['gamma']
+    delta = PARAMS['delta']
     
     _clf_loss = RetinaNetClassificationLoss(alpha, gamma)
     _box_loss = RetinaNetBoxLoss(delta)
@@ -211,7 +212,7 @@ def RetinaNetLoss(bbox_true, cls_true, box_pred, cls_pred):
     box_loss = _box_loss(bbox_true, box_pred)
     clf_loss = tf.where(tf.equal(ignore_mask, 1.0), 0.0, clf_loss)
     box_loss = tf.where(tf.equal(positive_mask, 1.0), box_loss, 0.0)
-    normalizer = tf.reduce_sum(positive_mask, axis=-1)
+    normalizer = tf.stop_gradient(tf.reduce_sum(positive_mask, axis=-1))
     clf_loss = tf.reduce_mean(tf.math.divide_no_nan(tf.reduce_sum(clf_loss, axis=-1), normalizer))
     box_loss = tf.reduce_mean(tf.math.divide_no_nan(tf.reduce_sum(box_loss, axis=-1), normalizer))
     loss = clf_loss + box_loss

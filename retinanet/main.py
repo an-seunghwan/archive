@@ -30,8 +30,8 @@ the problem of the extreme foreground-background class imbalance.
 #%%
 import os
 # os.chdir('/Users/anseunghwan/Documents/GitHub/archive/retinanet')
-os.chdir(r'D:\archive\retinanet')
-# os.chdir('/home1/prof/jeon/an/retinanet')
+# os.chdir(r'D:\archive\retinanet')
+os.chdir('/home1/prof/jeon/an/retinanet')
 
 # import re
 # import zipfile
@@ -53,9 +53,20 @@ from anchors import *
 from model import *
 from labeling import *
 #%%
-batch_size = 2
-num_classes = 20
-epochs = 75
+PARAMS = {
+    'epochs': 75,
+    'batch_size': 2,
+    'lr': 1e-3,
+    'momentum': 0.9,
+    'wd': 1e-4,
+    'num_classes': 20,
+    
+    'alpha': 0.25,
+    'gamma': 2.0,
+    'delta': 1.0,
+    'confidence_threshold': 0.5,
+    'prob_init': 0.01,
+}
 #%%
 class_dict = {
     'aeroplane': 1,
@@ -145,8 +156,8 @@ class DecodePredictions(tf.keras.layers.Layer):
         num_classes=20,
         confidence_threshold=0.5,
         nms_iou_threshold=0.5,
-        max_detections_per_class=200,
-        max_detections=200,
+        max_detections_per_class=100,
+        max_detections=100,
         box_variance=[0.1, 0.1, 0.2, 0.2],
         **kwargs
     ):
@@ -158,9 +169,7 @@ class DecodePredictions(tf.keras.layers.Layer):
         self.max_detections = max_detections
 
         self._anchor_box = AnchorBox()
-        self._box_variance = tf.convert_to_tensor(
-            [0.1, 0.1, 0.2, 0.2], dtype=tf.float32
-        )
+        self._box_variance = tf.convert_to_tensor(box_variance, dtype=tf.float32)
 
     def _decode_box_predictions(self, anchor_boxes, box_predictions):
         boxes = box_predictions * self._box_variance
@@ -202,7 +211,7 @@ def prepare_image(image):
     return tf.expand_dims(image, axis=0), ratio
 #%%
 '''dataset'''
-train_dataset, val_dataset, test_dataset, ds_info = fetch_dataset(batch_size)
+train_dataset, val_dataset, test_dataset, ds_info = fetch_dataset(PARAMS['batch_size'])
 train_dataset = train_dataset.concatenate(val_dataset)
 
 log_path = f'logs/voc2007'
@@ -211,15 +220,22 @@ log_path = f'logs/voc2007'
 ## Initializing and compiling model
 """
 resnet50_backbone = get_backbone()
-model = RetinaNet(num_classes, resnet50_backbone)
+model = RetinaNet(PARAMS['num_classes'], PARAMS['prob_init'], resnet50_backbone)
 model.build(input_shape=[None, 512, 512, 3])
 model.summary()
 # loss_fn = RetinaNetLoss(num_classes)
 
-learning_rates = [2.5e-06, 0.000625, 0.00125, 0.0025, 0.00025]
-learning_rate_boundaries = [125, 250, 500, 175700]
+buffer_model = RetinaNet(PARAMS['num_classes'], PARAMS['prob_init'], resnet50_backbone)
+buffer_model.build(input_shape=(None, 512, 512, 3))
+buffer_model.set_weights(model.get_weights()) # weight initialization
 
-optimizer = K.optimizers.SGD(learning_rate=learning_rates[0], momentum=0.9)
+# learning_rates = [2.5e-06, 0.000625, 0.00125, 0.0025, 0.00025, 2.5e-05]
+# learning_rate_boundaries = [125, 250, 500, 50000, 150000]
+# optimizer = K.optimizers.SGD(learning_rate=learning_rates[0], momentum=PARAMS['momentum'])
+
+optimizer = K.optimizers.SGD(learning_rate=PARAMS['lr'], 
+                             momentum=PARAMS['momentum'])
+learning_rate_boundaries = [50, 60, 70]
 
 label_encoder = LabelEncoder()
 
@@ -228,9 +244,9 @@ train_writer = tf.summary.create_file_writer(f'{log_path}/{current_time}/train')
 # test_writer = tf.summary.create_file_writer(f'{log_path}/{current_time}/test')
 
 # total_length = sum(1 for _ in train_dataset)
-iteration = (ds_info.splits["train"].num_examples + ds_info.splits["validation"].num_examples) // batch_size
+iteration = (ds_info.splits["train"].num_examples + ds_info.splits["validation"].num_examples) // PARAMS['batch_size']
 #%%
-for epoch in range(epochs):
+for epoch in range(PARAMS['epochs']):
     loss_avg = tf.keras.metrics.Mean()
     loss_box_avg = tf.keras.metrics.Mean()
     loss_clf_avg = tf.keras.metrics.Mean()
@@ -242,23 +258,38 @@ for epoch in range(epochs):
     progress_bar = tqdm.tqdm(range(iteration), unit='batch')
     for batch_num in progress_bar:
         
+        # '''learning rate schedule'''
+        # epoch_ = epoch * iteration + batch_num
+        # if epoch_ < learning_rate_boundaries[0]: optimizer.lr = learning_rates[0]
+        # elif epoch_ < learning_rate_boundaries[1]: optimizer.lr = learning_rates[1]
+        # elif epoch_ < learning_rate_boundaries[2]: optimizer.lr = learning_rates[2]
+        # elif epoch_ < learning_rate_boundaries[3]: optimizer.lr = learning_rates[3]
+        # elif epoch_ < learning_rate_boundaries[4]: optimizer.lr = learning_rates[4]
+        # else: optimizer.lr = learning_rates[5]
+        
         '''learning rate schedule'''
-        epoch_ = epoch * iteration + batch_num
-        if epoch_ < learning_rate_boundaries[0]: optimizer.lr = learning_rates[0]
-        elif epoch_ < learning_rate_boundaries[1]: optimizer.lr = learning_rates[1]
-        elif epoch_ < learning_rate_boundaries[2]: optimizer.lr = learning_rates[2]
-        elif epoch_ < learning_rate_boundaries[3]: optimizer.lr = learning_rates[3]
-        else: optimizer.lr = learning_rates[4]
+        if epoch == 0:
+            optimizer.lr = PARAMS['lr'] * 0.01
+        elif epoch < learning_rate_boundaries[0]: 
+            optimizer.lr = PARAMS['lr']
+        elif epoch < learning_rate_boundaries[1]: 
+            optimizer.lr = PARAMS['lr'] * 0.1
+        elif epoch < learning_rate_boundaries[2]: 
+            optimizer.lr = PARAMS['lr'] * (0.1 ** 2)
+        else:
+            optimizer.lr = PARAMS['lr'] * (0.1 ** 3)
 
         image, bbox, label = next(train_iter)
         image, bbox_true, cls_true = label_encoder.encode_batch(image, bbox, label)        
 
         with tf.GradientTape(persistent=True) as tape:
             bbox_pred, cls_pred = model(image)
-            loss, box_loss, clf_loss = RetinaNetLoss(bbox_true, cls_true, bbox_pred, cls_pred)
+            loss, box_loss, clf_loss = RetinaNetLoss(bbox_true, cls_true, bbox_pred, cls_pred, PARAMS)
                         
         grads = tape.gradient(loss, model.trainable_variables) 
         optimizer.apply_gradients(zip(grads, model.trainable_variables)) 
+        '''decoupled weight decay'''
+        weight_decay_decoupled(model, buffer_model, decay_rate=PARAMS['wd'] * optimizer.lr)
         
         loss_avg(loss)
         loss_box_avg(box_loss)
@@ -300,7 +331,7 @@ for epoch in range(epochs):
         """
         image = K.Input(shape=[512, 512, 3], name="image")
         predictions = model(image, training=False)
-        detections = DecodePredictions(confidence_threshold=0.5)(image, predictions[0], predictions[1])
+        detections = DecodePredictions(confidence_threshold=PARAMS['confidence_threshold'])(image, predictions[0], predictions[1])
         inference_model = K.Model(inputs=image, outputs=detections)
         
         """
@@ -346,13 +377,17 @@ model_path = f'{log_path}/{current_time}'
 if not os.path.exists(model_path):
     os.makedirs(model_path)
 model.save_weights(model_path + '/model_{}.h5'.format(current_time), save_format="h5")
+
+with open(model_path + '/args_{}.txt'.format(current_time), "w") as f:
+    for key, value, in PARAMS.items():
+        f.write(str(key) + ' : ' + str(value) + '\n')
 #%%
 """
 ## Building inference model
 """
 image = tf.keras.Input(shape=[512, 512, 3], name="image")
 predictions = model(image, training=False)
-detections = DecodePredictions(confidence_threshold=0.5)(image, predictions[0], predictions[1])
+detections = DecodePredictions(confidence_threshold=PARAMS['confidence_threshold'])(image, predictions[0], predictions[1])
 inference_model = tf.keras.Model(inputs=image, outputs=detections)
 #%%
 """
@@ -446,7 +481,7 @@ def calculate_AP_per_class(recall, precision):
 def calculate_AP(final_bboxes, final_labels, gt_boxes, gt_labels):
     mAP_threshold = 0.5
     AP = []
-    for c in range(num_classes):
+    for c in range(PARAMS['num_classes']):
         if tf.math.reduce_any(final_labels == c) or tf.math.reduce_any(gt_labels == c):
             final_bbox = tf.expand_dims(final_bboxes[final_labels == c], axis=0)
             gt_box = tf.expand_dims(gt_boxes[gt_labels == c], axis=0)
