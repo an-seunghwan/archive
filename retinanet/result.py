@@ -201,6 +201,41 @@ plt.savefig('{}/result.png'.format(model_path),
 plt.show()
 plt.close()
 #%%
+# per-image
+test_iter = iter(test_dataset)
+flag = 0
+results = []
+for sample in test_iter:
+    flag += 1
+    image = tf.cast(sample[0], dtype=tf.float32)
+    input_image, ratio = prepare_image(image[0])
+    detections = inference_model.predict(input_image)
+    num_detections = detections.valid_detections[0]
+    class_names = [
+        classnum_dict.get(int(x)) for x in detections.nmsed_classes[0][:num_detections]
+    ]
+    fig = visualize_detections(
+        image[0],
+        detections.nmsed_boxes[0][:num_detections] / ratio,
+        class_names,
+        detections.nmsed_scores[0][:num_detections],
+        sample[1].numpy()[0],
+        [classnum_dict.get(int(x)) for x in sample[2].numpy()[0]]
+    )
+    fig.canvas.draw()
+    results.append(np.array(fig.canvas.renderer._renderer))
+    if flag == 10: break
+
+for i in range(len(results)):
+    plt.figure(figsize=(10, 10))
+    plt.imshow(results[i])
+    plt.axis('off')
+    plt.tight_layout()
+    plt.savefig('{}/result_{}.png'.format(model_path, i),
+                dpi=200, bbox_inches="tight", pad_inches=0.1)
+    # plt.show()
+    plt.close()
+#%%
 """
 AP
 """
