@@ -1,33 +1,4 @@
 #%%
-"""
-Title: Object Detection with RetinaNet
-Author: [Srihari Humbarwadi](https://twitter.com/srihari_rh)
-Date created: 2020/05/17
-Last modified: 2020/07/14
-Description: Implementing RetinaNet: Focal Loss for Dense Object Detection.
-Modified version
-"""
-
-"""
-## Introduction
-
-Object detection a very important problem in computer
-vision. Here the model is tasked with localizing the objects present in an
-image, and at the same time, classifying them into different categories.
-Object detection models can be broadly classified into "single-stage" and
-"two-stage" detectors. Two-stage detectors are often more accurate but at the
-cost of being slower. Here in this example, we will implement RetinaNet,
-a popular single-stage detector, which is accurate and runs fast.
-RetinaNet uses a feature pyramid network to efficiently detect objects at
-multiple scales and introduces a new loss, the Focal loss function, to alleviate
-the problem of the extreme foreground-background class imbalance.
-
-**References:**
-
-- [RetinaNet Paper](https://arxiv.org/abs/1708.02002)
-- [Feature Pyramid Network Paper](https://arxiv.org/abs/1612.03144)
-"""
-#%%
 import os
 # os.chdir('/Users/anseunghwan/Documents/GitHub/archive/retinanet')
 os.chdir(r'D:\archive\retinanet')
@@ -50,8 +21,20 @@ from anchors import *
 from model import *
 from labeling import *
 #%%
-batch_size = 2
-num_classes = 20
+PARAMS = {
+    'epochs': 75,
+    'batch_size': 2,
+    'lr': 1e-3,
+    'momentum': 0.9,
+    'wd': 1e-4,
+    'num_classes': 20,
+    
+    'alpha': 0.25,
+    'gamma': 2.0,
+    'delta': 1.0,
+    'confidence_threshold': 0.6,
+    'prob_init': 0.01,
+}
 #%%
 class_dict = {
     'aeroplane': 1,
@@ -160,16 +143,16 @@ def prepare_image(image):
     return tf.expand_dims(image, axis=0), ratio
 #%%
 '''dataset'''
-train_dataset, val_dataset, test_dataset, ds_info = fetch_dataset(batch_size)
+train_dataset, val_dataset, test_dataset, ds_info = fetch_dataset(PARAMS['batch_size'])
 test_iter = iter(test_dataset)
 
 log_path = f'logs/voc2007'
 #%%
-model_path = log_path + '/20220211-111420'
+model_path = log_path + '/20220213-214440'
 model_name = [x for x in os.listdir(model_path) if x.endswith('.h5')]
 model_name = model_name[-1]
 resnet50_backbone = get_backbone()
-model = RetinaNet(num_classes, resnet50_backbone)
+model = RetinaNet(PARAMS['num_classes'], PARAMS['prob_init'], resnet50_backbone)
 model.build(input_shape=[None, 512, 512, 3])
 model.load_weights(model_path + '/' + model_name)
 model.summary()
@@ -179,7 +162,7 @@ model.summary()
 """
 image = K.Input(shape=[512, 512, 3], name="image")
 predictions = model(image, training=False)
-detections = DecodePredictions(confidence_threshold=0.65)(image, predictions[0], predictions[1])
+detections = DecodePredictions(confidence_threshold=PARAMS['confidence_threshold'])(image, predictions[0], predictions[1])
 inference_model = K.Model(inputs=image, outputs=detections)
 #%%
 """
@@ -213,7 +196,7 @@ for i in range(len(results)):
     axes.flatten()[i].imshow(results[i])
     axes.flatten()[i].axis('off')
 plt.tight_layout()
-plt.savefig('{}/results.png'.format(model_path),
+plt.savefig('{}/result.png'.format(model_path),
             dpi=200, bbox_inches="tight", pad_inches=0.1)
 plt.show()
 plt.close()
@@ -221,6 +204,14 @@ plt.close()
 """
 AP
 """
+# [test], ds_info = tfds.load(name='voc/2007', split=['test'], with_info=True)
+
+# autotune = tf.data.AUTOTUNE
+# test_dataset = test.map(preprocess_test_data, num_parallel_calls=autotune)
+# test_dataset = test_dataset.batch(batch_size=1, drop_remainder=False)
+# # test_dataset = test_dataset.map(label_encoder.encode_batch, num_parallel_calls=autotune)
+# test_dataset = test_dataset.apply(tf.data.experimental.ignore_errors())
+# test_dataset = test_dataset.prefetch(autotune)
 #%%
 def generate_iou(anchors, gt_boxes):
     bbox_y1, bbox_x1, bbox_y2, bbox_x2 = tf.split(anchors, 4, axis=-1) 
@@ -270,10 +261,10 @@ def calculate_AP_per_class(recall, precision):
     AP = tf.reduce_sum(AP) / 11
     return AP
 #%%
-def calculate_AP(final_bboxes, final_labels, gt_boxes, gt_labels):
+def calculate_AP(final_bboxes, final_labels, gt_boxes, gt_labels, PARAMS):
     mAP_threshold = 0.5
     AP = []
-    for c in range(num_classes):
+    for c in range(PARAMS['num_classes']):
         if tf.math.reduce_any(final_labels == c) or tf.math.reduce_any(gt_labels == c):
             final_bbox = tf.expand_dims(final_bboxes[final_labels == c], axis=0)
             gt_box = tf.expand_dims(gt_boxes[gt_labels == c], axis=0)
@@ -304,7 +295,10 @@ for sample in tqdm.tqdm(test_iter):
     final_bboxes = tf.stack([swap_xy(x[None, ...]) for x in final_bboxes[0]], axis=1)
     gt_boxes = swap_xy(convert_to_corners(gt_boxes))
     
-    mAP.append(calculate_AP(final_bboxes, final_labels, gt_boxes[tf.newaxis, ...], gt_labels[None, ...]))
+    mAP.append(calculate_AP(final_bboxes, final_labels, gt_boxes[tf.newaxis, ...], gt_labels[None, ...], PARAMS))
 #%%
-tf.reduce_mean(mAP) # 0.3980715
+tf.reduce_mean(mAP) 
+'''
+mAP: 0.40557733
+'''
 #%%

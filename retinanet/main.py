@@ -156,8 +156,8 @@ class DecodePredictions(tf.keras.layers.Layer):
         num_classes=20,
         confidence_threshold=0.5,
         nms_iou_threshold=0.5,
-        max_detections_per_class=100,
-        max_detections=100,
+        max_detections_per_class=200,
+        max_detections=200,
         box_variance=[0.1, 0.1, 0.2, 0.2],
         **kwargs
     ):
@@ -393,6 +393,7 @@ inference_model = tf.keras.Model(inputs=image, outputs=detections)
 """
 save results
 """
+test_iter = iter(test_dataset)
 flag = 0
 results = []
 for sample in test_iter:

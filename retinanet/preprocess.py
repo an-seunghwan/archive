@@ -116,6 +116,48 @@ def preprocess_data(sample):
     bbox = convert_to_xywh(bbox)
     return image, bbox, class_id
 #%%
+def preprocess_test_data(sample):
+    """Applies preprocessing step to a single sample
+
+    Arguments:
+        sample: A dict representing a single training sample.
+
+    Returns:
+        image: Resized and padded image with random horizontal flipping applied.
+            (Resizes images so that both width and height are fixed size)
+        
+        bbox: Bounding boxes with the shape `(num_objects, 4)` where each box is
+            of the format `[x, y, width, height]`.
+            
+        class_id: An tensor representing the class id of the objects, having
+            shape `(num_objects,)`.
+    """
+    
+    """
+    1. remove is_difficult
+    2. without augmentation
+    """
+    image = sample["image"]
+    bbox = swap_xy(sample["objects"]["bbox"])
+    class_id = tf.cast(sample["objects"]["label"], dtype=tf.int32)
+    is_difficult = sample["objects"]['is_difficult']
+
+    image_shape = [512, 512]
+    image_shape = tf.cast(image_shape, dtype=tf.float32)
+    image = tf.image.resize(image, tf.cast(image_shape, dtype=tf.int32))
+
+    bbox = tf.stack(
+        [
+            bbox[:, 0] * image_shape[1],
+            bbox[:, 1] * image_shape[0],
+            bbox[:, 2] * image_shape[1],
+            bbox[:, 3] * image_shape[0],
+        ],
+        axis=-1,
+    )
+    bbox = convert_to_xywh(bbox)
+    return image, bbox[tf.logical_not(is_difficult)], class_id[tf.logical_not(is_difficult)], is_difficult
+#%%
 """
 ## Setting up a `tf.data` pipeline
 
@@ -141,7 +183,7 @@ def fetch_dataset(batch_size):
     train_dataset = train.map(preprocess_data, num_parallel_calls=autotune)
     train_dataset = train_dataset.shuffle(ds_info.splits["train"].num_examples)
     train_dataset = train_dataset.padded_batch(
-        batch_size=batch_size, padding_values=(0.0, 1e-8, -1), drop_remainder=True
+        batch_size=batch_size, padding_values=(0.0, 1e-8, -1), drop_remainder=False
     )
     # train_dataset = train_dataset.map(
     #     label_encoder.encode_batch, num_parallel_calls=autotune
@@ -155,18 +197,18 @@ def fetch_dataset(batch_size):
     label에 negative sample index로 padding?
     '''
     val_dataset = val_dataset.padded_batch(
-        batch_size=batch_size, padding_values=(0.0, 1e-8, -1), drop_remainder=True
+        batch_size=batch_size, padding_values=(0.0, 1e-8, -1), drop_remainder=False
     )
     # val_dataset = val_dataset.map(label_encoder.encode_batch, num_parallel_calls=autotune)
     val_dataset = val_dataset.apply(tf.data.experimental.ignore_errors())
     val_dataset = val_dataset.prefetch(autotune)
 
-    test_dataset = test.map(preprocess_data, num_parallel_calls=autotune)
+    test_dataset = test.map(preprocess_test_data, num_parallel_calls=autotune)
     '''
     label에 negative sample index로 padding?
     '''
     test_dataset = test_dataset.padded_batch(
-        batch_size=1, padding_values=(0.0, 1e-8, -1), drop_remainder=True
+        batch_size=1, drop_remainder=False
     )
     # test_dataset = test_dataset.map(label_encoder.encode_batch, num_parallel_calls=autotune)
     test_dataset = test_dataset.apply(tf.data.experimental.ignore_errors())

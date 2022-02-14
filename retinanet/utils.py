@@ -103,8 +103,8 @@ def visualize_detections(
         )
         ax.add_patch(patch)
         ax.text(
-            x - w/2,
-            y - h/2,
+            x + w/2,
+            y + h/2,
             text,
             bbox={"facecolor": gt_color, "alpha": 0.4},
             clip_box=ax.clipbox,
