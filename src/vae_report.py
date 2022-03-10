@@ -5,20 +5,21 @@ Date created: 2020/05/03
 Last modified: 2020/05/03
 Description: Convolutional Variational AutoEncoder (VAE) trained on MNIST digits.
 """
-
+#%%
 """
 ## Setup
 """
-#%%
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
+import matplotlib.pyplot as plt
+from PIL import Image
 
+#%%
 """
 ## Create a sampling layer
 """
-#%%
 
 class Sampling(layers.Layer):
     """Uses (z_mean, z_log_var) to sample z, the vector encoding a digit."""
@@ -30,7 +31,6 @@ class Sampling(layers.Layer):
         epsilon = tf.keras.backend.random_normal(shape=(batch, dim))
         return z_mean + tf.exp(0.5 * z_log_var) * epsilon
 #%%
-
 """
 ## Build the encoder
 """
@@ -64,7 +64,6 @@ decoder.summary()
 """
 ## Define the VAE as a `Model` with a custom `train_step`
 """
-
 
 class VAE(keras.Model):
     def __init__(self, encoder, decoder, **kwargs):
@@ -126,9 +125,6 @@ vae.fit(mnist_digits, epochs=30, batch_size=128)
 ## Display a grid of sampled digits
 """
 
-import matplotlib.pyplot as plt
-
-
 def plot_latent_space(vae, n=30, figsize=15):
     # display a n*n 2D manifold of digits
     digit_size = 28
@@ -169,7 +165,6 @@ plot_latent_space(vae)
 ## Display how the latent space clusters different digit classes
 """
 
-
 def plot_label_clusters(vae, data, labels):
     # display a 2D plot of the digit classes in the latent space
     z_mean, _, _ = vae.encoder.predict(data)
@@ -181,7 +176,6 @@ def plot_label_clusters(vae, data, labels):
     plt.xticks(fontsize = 18)
     plt.yticks(fontsize = 18)
     plt.show()
-
 #%%
 (x_train, y_train), _ = keras.datasets.mnist.load_data()
 x_train = np.expand_dims(x_train, -1).astype("float32") / 255
@@ -213,6 +207,8 @@ plt.xlabel("$z_0$", fontsize=35)
 plt.ylabel("$z_1$", fontsize=35)
 plt.xticks(fontsize = 25)
 plt.yticks(fontsize = 25)
+plt.savefig(r'D:\archive\assets\naive_vae_interpolation_path.png', 
+            dpi=200, bbox_inches="tight", pad_inches=0.1)
 plt.show()
 #%%
 inter = np.linspace(z_inter[0], z_inter[1], 10)
@@ -223,5 +219,21 @@ for i in range(10):
     plt.subplot(1, 10+1, i+1)
     plt.imshow(inter_recon[i], cmap='gray_r')
     plt.axis('off')
+plt.savefig(r'D:\archive\assets\naive_vae_interpolation_path_recon.png', 
+            dpi=200, bbox_inches="tight", pad_inches=0.1)
 plt.show()
+#%%
+img = [Image.open(r'D:\archive\assets\naive_vae_interpolation_path.png'),
+        Image.open(r'D:\archive\assets\naive_vae_interpolation_path_recon.png')]
+
+f, (a0, a1) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [2, 0.25]})
+a0.imshow(img[0])    
+a0.axis('off')
+a1.imshow(img[1])    
+a1.axis('off')
+plt.tight_layout() 
+plt.savefig(r'D:\archive\assets\naive_vae_interpolation_path_and_recon.png',
+            dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.show()
+plt.close()
 #%%
