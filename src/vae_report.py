@@ -193,23 +193,25 @@ i = 500
 j = 260
 z_inter = (z_mean[np.where(y_train == 0)[0][[i]][0], :], z_mean[np.where(y_train == 1)[0][[j]][0], :])
 
-plt.figure(figsize=(8, 8))
-plt.scatter(z_mean[:, 0], z_mean[:, 1], c=y_train, cmap=plt.cm.Reds)
+plt.figure(figsize=(10, 10))
+plt.tick_params(labelsize=30)    
+plt.locator_params(axis='y', nbins=8)
+plt.scatter(z_mean[:, 0], z_mean[:, 1], c=y_train, s=10, cmap=plt.cm.Reds, alpha=1)
+plt.locator_params(axis='x', nbins=5)
+plt.locator_params(axis='y', nbins=5)
 plt.scatter(z_inter[0][0], z_inter[0][1], color='blue', s=100)
 plt.annotate('A', (z_inter[0][0], z_inter[0][1]), fontsize=30)
 plt.scatter(z_inter[1][0], z_inter[1][1], color='blue', s=100)
 plt.annotate('B', (z_inter[1][0], z_inter[1][1]), fontsize=30)
 plt.plot((z_inter[0][0], z_inter[1][0]), (z_inter[0][1], z_inter[1][1]), color='black', linewidth=2, linestyle='--')
-# plt.colorbar()
-plt.locator_params(axis='x', nbins=5)
-plt.locator_params(axis='y', nbins=5)
-plt.xlabel("$z_0$", fontsize=35)
-plt.ylabel("$z_1$", fontsize=35)
-plt.xticks(fontsize = 25)
-plt.yticks(fontsize = 25)
+plt.xlabel("$z_0$", fontsize=30)
+plt.ylabel("$z_1$", fontsize=30)
+# plt.xticks(fontsize = 25)
+# plt.yticks(fontsize = 25)
 plt.savefig(r'D:\archive\assets\naive_vae_interpolation_path.png', 
-            dpi=200, bbox_inches="tight", pad_inches=0.1)
+            dpi=100, bbox_inches="tight", pad_inches=0.1)
 plt.show()
+plt.close()
 #%%
 inter = np.linspace(z_inter[0], z_inter[1], 10)
 inter_recon = vae1.decoder.predict(inter)
@@ -220,8 +222,9 @@ for i in range(10):
     plt.imshow(inter_recon[i], cmap='gray_r')
     plt.axis('off')
 plt.savefig(r'D:\archive\assets\naive_vae_interpolation_path_recon.png', 
-            dpi=200, bbox_inches="tight", pad_inches=0.1)
+            dpi=100, bbox_inches="tight", pad_inches=0.1)
 plt.show()
+plt.close()
 #%%
 img = [Image.open(r'D:\archive\assets\naive_vae_interpolation_path.png'),
         Image.open(r'D:\archive\assets\naive_vae_interpolation_path_recon.png')]
@@ -233,7 +236,7 @@ a1.imshow(img[1])
 a1.axis('off')
 plt.tight_layout() 
 plt.savefig(r'D:\archive\assets\naive_vae_interpolation_path_and_recon.png',
-            dpi=200, bbox_inches="tight", pad_inches=0.1)
+            dpi=100, bbox_inches="tight", pad_inches=0.1)
 plt.show()
 plt.close()
 #%%
