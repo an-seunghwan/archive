@@ -2,3 +2,4 @@
 *.tar
 *.pt
 *.h5
+wandb

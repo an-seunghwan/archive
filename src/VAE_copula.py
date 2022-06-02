@@ -1,4 +1,7 @@
 #%%
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+#%%
 import statsmodels
 from statsmodels.distributions.copula.api import ClaytonCopula
 
@@ -9,19 +12,57 @@ from torch.nn import functional as F
 import numpy as np
 import matplotlib.pyplot as plt
 #%%
-n = 50000
-d = 2
-tau = 0.5
-cop = ClaytonCopula(theta=tau, k_dim=d)
-data = cop.rvs(n, random_state=1)
-data = torch.FloatTensor(data)
+import sys
+import subprocess
+try:
+    import wandb
+except:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "wandb"])
+    with open("../wandb_api.txt", "r") as f:
+        key = f.readlines()
+    subprocess.run(["wandb", "login"], input=key[0], encoding='utf-8')
+    import wandb
+
+wandb.init(
+    project="RafterNet", 
+    entity="anseunghwan",
+    tags=["clayton"],
+)
+#%%
+import argparse
+def get_args(debug):
+    parser = argparse.ArgumentParser('parameters')
+
+    parser.add_argument('--seed', type=int, default=1, 
+                        help='seed for repeatable results')
+    parser.add_argument('--n', type=int, default=50000, 
+                        help='the number of dataset')
+    parser.add_argument('--data_dim', type=int, default=2, 
+                        help='dimension of copula')
+    parser.add_argument('--tau', type=float, default=0.5, 
+                        help='Kendalls tau of copula')
+    
+    parser.add_argument('--train_iter', type=int, default=50, 
+                        help='the number of training iteration')
+    
+    parser.add_argument('--latent_dim', type=int, default=200, 
+                        help='dimension of latent variable')
+    parser.add_argument('--num_layers', type=int, default=1, 
+                        help='number of neural network layers')
+    parser.add_argument('--hidden_dim', type=int, default=100, 
+                        help='number of neural network layers')
+
+    if debug:
+        return parser.parse_args(args=[])
+    else:    
+        return parser.parse_args()
 #%%
 class VAE(nn.Module):
     def __init__(self,
-                 data_dim,
-                 latent_dim,
-                 num_layers,
-                 hidden_dim):
+                data_dim,
+                latent_dim,
+                num_layers,
+                hidden_dim):
         super(VAE, self).__init__()
         self.latent_dim = latent_dim
 
@@ -95,44 +136,63 @@ class VAE(nn.Module):
         """
         return self.forward(x)[0]
 #%%
-model = VAE(
-    data_dim=2, 
-    latent_dim=200, 
-    num_layers=2, 
-    hidden_dim=600
-)
-print(model)
-#%%
-def loss_function(data, xhat, mean, logvar):
-    beta = 1.
-    recon_loss = 0.5 * torch.mean(torch.sum(torch.pow(xhat - data, 2), axis=1))
-    kl_loss = torch.mean(-0.5 * torch.sum(1 + logvar - mean ** 2 - logvar.exp(), dim = 1), dim = 0)
-    loss = recon_loss + beta * kl_loss
-    return {'loss': loss, 'recon_loss':recon_loss, 'KLD':kl_loss}
-#%%
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-for iteration in range(100):
-    optimizer.zero_grad()
-    xhat, z, mean, logvar = model(data)
-    loss_ = loss_function(data, xhat, mean, logvar)
-    loss = loss_['loss']
-    loss.backward()
-    optimizer.step()
+def main():
+    config = vars(get_args(debug=True)) # default configuration
+    wandb.config.update(config)
     
-    print_input = "[iteration {:03d}]".format(iteration)
-    print_input += ''.join([', {}: {:.4f}'.format(x, y.detach().item()) for x, y in loss_.items()])
-    print(print_input)
+    n = config["n"]
+    data_dim = config["data_dim"]
+    tau = config["tau"]
+    cop = ClaytonCopula(theta=tau, k_dim=data_dim)
+    data = cop.rvs(n, random_state=config["seed"])
+    data = torch.FloatTensor(data)
+    
+    model = VAE(
+        data_dim=data_dim, 
+        latent_dim=config["latent_dim"], 
+        num_layers=config["num_layers"], 
+        hidden_dim=config["hidden_dim"], 
+    )
+    print(model)
+    
+    def loss_function(data, xhat, mean, logvar):
+        beta = 1.
+        recon_loss = 0.5 * torch.mean(torch.sum(torch.pow(xhat - data, 2), axis=1))
+        kl_loss = torch.mean(-0.5 * torch.sum(1 + logvar - mean ** 2 - logvar.exp(), dim = 1), dim = 0)
+        loss = recon_loss + beta * kl_loss
+        return {'loss': loss, 'recon_loss':recon_loss, 'KLD':kl_loss}
+    
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    for iteration in range(config["train_iter"]):
+        optimizer.zero_grad()
+        xhat, z, mean, logvar = model(data)
+        loss_ = loss_function(data, xhat, mean, logvar)
+        loss = loss_['loss']
+        loss.backward()
+        optimizer.step()
+        
+        print_input = "[iteration {:03d}]".format(iteration)
+        print_input += ''.join([', {}: {:.4f}'.format(x, y.detach().item()) for x, y in loss_.items()])
+        print(print_input)
+        
+        wandb.log({x : y.detach().item() for x, y in loss_.items()})
+    
+    """
+    http://webdoc.sub.gwdg.de/ebook/serien/e/uio_statistical_rr/05-07.pdf
+    """
+    n_gen = 1000
+    data_gen = model.sample(n_gen)
+    data_gen = data_gen.detach().numpy()
+    S = 0
+    for i in range(n_gen):
+        a = ((data_gen <= data_gen[i, :]).sum(axis=1) == 2).astype(float).sum() / (n_gen + 1)
+        b = cop.cdf(data_gen[i, :])[0]
+        S += (a - b) ** 2
+    S = S / n_gen
+    wandb.log(S)
+    
+    wandb.run.finish()
 #%%
-"""
-http://webdoc.sub.gwdg.de/ebook/serien/e/uio_statistical_rr/05-07.pdf
-"""
-n_gen = 1000
-data_gen = model.sample(n_gen)
-data_gen = data_gen.detach().numpy()
-S = 0
-for i in range(n_gen):
-    a = ((data_gen <= data_gen[i, :]).sum(axis=1) == 2).astype(float).sum() / (n_gen + 1)
-    b = cop.cdf(data_gen[i, :])[0]
-    S += (a - b) ** 2
-S = S / n_gen
+if __name__ == "__main__":
+    main()
 #%%
