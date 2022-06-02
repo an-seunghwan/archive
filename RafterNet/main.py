@@ -45,12 +45,12 @@ def get_args(debug):
     parser.add_argument('--train_iter', type=int, default=50, 
                         help='the number of training iteration')
     
-    parser.add_argument('--latent_dim', type=int, default=200, 
-                        help='dimension of latent variable')
     parser.add_argument('--num_layers', type=int, default=1, 
                         help='number of neural network layers')
     parser.add_argument('--hidden_dim', type=int, default=100, 
                         help='number of neural network layers')
+    parser.add_argument('--latent_dim', type=int, default=200, 
+                        help='dimension of latent variable')
 
     if debug:
         return parser.parse_args(args=[])
@@ -137,7 +137,7 @@ class VAE(nn.Module):
         return self.forward(x)[0]
 #%%
 def main():
-    config = vars(get_args(debug=True)) # default configuration
+    config = vars(get_args(debug=False)) # default configuration
     wandb.config.update(config)
     
     n = config["n"]
