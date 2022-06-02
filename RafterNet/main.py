@@ -45,9 +45,9 @@ def get_args(debug):
     parser.add_argument('--train_iter', type=int, default=50, 
                         help='the number of training iteration')
     
-    parser.add_argument('--num_layers', type=int, default=1, 
+    parser.add_argument('--num_layers', type=int, default=3, 
                         help='number of neural network layers')
-    parser.add_argument('--hidden_dim', type=int, default=100, 
+    parser.add_argument('--hidden_dim', type=int, default=300, 
                         help='number of neural network layers')
     parser.add_argument('--latent_dim', type=int, default=200, 
                         help='dimension of latent variable')
@@ -189,7 +189,7 @@ def main():
         b = cop.cdf(data_gen[i, :])[0]
         S += (a - b) ** 2
     S = S / n_gen
-    wandb.log(S)
+    wandb.log({'CvM': S})
     
     wandb.run.finish()
 #%%
