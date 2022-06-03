@@ -88,6 +88,7 @@ class VAE(nn.Module):
             decoder.append(nn.Linear(in_dim, out_dim))
             decoder.append(nn.ReLU())
         decoder.append(nn.Linear(hidden_dim, data_dim))
+        decoder.append(nn.Sigmoid())
         self.decoder = nn.ModuleList(decoder)
 
     def encode(self, input):
